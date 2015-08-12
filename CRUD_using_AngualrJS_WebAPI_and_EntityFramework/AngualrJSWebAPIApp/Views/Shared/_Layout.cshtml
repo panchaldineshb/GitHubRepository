@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<!--
+   Referred Example:
+
+   http://www.cssplay.co.uk/layouts/flexible-equal-height.html
+
+   -->
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="usersApp">
+<head>
+    <!-- META -->
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Optimize mobile viewport -->
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link href="~/Content/css/ng-grid.min.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- start layout -->
+    <div id="layout">
+        @RenderSection("header", required: false) @RenderSection("navbar", required: false)
+        @RenderBody() @RenderSection("footer", required: false)
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+
+
+    <script src="~/Scripts/js/jquery-1.10.1.min.js"></script>
+    <script src="~/Scripts/js/angular.min.js"></script>
+    <script src="~/Scripts/js/ng-grid.min.js"></script>
+    <script src="~/Scripts/Common/common.js"></script>
+</body>
+</html>

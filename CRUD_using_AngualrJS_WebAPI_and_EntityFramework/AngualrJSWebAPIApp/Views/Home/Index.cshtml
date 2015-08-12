@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section header {
+    <!-- start header -->
+    <div id="header" ng-controller="userCtrl">
+        <div class="content">
+            <h1>SARABI LLC</h1>
+            <p>{{tagLine}}</p>
+        </div>
+    </div>
+    <!-- end header -->
+}
+@section navbar {
+    <!-- start .navbar -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+                <ul class="nav">
+                    <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Projects", "Index", "Projects")</li>
+                    <li>@Html.ActionLink("Services", "Index", "Services")</li>
+                    <li>@Html.ActionLink("Companies", "Index", "Companies")</li>
+                    <li>@Html.ActionLink("Register", "Register", "Account")</li>
+                    <li>@Html.ActionLink("SignIn", "SignIn", "Account")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- end .navbar -->
+}
+@section footer {
+    <!-- startfooter -->
+    <div id="footer">
+        <div class="content">
+            <p>Copyright &copy;2014 Sarabi LLC | <a href="panchaldineshb@gmail.com">Contact Us</a></p>
+        </div>
+    </div>
+    <!-- end footer -->
+}
+<!-- start #wrapper -->
+<div id="wrapper" ng-controller="userCtrl">
+    <div id="outer1">
+        <div class="content">
+            <h3>Bundles Supported: {Left 20%}</h3>
+            <div ng-repeat="bundle in bundlesSupported">
+                <p><a href="{{bundle.name}}">{{bundle.displayName}}</a></p>
+            </div>
+        </div>
+        <!-- end content -->
+    </div>
+    <!-- start topbar -->
+    <div id="topbar">
+        <div class="content">
+            <h3>Top Bar 60%</h3>
+            <p>You can have any number of columns as long as the total width is 100%;</p>
+            <p>This top bar can be any combined width of the lower columns and can span any number of columns.</p>
+            <p>All this is done with simple divs.</p>
+        </div>
+
+        <div class="content">
+            <div class="gridStyle" ng-grid="gridOptions"></div>
+
+            <form name="myForm">
+                <b> {{action | uppercase}} </b>
+                </br>
+                <span> <b>User Details</b></span>
+                <table>
+                    <tr>
+                        <td>Id </td>
+                        <td> <input type="text" ng-model="New.Id" />*(PLEASE ENTER UNIQUE ID)</td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td> <input type="text" ng-model="New.Name" /></td>
+                    </tr>
+                    <tr>
+                        <td>City</td>
+                        <td> <input type="text" ng-model="New.City" /></td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td> <input type="text" ng-model="New.Address" /></td>
+                    </tr>
+                    <tr>
+                        <td>Contact No</td>
+                        <td> <input type="text" ng-model="New.ContactNo" /></td>
+                    </tr>
+                    <tr>
+                        <td>Email-Id</td>
+                        <td> <input type="text" ng-model="New.EmailId" /></td>
+                    </tr>
+                </table>
+                <input id="btn_Submit" ng-click="update()" type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+    <!-- end topbar -->
+    <!-- end #wrapper -->
+</div>

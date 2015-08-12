@@ -1,0 +1,264 @@
+﻿/* Body-----------------------------------------------*/
+body {
+	font-family: "trebuchet MS", verdana, arial, sans-serif;
+	background: #f0f0f0;
+}
+
+#layout {
+	min-width: 700px;
+	max-width: 1100px;
+	margin: 0 auto;
+	background: #e0e0e0;
+}
+
+/* Header-----------------------------------------------*/
+#header {
+	background: #990033;
+}
+
+/* User panel-----------------------------------------------*/
+#user_panel {
+	font-size: 16px;
+	background: #770033;
+}
+
+	#user_panel .pitch {
+		margin-right: 10px;
+	}
+
+	#user_panel .or {
+		padding: 0 3px;
+	}
+
+/* Outer-----------------------------------------------*/
+#outer1 {
+	float: left;
+	width: 10%;
+	background: #d0c0c0;
+}
+
+#outer2 {
+	float: left;
+	width: 10%;
+	background: #c0c0c0;
+}
+
+#outer3 {
+	float: left;
+	width: 10%;
+}
+
+#outer4 {
+	float: right;
+	width: 10%;
+	background: #d0d0d0;
+}
+
+#outer5 {
+	float: right;
+	width: 90%;
+	background: #c0b0b0;
+}
+
+#outer1, #outer2, #outer3, #outer4, #outer5 {
+	padding-bottom: 32767px;
+	margin-bottom: -32767px;
+}
+
+/* wrapper-----------------------------------------------*/
+#wrapper {
+	overflow: hidden;
+}
+
+#topbar {
+	width: 60%;
+	float: left;
+	background: #d8d8d8;
+}
+
+/**
+ * form
+ */
+#main {
+	clear: both;
+	background: #465c5a;
+	font-family: Helvetica;
+	font-size: 14px;
+}
+
+	#main form {
+		padding: 3px;
+	}
+
+	#main .block {
+		width: 50%;
+	}
+
+		#main .block strong {
+			color: #ccc;
+		}
+
+/**
+ * footer
+ */
+
+/**
+ * footer
+ */
+#footer {
+	clear: both;
+	background: #455c5a;
+}
+
+h1 {
+	font-size: 20px;
+	margin: 0;
+	padding: 10px 0;
+	color: #fff;
+}
+
+h3 {
+	font-size: 18px;
+	margin: 0;
+	padding: 8px 0;
+}
+
+.content {
+	padding: 10px;
+}
+
+p {
+	font-size: 12px;
+	line-height: 1.5em;
+	margin: 0;
+	padding: 5px 0;
+}
+
+#footer p,
+#header p {
+	color: #fff;
+}
+
+#footer a {
+	color: #fff;
+}
+
+	#footer a:hover {
+		text-decoration: none;
+	}
+
+/* Customize the navbar links to be fill the entire space of the .navbar */
+.navbar {
+	font-size: 12px;
+	background: #770033;
+	margin: 0;
+}
+
+	.navbar .navbar-inner {
+		padding: 0;
+	}
+
+	.navbar .nav {
+		margin: 0;
+		display: table;
+		width: 100%;
+	}
+
+		.navbar .nav li {
+			display: table-cell;
+			width: 1%;
+			float: none;
+		}
+
+			.navbar .nav li active {
+				background: #455c5a;
+			}
+
+			.navbar .nav li a {
+				font-weight: bold;
+				text-align: center;
+				border-left: 1px solid rgba(255,255,255,.75);
+				border-right: 1px solid rgba(0,0,0,.1);
+			}
+
+			.navbar .nav li:first-child a {
+				border-left: 0;
+				border-radius: 3px 0 0 3px;
+			}
+
+			.navbar .nav li:last-child a {
+				border-right: 0;
+				border-radius: 0 3px 3px 0;
+			}
+
+<!-- [if lte IE 7] >
+/* hack to compensate for IE and percentage widths rounding errors */
+#topbar {
+	width: 60.6%;
+}
+
+#outer3 {
+	width: 29.8%;
+}
+
+#outer5 {
+	width: 19.2%;
+}
+/* for IE6 */
+* html #wrapper {
+	display: inline-block;
+}
+
+* html #minMax {
+	width: expression(document.body.clientWidth < 702? "700px" : document.body.clientWidth > 1102? "1100px" : "auto");
+}
+
+<!-- [endif] -->
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+	border: 1px solid #ddd;
+	padding: 0 1.4em 1.4em 1.4em;
+	margin: 0 0 1.5em 0;
+}
+
+legend {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+textarea {
+	min-height: 75px;
+}
+
+.editor-label {
+	margin: 1em 0 0 0;
+}
+
+.editor-field {
+	margin: 0.5em 0 0 0;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+	color: #f00;
+}
+
+.field-validation-valid {
+	display: none;
+}
+
+.input-validation-error {
+	border: 1px solid #f00;
+	background-color: #fee;
+}
+
+.validation-summary-errors {
+	font-weight: bold;
+	color: #f00;
+}
+
+.validation-summary-valid {
+	display: none;
+}
