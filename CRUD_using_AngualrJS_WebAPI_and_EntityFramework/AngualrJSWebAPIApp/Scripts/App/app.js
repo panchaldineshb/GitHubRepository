@@ -70,8 +70,8 @@ usersApp.controller('userCtrl', function ($scope, userRepository) {
             { field: 'City', displayName: 'City', width: '15%' },
             { field: 'Address', displayName: 'Address', width: '15%' },
             { field: 'ContactNo', displayName: 'Contact No', width: '15%' },
-            { field: 'EmailId', displayName: 'Email Id', width: '15%' },
-            { displayName: 'Options', cellTemplate: '<input type="button" ng-click="setScope(row.entity,\'edit\')" name="edit"  value="Edit">&nbsp;<input type="button" ng-click="DeleteUser(row.entity.id)"  name="delete"  value="Delete">', width: '25%' }
+            { field: 'EmailId', displayName: 'Email Id', width: '10%' },
+            { displayName: 'Options', cellTemplate: '<input type="button" ng-click="setScope(row.entity,\'edit\')" name="edit" class="btn btn-large btn-warning" value="Edit">&nbsp;<input type="button" ng-click="DeleteUser(row.entity.id)" name="delete" class="btn btn-large btn-danger" value="Delete">', width: '30%' }
         ]
     };
 

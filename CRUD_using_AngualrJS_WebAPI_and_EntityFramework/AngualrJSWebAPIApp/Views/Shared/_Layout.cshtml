@@ -13,7 +13,7 @@
     <!-- Optimize mobile viewport -->
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/css", "~/Content/bootstrap")
     @Scripts.Render("~/bundles/modernizr")
 
     <link href="~/Content/css/ng-grid.min.css" rel="stylesheet" />
@@ -23,10 +23,12 @@
     <!-- start layout -->
     <div id="layout">
         @RenderSection("header", required: false) @RenderSection("navbar", required: false)
+
         @RenderBody() @RenderSection("footer", required: false)
     </div>
 
     @Scripts.Render("~/bundles/jquery")
+
     @RenderSection("scripts", required: false)
 
     <script src="~/Scripts/js/jquery-1.10.1.min.js"></script>
@@ -42,6 +44,6 @@
 
     <script src="~/Scripts/Common/config.js"></script>
 
-   <script src="~/Scripts/App/app.js"></script>
+    <script src="~/Scripts/App/app.js"></script>
 </body>
 </html>

@@ -2,6 +2,7 @@
     ViewBag.Title = "Home Page";
 }
 @section header {
+
     <!-- start header -->
     <div id="header" ng-controller="userCtrl">
         <div class="content">
@@ -13,10 +14,10 @@
 }
 @section navbar {
     <!-- start .navbar -->
-    <div class="navbar">
-        <div class="navbar-inner">
-            <div class="container">
-                <ul class="nav">
+    <div class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
                     <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Projects", "Index", "Projects")</li>
                     <li>@Html.ActionLink("Services", "Index", "Services")</li>
@@ -31,6 +32,7 @@
     </div>
     <!-- end .navbar -->
 }
+
 @section footer {
     <!-- startfooter -->
     <div id="footer">
@@ -93,7 +95,7 @@
                         <td> <input type="text" ng-model="New.EmailId" /></td>
                     </tr>
                 </table>
-                <input id="btn_Submit" ng-click="update()" type="submit" value="Submit" />
+                <input id="btn_Submit" class="btn btn-large btn-success" ng-click="update()" type="submit" value="Submit" />
             </form>
         </div>
     </div>

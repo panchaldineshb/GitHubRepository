@@ -1,5 +1,7 @@
 ﻿using System.Web.Optimization;
 
+using AngualrJSWebAPIApp.Web.Infrastructure;
+
 namespace AngualrJSWebAPIApp.Web
 {
     public class BundleConfig
@@ -23,8 +25,7 @@ namespace AngualrJSWebAPIApp.Web
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/Site.css",
-                "~/Content/lib/bootstrap.min.css"));
+                "~/Content/Site.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",
@@ -39,6 +40,11 @@ namespace AngualrJSWebAPIApp.Web
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+            var css = new StyleBundle("~/Content/bootstrap")
+                .Include("~/Content/bootstrap/bootstrap.less");
+            css.Transforms.Add(new LessMinify());
+            bundles.Add(css);
         }
     }
 }
