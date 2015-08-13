@@ -1,6 +1,7 @@
 ﻿using System.Net.Http.Headers;
 using System.Reflection;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Mvc;
 using System.Web.Routing;
 using AngualrJSWebAPIApp.DAL.Context;
@@ -16,6 +17,10 @@ namespace AngualrJSWebAPIApp.API
     {
         protected void Application_Start()
         {
+            //To enable CORS for all Web API controllers in your application, pass an EnableCorsAttribute instance to the EnableCors method:
+            var enableCorsAttribute = new EnableCorsAttribute("*", "Origin, Content-Type, Accept", "GET, PUT, POST, DELETE, OPTIONS");
+            GlobalConfiguration.Configuration.EnableCors(enableCorsAttribute);
+
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);

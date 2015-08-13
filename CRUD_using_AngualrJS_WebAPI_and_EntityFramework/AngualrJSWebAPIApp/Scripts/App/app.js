@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 /**
  * @ngdoc overview
@@ -10,7 +10,6 @@
  */
 var usersApp = angular.module('usersApp', [
     'ngGrid',
-    'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
@@ -19,12 +18,6 @@ var usersApp = angular.module('usersApp', [
 ]);
 
 var url = 'http://localhost:58045/api/User';
-
-usersApp.config(['$httpProvider', function ($httpProvider) {
-    $httpProvider.defaults.useXDomain = true;
-    delete $httpProvider.defaults.headers.common['X-Requested-With'];
-}
-]);
 
 //the factory object for the webAPI call.
 usersApp.factory('userRepository', function ($http) {
