@@ -17,7 +17,9 @@ var usersApp = angular.module('usersApp', [
     'ngTouch'
 ]);
 
-var url = 'http://localhost:58045/api/User';
+var baseUrl = config.apiurl;
+
+var url = baseUrl + 'api/User';
 
 //the factory object for the webAPI call.
 usersApp.factory('userRepository', function ($http) {

@@ -222,6 +222,7 @@
     <Content Include="readme.txt" />
     <Content Include="Scripts\App\app.js" />
     <Content Include="Scripts\Common\common.js" />
+    <Content Include="Scripts\Common\config.js" />
     <Content Include="Scripts\Controllers\about.js" />
     <Content Include="Scripts\Controllers\main.js" />
     <Content Include="Scripts\Factories\orderfactory.js" />
