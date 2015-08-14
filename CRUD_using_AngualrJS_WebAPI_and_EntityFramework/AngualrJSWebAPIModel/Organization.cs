@@ -1,16 +1,14 @@
 ﻿namespace AngualrJSWebAPIApp.Models
 {
-    public class User : BaseEntity<User>
+    public class Organization : BaseEntity<Organization>
     {
-        public Role Role { get; set; }
-
-        public Organization Organization { get; set; }
-
         public string City { get; set; }
 
         public string Name { get; set; }
 
         public string Address { get; set; }
+
+        public User[] Administrators { get; set; }
 
         public string ContactNo { get; set; }
 

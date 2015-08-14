@@ -45,9 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Context\AngualrJSWebAPIAppDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seeds\SeedBuilder.cs" />
+    <Compile Include="Seeds\OrganizationSeed.cs" />
+    <Compile Include="Seeds\UserSeed.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="readme.txt" />

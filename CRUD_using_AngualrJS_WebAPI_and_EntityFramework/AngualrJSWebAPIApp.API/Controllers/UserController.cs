@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Web.Http;
 using System.Collections.Generic;
-
-using AngualrJSWebAPIApp.Models;
+using System.Web.Http;
 using AngualrJSWebAPIApp.DAL.Context;
+using AngualrJSWebAPIApp.Models;
 
 namespace AngualrJSWebAPIApp.Web.ApiControllers
 {
