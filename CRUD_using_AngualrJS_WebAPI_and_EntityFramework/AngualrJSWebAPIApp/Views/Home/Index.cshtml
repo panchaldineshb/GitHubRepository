@@ -65,37 +65,57 @@
         <div class="content">
             <div class="gridStyle" ng-grid="gridOptions"></div>
 
-            <form name="myForm">
-                <b> {{action | uppercase}} </b>
-                </br>
-                <span> <b>User Details</b></span>
-                <table>
-                    <tr>
-                        <td>Id </td>
-                        <td> <input type="text" ng-model="New.Id" />*(PLEASE ENTER UNIQUE ID)</td>
-                    </tr>
-                    <tr>
-                        <td>Name</td>
-                        <td> <input type="text" ng-model="New.Name" /></td>
-                    </tr>
-                    <tr>
-                        <td>City</td>
-                        <td> <input type="text" ng-model="New.City" /></td>
-                    </tr>
-                    <tr>
-                        <td>Address</td>
-                        <td> <input type="text" ng-model="New.Address" /></td>
-                    </tr>
-                    <tr>
-                        <td>Contact No</td>
-                        <td> <input type="text" ng-model="New.ContactNo" /></td>
-                    </tr>
-                    <tr>
-                        <td>Email-Id</td>
-                        <td> <input type="text" ng-model="New.EmailId" /></td>
-                    </tr>
-                </table>
-                <input id="btn_Submit" class="btn btn-large btn-success" ng-click="update()" type="submit" value="Submit" />
+            <form name="myForm" class="form-horizontal">
+                <fieldset>
+                    <legend>User Details</legend>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label" for="inputId">Id</label>
+                        <div class="col-lg-10">
+                            <input class="form-control" id="inputId" type="text" ng-model="New.Id" placeholder="Id">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label" for="inputName">Name</label>
+                        <div class="col-lg-10">
+                            <input class="form-control" id="inputName" type="text" ng-model="New.Name" placeholder="Name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label" for="inputCity">City</label>
+                        <div class="col-lg-10">
+                            <input class="form-control" id="inputCity" type="text" ng-model="New.City" placeholder="City">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label" for="inputAddress">Address</label>
+                        <div class="col-lg-10">
+                            <textarea class="form-control" id="inputAddress" ng-model="New.Address" placeholder="Address" rows="3"></textarea>
+                            <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label" for="inputContactNo">ContactNo</label>
+                        <div class="col-lg-10">
+                            <input class="form-control" id="inputContactNo" type="text" ng-model="New.ContactNo" placeholder="ContactNo">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label" for="inputEmailId">Email</label>
+                        <div class="col-lg-10">
+                            <input class="form-control" id="inputEmailId" type="text" ng-model="New.EmailId" placeholder="EmailId">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <button class="btn btn-default" type="reset">Cancel</button>
+                            <button class="btn btn-primary" type="submit" ng-click="update()">Submit</button>
+                        </div>
+                    </div>
+                </fieldset>
             </form>
         </div>
     </div>

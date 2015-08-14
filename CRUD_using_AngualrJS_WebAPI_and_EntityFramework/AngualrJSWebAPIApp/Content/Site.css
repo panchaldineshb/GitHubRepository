@@ -39,7 +39,7 @@ body {
 /* Outer-----------------------------------------------*/
 #outer1 {
 	float: left;
-	width: 10%;
+	width: 20%;
 	background: #d0c0c0;
 }
 
@@ -77,7 +77,7 @@ body {
 }
 
 #topbar {
-	width: 60%;
+	width: 80%;
 	float: left;
 	background: #d8d8d8;
 }
