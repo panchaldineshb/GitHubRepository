@@ -141,6 +141,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\OrganizationController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -310,6 +313,8 @@
     <Content Include="Scripts\Common\common.js" />
     <Content Include="Scripts\Common\config.js" />
     <Content Include="Scripts\Controllers\about.js" />
+    <Content Include="Scripts\Factories\userFactory.js" />
+    <Content Include="Scripts\Controllers\userController.js" />
     <Content Include="Scripts\Controllers\main.js" />
     <Content Include="Scripts\Factories\orderfactory.js" />
     <None Include="Scripts\jquery-1.9.0.intellisense.js" />
@@ -423,6 +428,9 @@
     <Content Include="Scripts\Js\errors.json" />
     <Content Include="Scripts\Js\jquery-1.10.2.min.map" />
     <Content Include="Scripts\Js\version.json" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Admin\RegisterOrganization.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -436,6 +444,10 @@
     <ProjectReference Include="..\AngualrJSWebAPI.Shared\AngualrJSWebAPI.Shared.csproj">
       <Project>{50907560-09ac-4e2a-b3c8-6e0d2eff23af}</Project>
       <Name>AngualrJSWebAPI.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AngualrJSWebAPIApp.ViewModels\AngualrJSWebAPIApp.ViewModels.csproj">
+      <Project>{d33c3969-d281-4844-b8a3-9e6394fe6cb2}</Project>
+      <Name>AngualrJSWebAPIApp.ViewModels</Name>
     </ProjectReference>
     <ProjectReference Include="..\AngualrJSWebAPIDAL\AngualrJSWebAPIApp.DAL.csproj">
       <Project>{1cc6aa4a-9760-4da0-a78d-81524aca06ab}</Project>

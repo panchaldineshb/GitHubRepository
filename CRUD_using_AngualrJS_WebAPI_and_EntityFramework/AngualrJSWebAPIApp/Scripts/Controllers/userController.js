@@ -1,53 +1,7 @@
-﻿'use strict';
-
-/**
- * @ngdoc overview
- * @name myAngularAppApp
- * @description
- * # myAngularAppApp
- *
- * Main module of the application.
- */
-var SarabiAngularApp = angular.module('SarabiAngularApp', ['ngGrid', 'ngCookies', 'ngResource', 'ngRoute', 'ngSanitize', 'ngTouch'])
-.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider, $httpProvider) {
-    $httpProvider.defaults.timeout = 5000;
-    $locationProvider.html5Mode(true);
-}]);
-
-var baseUrl = config.apiurl;
-
-var url = baseUrl + 'api/User';
-
-//the factory object for the webAPI call.
-SarabiAngularApp.factory('userFactory', function ($http) {
-    return {
-        getUsers: function (callback) {
-            $http.get(url).success(callback);
-            alert(url);
-        }
-        ,
-        //method for insert
-        insertUser: function (callback, user) {
-            var user = { "id": user.Id, "city": user.City, "name": user.Name, "address": user.Address, "contactNo": user.ContactNo, "emailId": user.EmailId };
-            $http.post(url, user).success(callback);
-        }
-            ,
-        //method for update
-        updateUser: function (callback, user) {
-            var user = { "id": user.Id, "city": user.City, "name": user.Name, "address": user.Address, "contactNo": user.ContactNo, "emailId": user.EmailId };
-            $http.put(url + '/' + user.Id, user).success(callback);
-        }
-        ,
-        //method for delete
-        deleteUser: function (callback, id) {
-            $http.delete(url + '/' + id).success(callback);
-        }
-    }
-});
+'use strict';
 
 //controller
 SarabiAngularApp.controller('userController', function ($scope, userFactory) {
-
     $scope.tagLine = 'Likeastore. Analytics';
 
     getUsers();
@@ -69,7 +23,7 @@ SarabiAngularApp.controller('userController', function ($scope, userFactory) {
         showGroupPanel: true,
         showColumnMenu: true,
         enableFiltering: true,
-        columnDefs: [{ field: 'Name', displayName: 'Name', width: '20%', cellTemplate: '<div>{{row.entity.Name}}</div>' },
+        columnDefs: [{ field: 'Name', displayName: 'Name', width: '20%', cellTemplate: '<div>{{row.entity.Name}}</div>'},
             { field: 'City', displayName: 'City', width: '15%' },
             { field: 'Address', displayName: 'Address', width: '15%' },
             { field: 'ContactNo', displayName: 'Contact No', width: '10%' },

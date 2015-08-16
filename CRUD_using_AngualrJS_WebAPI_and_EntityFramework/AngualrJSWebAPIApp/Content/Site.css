@@ -22,6 +22,17 @@ body {
 	background: #990033;
 }
 
+	#header .content {
+		padding: 10px;
+	}
+
+		#header .content h1 {
+			font-size: 20px;
+			margin: 0;
+			padding: 10px 0;
+			color: #fff;
+		}
+
 /* User panel-----------------------------------------------*/
 #user_panel {
 	font-size: 16px;
@@ -116,6 +127,7 @@ body {
 	background: #455c5a;
 }
 
+/*
 h1 {
 	font-size: 20px;
 	margin: 0;
@@ -128,6 +140,7 @@ h3 {
 	margin: 0;
 	padding: 8px 0;
 }
+	*/
 
 .content {
 	padding: 10px;

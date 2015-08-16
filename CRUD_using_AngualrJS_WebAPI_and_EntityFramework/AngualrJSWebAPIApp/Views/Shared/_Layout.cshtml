@@ -6,10 +6,12 @@
 
    -->
 <!-- ASSIGN OUR ANGULAR MODULE -->
-<html ng-app="usersApp">
+<html ng-app="SarabiAngularApp">
 <head>
     <!-- META -->
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- base tag -->
+   <base href="/">
     <!-- Optimize mobile viewport -->
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
@@ -36,14 +38,25 @@
     <script src="~/Scripts/js/angular.min.js"></script>
     <script src="~/Scripts/js/ng-grid.min.js"></script>
 
+    <script src="~/Scripts/js/angular-animate.js"></script>
+    <script src="~/Scripts/js/angular-aria.js"></script>
     <script src="~/Scripts/js/angular-cookies.js"></script>
     <script src="~/Scripts/js/angular-resource.js"></script>
     <script src="~/Scripts/js/angular-route.js"></script>
     <script src="~/Scripts/js/angular-sanitize.js"></script>
     <script src="~/Scripts/js/angular-touch.js"></script>
+    <script src="~/Scripts/js/angular-scenario.js"></script>
+    <script src="~/Scripts/js/angular-strap.js"></script>
+    <script src="~/Scripts/js/angular-strap.tpl.js"></script>
+
+    <script src="~/Scripts/js/angular-loader.js"></script>
+    <script src="~/Scripts/js/angular-mocks.js"></script>
 
     <script src="~/Scripts/Common/config.js"></script>
 
     <script src="~/Scripts/App/app.js"></script>
+
+    <script src="~/Scripts/Factories/userFactory.js"></script>
+    <script src="~/Scripts/Controllers/userController.js"></script>
 </body>
 </html>
