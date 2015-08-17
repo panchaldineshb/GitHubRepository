@@ -1,8 +1,5 @@
-﻿using System.Web.Mvc;
-
-using System.Linq;
-using System.Threading.Tasks;
-
+﻿using System.Threading.Tasks;
+using System.Web.Mvc;
 using AngualrJSWebAPIApp.ViewModels;
 
 namespace AngualrJSWebAPIApp.Web.Controllers
@@ -10,31 +7,7 @@ namespace AngualrJSWebAPIApp.Web.Controllers
     public class AccountController : Controller
     {
         //
-        // GET: /Admin/
-
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        //
-        // GET: /Admin/Details/5
-
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        //
-        // GET: /Admin/Create
-
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        //
-        // GET: /Admin/Login
+        // GET: /Account/Login
 
         [AllowAnonymous]
         public ActionResult Login()
@@ -43,7 +16,7 @@ namespace AngualrJSWebAPIApp.Web.Controllers
         }
 
         //
-        // POST: /Admin/Login
+        // POST: /Account/Login
 
         [HttpPost]
         [AllowAnonymous]
@@ -62,7 +35,7 @@ namespace AngualrJSWebAPIApp.Web.Controllers
         }
 
         //
-        // GET: /Admin/Register
+        // GET: /Account/Register
 
         [AllowAnonymous]
         public ActionResult Register()
@@ -71,7 +44,7 @@ namespace AngualrJSWebAPIApp.Web.Controllers
         }
 
         //
-        // POST: /Admin/Register
+        // POST: /Account/Register
 
         [HttpPost]
         [AllowAnonymous]
@@ -83,8 +56,5 @@ namespace AngualrJSWebAPIApp.Web.Controllers
             //await SignInManager.SignInAsync(user, false, false);
             return true;
         }
-
-
-
     }
 }

@@ -9,6 +9,8 @@ namespace AngualrJSWebAPIApp.Web
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.IgnoreList.Clear();
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -19,12 +21,24 @@ namespace AngualrJSWebAPIApp.Web
                         "~/Scripts/jquery.unobtrusive*",
                         "~/Scripts/jquery.validate*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/bootstrapjs").Include(
+                        "~/Scripts/bootstrap.min.js"));
+
+            bundles.Add(new StyleBundle("~/Content/bootstrapcss").Include(
+                        "~/Content/bootstrap.min.css",
+                        "~/Content/bootstrap-responsive.min.css"));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                "~/Content/bootstrap.css",
+                "~/Content/bootstrap-responsive.css",
+                "~/Content/bootstrap-mvc-validation.css",
+                "~/Content/bootstrap-select.min.css",
+                "~/Content/datepicker.css",
                 "~/Content/Site.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
@@ -41,7 +55,7 @@ namespace AngualrJSWebAPIApp.Web
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
 
-            var css = new StyleBundle("~/Content/bootstrap")
+            var css = new StyleBundle("~/Content/bootstrapless")
                 .Include("~/Content/bootstrap/bootstrap.less");
             css.Transforms.Add(new LessMinify());
             bundles.Add(css);

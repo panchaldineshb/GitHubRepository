@@ -1,63 +1,87 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Web.Http;
-using AngualrJSWebAPIApp.DAL.Context;
+using AngualrJSWebAPIApp.API.Abstract;
 using AngualrJSWebAPIApp.Models;
 
 namespace AngualrJSWebAPIApp.Web.ApiControllers
 {
     public class UserController : ApiController
     {
-        private readonly AngualrJSWebAPIAppDbContext _dbContext;
+        private readonly IRepository<User> _repUser;
 
-        public UserController(AngualrJSWebAPIAppDbContext dbContext)
+        public UserController(IRepository<User> repUser)
         {
-            if (dbContext == null) throw new ArgumentNullException("dbContext");
-            _dbContext = dbContext;
+            if (repUser == null) throw new ArgumentNullException("repUser");
+            _repUser = repUser;
         }
 
         // GET api/<controller>
+
         [AllowAnonymous]
-        public IEnumerable<User> Get()
+        public async Task<IHttpActionResult> Get()
         {
-            return _dbContext.Users;
+            var list = await _repUser.GetAllAsync();
+
+            return Ok(list);
         }
 
         // GET api/<controller>/5
+
         [AllowAnonymous]
-        public User Get(string id)
+        public async Task<IHttpActionResult> Get(string id)
         {
-            return _dbContext.Users.Find(id);
+            if (id == null) return BadRequest();
+
+            var q = await _repUser.FindAsync(x => x.Id == id);
+
+            return Ok(new { User = q });
         }
 
         // POST api/<controller>
+
         [AllowAnonymous]
-        public void Post([FromBody]User customer)
+        public async Task<IHttpActionResult> Post([FromBody]User user)
         {
-            _dbContext.Users.Add(customer);
-            _dbContext.SaveChanges();
+            if (user == null) return BadRequest();
+
+            await _repUser.AddAsync(user);
+
+            return Ok();
         }
 
         // PUT api/<controller>/5
+
         [AllowAnonymous]
-        public void Put(string id, [FromBody]User customer)
+        public async Task<IHttpActionResult> Put(string id, [FromBody]User user)
         {
-            User customerToRemove = _dbContext.Users.Find(customer.Id);
+            if (user == null) return BadRequest();
 
-            _dbContext.Users.Remove(customerToRemove);
-            User updatedUser = customer;
-            _dbContext.Users.Add(updatedUser);
+            var userToRemove = await _repUser.FindAsync(x => x.Id == id);
 
-            _dbContext.SaveChanges();
+            if (userToRemove == null) return BadRequest();
+
+            _repUser.Remove(userToRemove);
+
+            User updatedUser = user;
+            await _repUser.AddAsync(updatedUser);
+
+            return Ok();
         }
 
         // DELETE api/<controller>/5
         [AllowAnonymous]
-        public void Delete(string id)
+        public async Task<IHttpActionResult> Delete(string id)
         {
-            User cust = _dbContext.Users.Find(id);
-            _dbContext.Users.Remove(cust);
-            _dbContext.SaveChanges();
+            if (id == null) return BadRequest();
+
+            var userToRemove = await _repUser.FindAsync(x => x.Id == id);
+
+            if (userToRemove == null) return BadRequest();
+
+            await _repUser.RemoveAsync(userToRemove);
+
+            return Ok();
         }
     }
 }

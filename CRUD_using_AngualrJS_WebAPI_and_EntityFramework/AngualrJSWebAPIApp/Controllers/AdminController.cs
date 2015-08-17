@@ -1,8 +1,5 @@
-﻿using System.Web.Mvc;
-
-using System.Linq;
-using System.Threading.Tasks;
-
+﻿using System.Threading.Tasks;
+using System.Web.Mvc;
 using AngualrJSWebAPIApp.ViewModels;
 
 namespace AngualrJSWebAPIApp.Web.Controllers
@@ -92,7 +89,5 @@ namespace AngualrJSWebAPIApp.Web.Controllers
         {
             return View();
         }
-
-
     }
 }

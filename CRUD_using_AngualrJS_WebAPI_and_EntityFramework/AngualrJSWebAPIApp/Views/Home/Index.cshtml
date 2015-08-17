@@ -4,124 +4,111 @@
 @section header {
 
     <!-- start header -->
-    <div id="header" ng-controller="userController">
-        <div class="content">
-            <h1>SARABI LLC</h1>
-            <p>{{tagLine}}</p>
-        </div>
-    </div>
     <!-- end header -->
 }
 @section navbar {
     <!-- start .navbar -->
-    <div class="navbar navbar-inverse">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Projects", "Index", "Projects")</li>
-                    <li>@Html.ActionLink("Services", "Index", "Services")</li>
-                    <li>@Html.ActionLink("Companies", "Index", "Companies")</li>
-                    <li>@Html.ActionLink("Register", "Register", "Account")</li>
-                    <li>@Html.ActionLink("SignIn", "SignIn", "Account")</li>
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <!--                 <img src="http://placehold.it/150x50&text=Logo" alt=""> -->
+
+                    <h1>SARABI LLC</h1>
+                    <p>{{tagLine}}</p>
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Services", "Services", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
                 </ul>
             </div>
         </div>
-    </div>
+    </nav>
+
     <!-- end .navbar -->
 }
 
-@section footer {
-    <!-- startfooter -->
-    <div id="footer">
-        <div class="content">
-            <p>Copyright &copy;2014 Sarabi LLC | <a href="panchaldineshb@gmail.com">Contact Us</a></p>
-        </div>
-    </div>
-    <!-- end footer -->
-}
-<!-- start #wrapper -->
-<div id="wrapper" ng-controller="userController">
-    <div id="outer1">
-        <div class="content">
-            <h3>Bundles Supported: {Left 20%}</h3>
-            <div ng-repeat="bundle in bundlesSupported">
-                <p><a href="{{bundle.name}}">{{bundle.displayName}}</a></p>
+<!-- Page Content -->
+<div class="container" ng-controller="userController">
+
+    <!-- Post Content -->
+
+    <div class="gridStyle" ng-grid="gridOptions"></div>
+
+    <form name="myForm" class="form-horizontal">
+        <fieldset>
+            <legend>User Details</legend>
+            <div class="form-group">
+                <label class="col-lg-2 control-label" for="inputId">Id</label>
+                <div class="col-lg-10">
+                    <input class="form-control" id="inputId" type="text" ng-model="New.Id" placeholder="Id">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label" for="inputName">Name</label>
+                <div class="col-lg-10">
+                    <input class="form-control" id="inputName" type="text" ng-model="New.Name" placeholder="Name">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-lg-2 control-label" for="inputCity">City</label>
+                <div class="col-lg-10">
+                    <input class="form-control" id="inputCity" type="text" ng-model="New.City" placeholder="City">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-lg-2 control-label" for="inputAddress">Address</label>
+                <div class="col-lg-10">
+                    <textarea class="form-control" id="inputAddress" ng-model="New.Address" placeholder="Address" rows="3"></textarea>
+                    <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-lg-2 control-label" for="inputContactNo">ContactNo</label>
+                <div class="col-lg-10">
+                    <input class="form-control" id="inputContactNo" type="text" ng-model="New.ContactNo" placeholder="ContactNo">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label" for="inputEmailId">Email</label>
+                <div class="col-lg-10">
+                    <input class="form-control" id="inputEmailId" type="text" ng-model="New.EmailId" placeholder="EmailId">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button class="btn btn-default" type="reset">Cancel</button>
+                    <button class="btn btn-primary" type="submit" ng-click="update()">Submit</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+    <hr>
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy;2014 Sarabi LLC | <a href="panchaldineshb@gmail.com">Contact Us</a></p>
             </div>
         </div>
-        <!-- end content -->
-    </div>
-    <!-- start topbar -->
-    <div id="topbar">
-        <div class="content">
-            <h3>Top Bar 60%</h3>
-            <p>You can have any number of columns as long as the total width is 100%;</p>
-            <p>This top bar can be any combined width of the lower columns and can span any number of columns.</p>
-            <p>All this is done with simple divs.</p>
-        </div>
-
-        <div class="content">
-            <div class="gridStyle" ng-grid="gridOptions"></div>
-        </div>
-
-        <div class="content">
-
-            <form name="myForm" class="form-horizontal">
-                <fieldset>
-                    <legend>User Details</legend>
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="inputId">Id</label>
-                        <div class="col-lg-10">
-                            <input class="form-control" id="inputId" type="text" ng-model="New.Id" placeholder="Id">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="inputName">Name</label>
-                        <div class="col-lg-10">
-                            <input class="form-control" id="inputName" type="text" ng-model="New.Name" placeholder="Name">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="inputCity">City</label>
-                        <div class="col-lg-10">
-                            <input class="form-control" id="inputCity" type="text" ng-model="New.City" placeholder="City">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="inputAddress">Address</label>
-                        <div class="col-lg-10">
-                            <textarea class="form-control" id="inputAddress" ng-model="New.Address" placeholder="Address" rows="3"></textarea>
-                            <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="inputContactNo">ContactNo</label>
-                        <div class="col-lg-10">
-                            <input class="form-control" id="inputContactNo" type="text" ng-model="New.ContactNo" placeholder="ContactNo">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label" for="inputEmailId">Email</label>
-                        <div class="col-lg-10">
-                            <input class="form-control" id="inputEmailId" type="text" ng-model="New.EmailId" placeholder="EmailId">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-lg-10 col-lg-offset-2">
-                            <button class="btn btn-default" type="reset">Cancel</button>
-                            <button class="btn btn-primary" type="submit" ng-click="update()">Submit</button>
-                        </div>
-                    </div>
-                </fieldset>
-            </form>
-        </div>
-    </div>
-    <!-- end topbar -->
-    <!-- end #wrapper -->
+    </footer>
 </div>

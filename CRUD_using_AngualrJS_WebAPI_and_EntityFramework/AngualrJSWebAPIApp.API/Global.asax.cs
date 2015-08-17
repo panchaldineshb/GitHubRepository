@@ -4,7 +4,11 @@ using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Mvc;
 using System.Web.Routing;
+using AngualrJSWebAPIApp.API.Abstract;
+using AngualrJSWebAPIApp.API.Concrete;
+using AngualrJSWebAPIApp.API.Repositories;
 using AngualrJSWebAPIApp.DAL.Context;
+using AngualrJSWebAPIApp.Models;
 using Autofac;
 using Autofac.Integration.WebApi;
 
@@ -55,7 +59,9 @@ namespace AngualrJSWebAPIApp.API
         {
             builder.RegisterType<AngualrJSWebAPIAppDbContext>().AsSelf().InstancePerRequest();
 
-            //builder.Register<IPlanetsRepository>(c => new PlanetsRepository(c.Resolve<AngualrJSWebAPIAppDbContext>())).InstancePerApiRequest();
+            builder.RegisterType<ApplicationRepository<User>>().As<IRepository<User>>().InstancePerRequest();
+
+            builder.Register<IUsersRepository>(c => new UsersRepository(c.Resolve<AngualrJSWebAPIAppDbContext>())).InstancePerRequest();
         }
     }
 }
