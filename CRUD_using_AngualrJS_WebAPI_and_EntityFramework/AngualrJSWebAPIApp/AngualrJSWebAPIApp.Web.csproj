@@ -325,6 +325,8 @@
     <Content Include="Scripts\Common\common.js" />
     <Content Include="Scripts\Common\config.js" />
     <Content Include="Scripts\Controllers\about.js" />
+    <Content Include="Scripts\Controllers\organizationController.js" />
+    <Content Include="Scripts\Factories\organizationFactory.js" />
     <Content Include="Scripts\Factories\userFactory.js" />
     <Content Include="Scripts\Controllers\userController.js" />
     <Content Include="Scripts\Controllers\main.js" />
@@ -444,7 +446,7 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Admin\RegisterOrganization.cshtml" />
-    <Content Include="Views\Organization\Create.cshtml" />
+    <Content Include="Views\Organization\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_html5shiv.cshtml" />
   </ItemGroup>

@@ -7,22 +7,24 @@ namespace AngualrJSWebAPIApp.Web.Controllers
     public class OrganizationController : Controller
     {
         //
-        // GET: /Organization/Create
-        //
-        // GET: /Admin/Register
+        // GET: /Organization/Register
 
+
+        [HttpGet]
         [AllowAnonymous]
-        public ActionResult Create()
+
+        public ActionResult Register()
         {
             return View();
         }
 
         //
-        // POST: /Admin/Register
+        // POST: /Organization/Register
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<bool> Create(OrganizationViewModel model)
+
+        public async Task<bool> Register(OrganizationViewModel model)
         {
             //var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
             //var result = await UserManager.CreateAsync(user, model.Password);
