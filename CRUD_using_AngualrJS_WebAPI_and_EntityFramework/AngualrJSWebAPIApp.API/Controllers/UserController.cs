@@ -57,7 +57,7 @@ namespace AngualrJSWebAPIApp.Web.ApiControllers
         {
             if (user == null) return BadRequest();
 
-            var userToRemove = await _repUser.FindAsync(x => x.Id == id);
+            var userToRemove = _repUser.Find(x => x.Id == id);
 
             if (userToRemove == null) return BadRequest();
 
@@ -75,7 +75,7 @@ namespace AngualrJSWebAPIApp.Web.ApiControllers
         {
             if (id == null) return BadRequest();
 
-            var userToRemove = await _repUser.FindAsync(x => x.Id == id);
+            var userToRemove = _repUser.Find(x => x.Id == id);
 
             if (userToRemove == null) return BadRequest();
 
