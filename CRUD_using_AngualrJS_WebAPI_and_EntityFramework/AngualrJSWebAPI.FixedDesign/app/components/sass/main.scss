@@ -1,0 +1,1436 @@
+@import "compass";
+$borderTest:1px solid red;
+$mediaParam:2;
+$widthWraper:1970px/$mediaParam;
+$widthMain:1172px/$mediaParam;
+$heightBanner:1100px/$mediaParam;
+$heightParam:$heightBanner/1100px;
+$widthParam:$widthMain/1172px;
+$colorBannerText:white;
+$colorBannerTextHover:black;
+$heightHeader:280px*$heightParam ;
+$colorDateTime:#9b772e;
+$colorBg:#f39c12;
+$fontFamily:"Open Sans";
+$fontParam: 1.25*$heightParam;
+$widthMargin: (($widthWraper)-($widthMain))/2;
+
+*{
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  border-collapse: collapse;
+  font-family: $fontFamily;
+}
+
+#backTo{
+  width: 156px*$widthParam;
+  height: 76px*$heightParam;
+  position: fixed;
+  cursor: pointer;
+  display: none;
+  top: 25%;
+  left: 0;
+  background: url(../img/Back-To-Top.png) 0 0 no-repeat;
+  a{
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+html{
+  body{
+    background-color: white;
+      .statusResponseError{
+        border-color: red;
+        @include box-shadow(0 0 5px red);
+      }
+      .statusResponseSuccess{
+        border-color: green;
+        @include box-shadow(0 0 5px green) ;
+      }
+      #messageResponse{
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 40% ;
+        z-index: 2;
+        font-size: 0.8em;
+        width: 300px ;
+        min-height: 130px;
+        padding: 15px 10px 0 10px;
+        color: white;
+        text-align: center;
+        background-color: silver;
+        border-width: 2px;
+        border-style: solid;
+        @include border-radius(5%);
+        div{
+          &:first-child{
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: inherit;
+            height: 30px;
+          }
+          &:last-child{
+            font-size: 1.1em;
+            padding-top: 40px ;
+          }
+        }
+      }
+    .bg_wraper{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: $widthWraper;
+      height: 550px;
+    }
+    .bg_blocks{
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: $widthWraper;
+      height: 350px;
+    }
+    #wraper{
+      width: $widthWraper;
+      margin: 0 auto;
+      position: relative;
+      background: url(../img/banner.png) 0 0 no-repeat;
+      @include background-size(contain);
+      #main{
+        width: $widthMain;
+        margin: 0 auto;
+        #banner{
+          height: $heightBanner;
+          width: 100%;
+          header{
+            height:$heightHeader;
+            width: 100%;
+            position: relative;
+            #logo{
+              position: absolute;
+              $radiusLogo:150px;
+              height: $radiusLogo*$heightParam;
+              width: $radiusLogo*$heightParam;
+              top:60px*$heightParam;
+              left:0;
+              border:1px solid $colorBannerText;
+              @include border-radius(50%);
+              behavior: url(PIE.htc);
+              &>span{
+                font-size: 45px*$fontParam;
+                color:$colorBannerText;
+                display: block;
+                width: 100%;
+                line-height: $radiusLogo*$heightParam;
+                text-align: center;
+              }
+            }
+            nav{
+              display: block;
+              float: right;
+              height: 100%;
+              width: 80%;
+              ul{
+                display: table;
+                width: 100%;
+                height: 100%;
+                li{
+                  position: relative;
+                  display: table-cell;
+                  padding: 0;
+                  list-style: none;
+                  text-align: center;
+                  font-size: 18px*$fontParam;
+                  &:after{
+                    content: "\\\\";
+                    display: block;
+                    color:$colorBannerText;
+                    font-size: 18px*$fontParam;
+                    position: absolute;
+                    top:43%;
+                    left:-2px;
+                  }
+                  a{
+                    color:$colorBannerText;
+                    text-decoration:none;
+                    display: block;
+                    width: 100%;
+                    line-height: $heightHeader;
+                    &:hover{
+                      color:$colorBannerTextHover;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          #sliders{
+            position: relative;
+            height: ($heightBanner - $heightHeader);
+            width: 100%;
+            #slider{
+              width: 100%;
+              height: 100%;
+              position: relative;
+              text-align: center;
+              color:$colorBannerText;
+              #infoOne{
+                padding-top:(150px * $heightParam);
+                font-size: 45px*$fontParam;
+              }
+              #infoTwo{
+                font-size: 55px*$fontParam;
+                font-weight: bold;
+              }
+              #infoThree{
+                font-size: 40px*$fontParam;
+                padding-bottom: 92px*$heightParam;
+              }
+              #learnMore{
+                position: relative;
+                font-size: 40px*$fontParam;
+                display: inline;
+                text-decoration: none;
+                height: 39px*$heightParam;
+                background-color: $colorBg;
+                $paddingThis:38px*$heightParam;
+                padding: 3px $paddingThis;
+                @include border-radius(5%);
+                behavior: url(PIE.htc);
+                @include opacity(0.9);
+                &:hover{
+                  color:$colorBg;
+                  background: white;
+                  cursor: pointer;
+                }
+              }
+              .buttonNavy{
+                display: block;
+                top:30%;
+                height: 55px*$heightParam;
+                width: 55px*$heightParam;
+                position: absolute;
+                border:1px solid $colorBannerText;
+                @include border-radius(50%);
+                behavior: url(PIE.htc);
+                color:$colorBannerText;
+                @include opacity(0.35);
+                &>span{
+                    @extend .buttonNavyT;
+                }
+                &:hover{
+                  background-color: $colorBg;
+                  cursor: pointer;
+                }
+              }
+              .buttonNavyT{
+                display: block;
+                width: 100%;
+                line-height: 55px*$heightParam;
+                font-size: 40px*$fontParam;
+              }
+              #before{
+                @extend .buttonNavy;
+                left: -230px*$heightParam;
+              }
+              #next{
+                @extend .buttonNavy;
+                right: -230px*$heightParam;
+              }
+              #navy{
+                $widthNavy:15px*$widthParam;
+                height: $widthNavy;
+                width: $widthNavy*8;
+                display: inline-block;
+                position: absolute;
+                bottom: 194px*$heightParam;
+                left:47%;
+                &>span {
+                  position: relative;
+                  display: inline-block;
+                  margin: 0 $widthNavy 0 0;
+                  height: $widthNavy;
+                  width: $widthNavy;
+                  @include border-radius(50%);
+                  behavior: url(PIE.htc);
+                  background-color: $colorBannerText;
+                  @include opacity(0.5);
+                  &:hover{
+                   @include opacity(1);
+                }
+                }
+              }
+            }
+            #dateTime{
+              position: absolute;
+              right: -290px*$widthParam;
+              bottom: 140px*$heightParam;
+              &>span{
+                color:$colorDateTime;
+                font-size: 45px*$fontParam;
+                @include text-shadow(
+                        -0   -1px 0   #000000,
+                        0   -1px 0   #000000,
+                        -0    1px 0   #000000,
+                        0    1px 0   #000000,
+                        -1px -0   0   #000000,
+                        1px -0   0   #000000,
+                        -1px  0   0   #000000,
+                        1px  0   0   #000000,
+                        -1px -1px 0   #000000,
+                        1px -1px 0   #000000,
+                        -1px  1px 0   #000000,
+                        1px  1px 0   #000000,
+                        -1px -1px 0   #000000,
+                        1px -1px 0   #000000,
+                        -1px  1px 0   #000000,
+                        1px  1px 0   #000000);
+              }
+            }
+          }
+        }
+        .blocksHeader{
+          &>h2{
+            font-weight: bold;
+            font-size: 30px*$fontParam;
+            position: relative;
+            float: left;
+            height: 285px*$heightParam;
+            width: 203px*$widthParam;
+            line-height:285px*$heightParam;
+            text-align: right;
+          }
+          .promo{
+            height: (285px*$heightParam - 110px*$heightParam);
+            font-size: 16px*$fontParam;
+            width: ($widthMain - (203px*$heightParam)-17px);
+            float: right;
+            padding-top: 110px*$heightParam;
+            padding-left:17px*$widthParam;
+            &>p{
+              border-left: 1px solid;
+              border-color:$colorBg;
+              padding-left: 17px;
+            }
+          }
+        }
+        #about{
+          width: 100%;
+          @extend .blocksHeader;
+          &:after{
+            content: "";
+            display: block;
+            clear: both;
+          }
+          #aboutStory{
+            float:left;
+            width: 100%;
+            height: 371px*$heightParam;
+            border-bottom: 2px solid #e6e6e6;
+            padding-bottom: 123px*$heightParam;
+            #aboutStoryText{
+              float: left;
+              width: 718px*$widthParam;
+              height: 100%;
+              font-size: 20px*$fontParam;
+              color:#e95d50;
+              background: url(../img/aboutBgLarge.png) 0 0 no-repeat;
+              @include background-size(126px*$widthParam);
+              h3{
+                color: black;
+                padding-bottom: 28px*$heightParam;
+                padding-left: 157px*$widthParam;
+              }
+              p{
+                padding-left: 157px*$widthParam;
+              }
+              p:last-child{
+                color:#8a8a8a;
+                padding-top: 39px*$heightParam;
+
+                font-size: 16px*$fontParam;
+              }
+              &:after{
+                content: "";
+                display: block;
+                clear: both;
+              }
+            }
+            #aboutStoryVideo{
+              float: right;
+              width:450px*$widthParam;
+              background: #e95d50 url(../img/aboutPhoto.png) 50% 50% no-repeat;
+              @include background-size(39px*$widthParam);
+              height: 100%;
+              @include border-radius(5%);
+              behavior: url(PIE.htc);
+              &:after{
+                content: "";
+                display: block;
+                clear: both;
+              }
+            }
+            &:after{
+              content: "";
+              display: block;
+              clear: both;
+            }
+          }
+          #aboutSkills{
+            width: 100%;
+            height: 819px*$heightParam;
+            float: left;
+            #aboutSkillsPhoto{
+              height: 100%;
+              width: 616px*$widthParam;
+              float: left;
+              background: url(../img/skillsPhotoLarge.png) 0 0 no-repeat;
+              @include background-size(contain);
+            }
+            #aboutSkillsText{
+              float: right;
+              height: 100%;
+              width: 548px*$widthParam;
+              background: url(../img/skillsBgLarge.png) 0 126px*$widthParam no-repeat;
+              @include background-size(126px*$widthParam);
+              &>h2{
+                padding-left: 153px*$widthParam;
+                padding-top: 122px*$widthParam;
+                font-size: 20px*$fontParam;
+              }
+              &>p{
+                font-size: 16px*$fontParam;
+                color:#737373;
+                padding-left: 153px*$widthParam;
+              }
+              .statistics{
+                .statistic{
+               margin-bottom: 40px*$heightParam;
+                  height: 80px*$heightParam;
+                  .lineInfo{
+                    height: 100%;
+                    &>span:first-child{
+                      font-size: 16px*$fontParam;
+                      font-weight: bold;
+                    }
+                    &>span:last-child{
+                      font-size: 16px*$fontParam;
+                    }
+                  }
+                  .lineProgress{
+                    width: 100%;
+                    height: 13px*$heightParam;
+                    background-color: #e6e6e6;
+                    .progress{
+                      width: 57%;
+                      height: 100%;
+                      background-color: #f39c12;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        section>.blocks{
+          height: 700px*$heightParam;
+          width: $widthWraper;
+          margin-left: -$widthMargin;
+          background: url(../img/blocks.png) 0 0 no-repeat;
+          -webkit-background-size: contain;
+          background-size: contain;
+          position: relative;
+          .inBlocks{
+            z-index: 2;
+            position: relative;
+            width: $widthMain;
+            height: 100%;
+            margin: 0 auto;
+          }
+        }
+        #team{
+          width: 100%;
+          &:after{
+            content: "";
+            display: block;
+            clear: both;
+          }
+          .inBlocks{
+            color:$colorBannerText;
+            text-align: center;
+            h5{
+              font-size: 45px*$fontParam;
+              padding-top: 260px*$heightParam;
+              padding-bottom: 38px*$heightParam;
+              font-weight: bold;
+            }
+            p{
+              font-size: 24px*$fontParam;
+              padding-top:23px*$heightParam;
+              background: url(../img/teamBgLine.gif) 49% 0 no-repeat;
+              -webkit-background-size: 50px*$widthParam 4px*$heightParam;
+              background-size: 50px*$widthParam 4px*$heightParam;
+            }
+          }
+          #teamContent{
+            width: 100%;
+            float: left;
+            @extend .blocksHeader;
+            #teamBlocks{
+              width: 100%;
+              height: 575px*$heightParam;
+              .teamBlock{
+                width: 21%;
+                height: 100%;
+                float:left;
+                padding-top: 29px*$heightParam;
+                padding-left: 19px*$widthParam;
+                padding-right: 19px*$widthParam;
+                text-align: center;
+                color:#cccccc;
+                border-top: 2px solid white;
+                background: url(../img/teamBg.gif) 50% 57% no-repeat;
+                @include background-size(20px*$widthParam 4px*$heightParam);
+                &:hover{
+                  background: #f0f0f0 url(../img/teamBgHover.gif) 50% 57% no-repeat;
+                  @include background-size(20px*$widthParam 4px*$heightParam);
+                  border-top: 2px solid #f39c12;
+                  cursor: pointer;
+                }
+                .teamPhoto{
+                  width: 200px*$widthParam;
+                  height: 200px*$widthParam;
+                  margin: 0 auto;
+                  @include border-radius(50%);
+                  behavior: url(PIE.htc);
+                  background-color: #e8f8f4;
+                  clear: both;
+                }
+                .teamName{
+                  font-size: 20px*$fontParam;
+                  font-weight: bold;
+                  color: black;
+                  padding-top: 28px*$heightParam;
+                }
+                .teamJob{
+                  font-size: 15px*$fontParam;
+                  padding-top: 10px*$heightParam;
+                  padding-bottom: 14px*$heightParam;
+                }
+                .teamAbout{
+                  font-size: 17px*$fontParam;
+                  padding-top: 17px*$heightParam;
+                  padding-bottom: 20px*$heightParam;
+                }
+                .teamLink{
+                  width: 150px*$widthParam;
+                  height: 19px*$heightParam;
+                  margin: 0 auto;
+                  &>div{
+                    height: 100%;
+                    width: 20%;
+                    float:left;
+                    background: url(../img/teamSoc.png) 0 0 no-repeat;
+                    -webkit-background-size: 150px*$widthParam 114px*$heightParam;
+                    background-size: 150px*$widthParam 114px*$heightParam;
+                  }
+                  .socTwitter{
+                    background-position: 0 0;
+                    &:hover{
+                      background-position: 0 20%;
+                    }
+                  }
+                  .socFacebook{
+                    background-position: 25% 0;
+                    &:hover{
+                      background-position: 25% 40%;
+                    }
+                  }
+                  .socDribble{
+                    background-position: 50% 0;
+                    &:hover{
+                      background-position: 50% 60%;
+                    }
+                  }
+                  .socGoogle{
+                    background-position: 75% 0;
+                    &:hover{
+                      background-position: 75% 80%;
+                    }
+                  }
+                  .socLinked{
+                    background-position: 100% 0;
+                    &:hover{
+                      background-position: 100% 100%;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        #services{
+          width: 100%;
+          height: 2038px*$heightParam;
+          &:after{
+            content: "";
+            display: block;
+            clear: both;
+          }
+          .inBlocks{
+            color:$colorBannerText;
+            text-align: center;
+            &:after{
+              content: "";
+              display: block;
+              clear: both;
+            }
+            .servicesLink{
+              width: 25%;
+              height: 100%;
+              float: left;
+              position: relative;
+              text-align: center;
+              &#ico1>.servicesVisualIco{
+                background: url(../img/servicesCupHover.gif) 50% 50% no-repeat;
+                @include background-size(42px*$widthParam 36px*$heightParam);
+                &:hover{
+                  background-image: url(../img/servicesCup.gif);
+                }
+              }
+              &#ico2>.servicesVisualIco{
+                background: url(../img/servicesStackHover.gif) 50% 50% no-repeat;
+                @include background-size(42px*$widthParam 36px*$heightParam);
+                &:hover{
+                  background-image: url(../img/servicesStack.gif);
+                }
+              }
+              &#ico3>.servicesVisualIco{
+                background: url(../img/servicesUserHover.gif) 50% 50% no-repeat;
+                @include background-size(42px*$widthParam 36px*$heightParam);
+                &:hover{
+                  background-image: url(../img/servicesUser.gif);
+                }
+              }
+              &#ico4>.servicesVisualIco{
+                background: url(../img/servicesLikeHover.gif) 50% 50% no-repeat;
+                @include background-size(42px*$widthParam 36px*$heightParam);
+                &:hover{
+                  background-image: url(../img/servicesLike.gif) ;
+                }
+              }
+              .servicesVisualIco{
+                height: 164px*$heightParam;
+                width: 164px*$heightParam;
+                @include border-radius(50%);
+                behavior: url(PIE.htc);
+                border: 1px solid white;
+                position: absolute;
+                top: 196px*$heightParam;
+                left: 64px*$widthParam;
+                &:hover{
+                  border-color: #e89512
+                }
+              }
+              .servicesVisual{
+                position: absolute;
+                top:400px*$heightParam;
+                width: 100%;
+                font-size: 45px*$fontParam;
+              }
+              .servicesVisualAbout{
+                position: absolute;
+                top:460px*$heightParam;
+                width: 100%;
+                font-size: 25px*$fontParam;
+              }
+            }
+        }
+          #servicesContent{
+            &:after{
+              content: "";
+              display: block;
+              clear: both;
+            }
+            width: 100%;
+            float: left;
+            @extend .blocksHeader;
+            .servicesBlocks{
+              position: relative;
+              width:33%;
+              float:left;
+              height: 470px*$heightParam;
+              text-align: center;
+              &#block1>.servicesBlockIco{
+                background: url(../img/servicesStar.gif) 50% 50% no-repeat;
+                @include background-size(37px*$widthParam);
+                &:hover{
+                  background: #f39c12 url(../img/servicesStarHover.gif) 50% 50% no-repeat;
+                  @include background-size(37px*$widthParam);
+                }
+              }
+              &#block2>.servicesBlockIco{
+                background: url(../img/servicesLab.gif) 50% 50% no-repeat;
+                @include background-size(37px*$widthParam);
+                &:hover{
+                  background:#f39c12 url(../img/servicesLabHover.gif) 50% 50% no-repeat;
+                  @include background-size(37px*$widthParam);
+                }
+              }
+              &#block3>.servicesBlockIco{
+                background: url(../img/servicesWorld.gif) 50% 50% no-repeat;
+                @include background-size(37px*$widthParam);
+                &:hover{
+                  background:#f39c12 url(../img/servicesWorldHover.gif) 50% 50% no-repeat;
+                  @include background-size(37px*$widthParam);
+                }
+              }
+              &#block4>.servicesBlockIco{
+                background: url(../img/servicesBank.gif) 50% 50% no-repeat;
+                @include background-size(37px*$widthParam);
+                &:hover{
+                  background:#f39c12 url(../img/servicesBankHover.gif) 50% 50% no-repeat;
+                  @include background-size(37px*$widthParam);
+                }
+              }
+              .servicesBlockIco{
+                position: absolute;
+                width: 102px*$widthParam;
+                height: 102px*$heightParam;
+                top:0;
+                left:35%;
+                border: 1px solid #f39c12;
+                @include border-radius(50%);
+                behavior: url(PIE.htc);
+                @include background-size(37px*$widthParam);
+              }
+              h5.serviceBlock{
+                width: 100%;
+                position: absolute;
+                 top: 200px*$heightParam;
+                font-size: 20px*$fontParam;
+                font-weight: bold;
+              }
+              p.serviceBlock{
+                width: 100%;
+                position: absolute;
+                top: 240px*$heightParam;
+                font-size: 16px*$fontParam;
+                color:#a9a9a9;
+              }
+            }
+            #serviceBlockTable{
+              display: table;
+              width: 732px*$widthParam;
+              float:left;
+              height: 470px*$heightParam;
+              .table{
+                width: 100%;
+                height: 100%;
+                display: table;
+              }
+              .blockTableHeader{
+                border:1px solid #e6e6e6;
+                display: table-row;
+                height: 120px*$heightParam;
+                width: 244px*$widthParam;
+                text-align: center;
+                & p{
+                  height: 50%;
+                  line-height: 200%;
+                  font-size: 22px*$fontParam;
+                  font-weight: bold;
+                }
+              }
+              .tableRows{
+                border:1px solid #e6e6e6;
+                display: table-row;
+                width: 100%;
+                height: 52px*$heightParam;
+                font-size: 15px*$fontParam;
+                text-align: center;
+                & span{
+                  line-height: 52px*$heightParam;
+                }
+              }
+              .blockTableFooter{
+                border:1px solid #e6e6e6;
+                display: table-row;
+                width: 100%;
+                height: 106px*$heightParam;
+                .serviceButton{
+                  height: 31px*$heightParam;
+                  width: 125px*$widthParam;
+                  border: 1px solid #f39c12;
+                  font-size: 14px*$fontParam;
+                  margin:  20% auto;
+                  text-align: center;
+                  line-height: 31px*$heightParam;
+                }
+              }
+              .tableRows.even, .blockTableFooter{
+                background-color: #fafafa;
+              }
+              .tableCell1,.tableCell2, .tableCell3{
+                display: table-cell;
+                width: 244px*$widthParam;
+                height: 100%;
+                border-top:13px*$heightParam solid white;
+                border-bottom: 13px*$heightParam solid white;
+                .blockTableHeader{
+                  background: url(../img/servicesTableBg.gif) 50% 50% no-repeat;
+                  @include background-size(50px*$widthParam 2px*$heightParam);
+                }
+                &:hover .blockTableHeader{
+                  background: #f39c12 url(../img/servicesTableBgHover.gif) 50% 50% no-repeat;
+                  @include background-size(50px*$widthParam 2px*$heightParam);
+                  border-top-color: #f39c12;
+                  color: white;
+                }
+                &:hover .blockTableFooter .serviceButton{
+                  background-color: #f39c12;
+                  cursor: pointer;
+                }
+                &:hover .blockTableFooter{
+                  background-color: #e6e6e6;
+                }
+                &:hover .tableRows.even{
+                  background-color: #e6e6e6;
+                }
+                &:hover .tableRows.odd{
+                  background-color: #f2f2f2;
+                }
+                &:hover{
+                  border-top:13px*$heightParam solid #f39c12;
+                  border-bottom: 13px*$heightParam solid #e6e6e6;
+                }
+              }
+            }
+          }
+        }
+        #portfolio{
+          width: 100%;
+          height: 2756px*$heightParam;
+          &:after{
+            content: "";
+            display: block;
+            clear: both;
+          }
+          .inBlocks {
+            color:$colorBannerText;
+            text-align: center;
+            .portfolioSliders{
+              .portfolioSlide{
+                h5{
+                  font-size: 24px*$fontParam;
+                  padding-top: 200px*$heightParam;
+                  padding-bottom: 20px*$heightParam;
+                  font-weight: bold;
+                }
+                p{
+                  font-size: 22px*$fontParam;
+                  padding-top:23px*$heightParam;
+                  padding-bottom: 30px*$heightParam;
+                  background: url(../img/teamBgLine.gif) 49% 0 no-repeat;
+                  -webkit-background-size: 50px*$widthParam 4px*$heightParam;
+                  background-size: 50px*$widthParam 4px*$heightParam;
+                }
+                .portfolioSlidePhoto{
+                  position: relative;
+                  width: 104px*$widthParam;
+                  height: 104px*$heightParam;
+                  border: 1px solid white;
+                  background: #f39c12 url(../img/portfolioSliderPhoto.png) 50% 50% no-repeat;
+                  @include background-size(104px*$widthParam);
+                  margin: 0 auto;
+                  @include border-radius(50%);
+                  behavior: url(PIE.htc);
+                }
+              }
+              #portfolioNavy{
+                $widthNavy:15px*$widthParam;
+                height: $widthNavy;
+                width: $widthNavy*10;
+                display: inline-block;
+                position: absolute;
+                bottom: 154px*$heightParam;
+                left:45%;
+                &>span {
+                  position: relative;
+                  display: inline-block;
+                  margin: 0 $widthNavy 0 0;
+                  height: $widthNavy;
+                  width: $widthNavy;
+                  @include border-radius(50%);
+                  behavior: url(PIE.htc);
+                  background-color: $colorBannerText;
+                  @include opacity(0.5);
+                  &:hover{
+                   @include opacity(1);
+                }
+                }
+              }
+            }
+            &:after {
+              content: "";
+              display: block;
+              clear: both;
+            }
+          }
+          #portfolioContent{
+            @extend .blocksHeader;
+            #portfolioArt{
+              height: 854px*$heightParam;
+              border-bottom: 1px solid #e6e6e6;
+              padding-top: 295px*$heightParam;
+              #portfolioArtSlider{
+                position: relative;
+                width: 100%;
+                height: 577px*$heightParam;
+                background: #f39c12 url(../img/portfolioArtBg.gif) 50% 50% no-repeat;
+                @include background-size(36px*$widthParam 29px*$heightParam);
+                @include border-radius(3%);
+                behavior: url(PIE.htc);
+                #portfolioArtSliderNavy{
+                  $widthNavy:15px*$widthParam;
+                  height: $widthNavy*6;
+                  width: $widthNavy;
+                  display: inline-block;
+                  position: absolute;
+                  bottom: 50%;
+                  right: 3%;
+                  &>span {
+                    position: relative;
+                    display: inline-block;
+                    margin: 0 $widthNavy 0 0;
+                    height: $widthNavy;
+                    width: $widthNavy;
+                    @include border-radius(50%);
+                    behavior: url(PIE.htc);
+                    background-color: $colorBannerText;
+                    @include opacity(0.5);
+                    &:hover{
+                     @include opacity(1);
+                  }
+                  }
+                }
+              }
+              #portfolioArtNavy{
+                #portfolioArtNavyButton{
+                  width: 144px*$widthParam;
+                  height: 32px*$heightParam;
+                  padding-top: 48px*$heightParam;
+                  margin: 0 auto;
+                  span{
+                    width: 30px*$widthParam;
+                    height: 30px*$heightParam;
+                    border: 1px solid #e6e6e6;
+                    display: inline-block;
+                    text-align: center;
+                    line-height: 30px*$heightParam;
+                    font-weight: bold;
+                    font-size: 30px*$fontParam;
+                    &:hover{
+                      background-color: #e6e6e6;
+                    }
+                  }
+                }
+                h5{
+                  font-size: 20px*$fontParam;
+                  color: #000;
+                  text-align: center;
+                  padding-top: 27px*$heightParam;
+                }
+                p{
+                  font-size: 14px*$fontParam;
+                  color: #808080;
+                  text-align: center;
+                }
+              }
+            }
+            #portfolioWork{
+              #menuWork{
+                padding: 118px*$heightParam 190px*$widthParam 78px*$heightParam 190px*$widthParam;
+                ul{
+                  list-style-type: none;
+                  padding: 0;
+                  display: table;
+                  width: 100%;
+                  li{
+                    display: table-cell;
+                    position: relative;
+                    &:after{
+                      content: "\\\\";
+                      display: block;
+                      font-size: 14px*$fontParam;
+                      position: absolute;
+                      top:0;
+                      left:-2px;
+                    }
+                    a{
+                      text-decoration: none;
+                      color:black;
+                      display: block;
+                      text-align: center;
+                      line-height: 100%;
+                      font-size: 14px*$fontParam;
+                      font-weight: bold;
+                      &:hover{
+                        color:#f39c12;
+                      }
+                    }
+                  }
+                }
+              }
+              #blocksWork{
+                width: 100%;
+                position: relative;
+                &:after{
+                  content:"";
+                  display: block;
+                  clear: both;
+                }
+                .blockWork{
+                  width: 292px*$widthParam;
+                  height: 308px*$heightParam;
+                  float:left;
+                  .workPhoto{
+                    width: 100%;
+                    height: 215px*$heightParam;
+                    background: #b7b7b7 url(../img/portfolioWorkBg.gif) 50% 50% no-repeat;
+                    @include background-size(70px*$heightParam 58px*$widthParam) ;
+                    &.odd{
+                      background: #c7c7c7 url(../img/portfolioWorkBg.gif) 50% 50% no-repeat;
+                      @include background-size(70px*$heightParam 58px*$widthParam) ;
+                    }
+                  }
+                  h5{
+                    font-size: 15px*$fontParam;
+                    text-align: center;
+                    padding-top: 21px*$heightParam;
+                  }
+                  p{
+                    font-size: 14px*$fontParam;
+                    text-align: center;
+                    padding-top: 12px*$heightParam;
+                    color: #b7b7b7;
+                  }
+                  &:hover{
+                    cursor: pointer;
+                  }
+                  &:hover h5{
+                    color:#f39c12;
+                  }
+                  &:hover .workPhoto,  &:hover .workPhoto.odd{
+                    background: #edeaea url(../img/portfolioWorkBgHover.png) 50% 50% no-repeat;
+                    @include background-size(98px*$heightParam );
+                  }
+                }
+              }
+            }
+          }
+        }
+        #blogs{
+          width: 100%;
+          height: 2122px*$heightParam;
+          &:after{
+            content: "";
+            display: block;
+            clear: both;
+          }
+          .inBlocks{
+            padding-top: 233px*$heightParam;
+            #blogsPrev{
+              height: 100px*$heightParam;
+              width: 100px*$widthParam;
+              border: 1px solid white;
+              @include border-radius(50%);
+              behavior: url(PIE.htc);
+              margin: 0 auto;
+              background: url(../img/blogsBg.gif) 50% 50% no-repeat;
+              @include background-size(36px*$widthParam 28px*$heightParam);
+            }
+            h5{
+              color: white;
+              text-align: center;
+              font-size: 22px*$fontParam;
+              padding-top: 37px*$heightParam;
+              a{
+                text-decoration: none;
+                color: #f39c12;
+              }
+            }
+            p{
+              color:#808080;
+              text-align: center;
+              font-size: 15px*$fontParam;
+              padding-top: 23px*$heightParam;
+            }
+          }
+          #blogsContent{
+            @extend .blocksHeader;
+            #blogBlocks{
+              width: 100%;
+              &:after{
+                content: "";
+                display: block;
+                clear: both;
+              }
+              .blogBlock{
+                width: 50%;
+                height: 540px*$heightParam;
+                float:left;
+                position: relative;
+                .blogBlockPhoto{
+                  width: 550px*$widthParam;
+                  background: #b7b7b7 url(../img/portfolioWorkBg.gif) 50% 50% no-repeat;
+                  @include background-size(70px*$widthParam 58px*$heightParam);
+                  height: 233px*$heightParam;
+                }
+                .blogBlockTitle{
+                  width: 438px*$widthParam;
+                  height: 60px*$heightParam;
+                  font-size: 18px*$fontParam;
+                  font-weight: bold;
+                  color:#000000;
+                  background-color: #b7b7b7;
+                  padding-left: 111px*$widthParam;
+                  span{
+                    position: relative;
+                    &:before{
+                      content: "";
+                      display: block;
+                      position: absolute;
+                      bottom: 0;
+                      left: -43px*$widthParam;
+                      width: 43px*$heightParam;
+                      height: 43px*$heightParam;
+                      background: url(../img/blogTitleBg.png) 0 0 no-repeat ;
+                      @include background-size(44px*$widthParam 42px*$heightParam) ;
+                    }
+                    background-color: white;
+                    display: block;
+                    height: 100%;
+                    line-height: 60px*$heightParam;
+                    padding-left: 18px*$widthParam ;
+                  }
+                }
+                .blogBlockTime{
+                  font-size: 14px*$fontParam;
+                  color:#a9a9a9;
+                  width: 111px*$widthParam;
+                  float: left;
+                  padding-top: 22px*$heightParam;
+                }
+                .blogBlockContent{
+                  font-size: 16px*$fontParam;
+                  padding-top: 22px*$heightParam;
+                  color:#a9a9a9;
+                  width: 427px*$widthParam ;
+                  float: left;
+                }
+                .blogBlockButton{
+                  width: 100px*$widthParam;
+                  height: 30px*$heightParam;
+                  border: 1px solid #f39c12;
+                  position: absolute;
+                  bottom: 30px*$heightParam ;
+                  left:25%;
+                  span{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    line-height: 30px*$heightParam;
+                    text-align: center;
+                    color:#000000;
+                    font-size: 13px*$fontParam;
+                    &:hover{
+                      color:white;
+                      background-color: #f39c12;
+                      cursor: pointer;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        #ourClients{
+          width: 100%;
+          height: 1484px*$heightParam ;
+          &:after{
+             content: "";
+             display: block;
+             clear: both;
+           }
+          .inBlocks {
+             color:$colorBannerText;
+             text-align: center;
+             &:after {
+               content: "";
+               display: block;
+               clear: both;
+             }
+             h5{
+               padding-top: 221px*$heightParam;
+               padding-bottom: 56px*$heightParam;
+               color: $colorBannerText;
+               font-size: 30px*$fontParam;
+               font-weight: bold ;
+             }
+             #clientsPrev{
+               width: 1210px*$widthParam;
+               .clientPrev{
+                 width: 254px*$widthParam;
+                 height: 160px*$heightParam;
+                 border: 1px solid white;
+                 display: inline-block;
+                 &:nth-child(1){
+                   background: url(../img/clientLogo1.png) 50% 50% no-repeat;
+                   @include background-size(224px*$widthParam 74px*$heightParam);
+                 }
+                 &:nth-child(2){
+                   background: url(../img/clientLogo2.png) 50% 50% no-repeat ;
+                   @include background-size(198px*$widthParam 74px*$heightParam);
+                 }
+                 &:nth-child(3){
+                   background: url(../img/clientLogo3.png) 50% 50% no-repeat ;
+                   @include background-size(232px*$widthParam 98px*$heightParam);
+                 }
+                 &:nth-child(4){
+                   background: url(../img/clientLogo4.png) 50% 50% no-repeat ;
+                   @include background-size(152px*$widthParam 108px*$heightParam);
+                 }
+               }
+             }
+           }
+          #ourClientsContent{
+            @extend .blocksHeader;
+            #contactMessage{
+              width: 622px*$widthParam;
+              float: left;
+              h5{
+                font-size: 20px*$fontParam;
+                color:black;
+                font-weight: bold;
+                padding-bottom: 32px*$heightParam ;
+              }
+              form{
+                font-size: 15px*$fontParam;
+                color: #b9b9b9;
+
+                .controlForm{
+                    width: 562px*$widthParam;
+                    height: 40px*$heightParam;
+                    margin-bottom: 20px*$heightParam;
+                    padding: 0 30px*$widthParam 0 30px*$widthParam;
+                    &.ng-dirty.ng-invalid{
+                        outline: 1px solid red;
+                        @include box-shadow(0 0 5px red);
+                    }
+                    &.ng-dirty.ng-valid{
+                        outline: 1px solid green;
+                        @include box-shadow(0 0 5px green);
+                    }
+                    &[type='text']{
+                      background: url(../img/contactIcoName.png) 95% 50% no-repeat ;
+                      @include background-size(20px*$widthParam 22px*$heightParam);
+                    }
+                    &[type='email']{
+                      background: url(../img/contactIcoEmail.png) 95% 50% no-repeat;
+                      @include background-size(20px*$widthParam 20px*$heightParam);
+                    }
+                    &:focus.ng-pristine{
+                      outline: #f39c12 solid 1px;
+                      &[type='email']{
+                        @include box-shadow(0 0 5px #f39c12);
+                        background: url(../img/contactIcoEmailHover.png) 95% 50% no-repeat;
+                        @include background-size(20px*$widthParam 20px*$heightParam);
+                      }
+                      &[type='text']{
+                        @include box-shadow(0 0 5px #f39c12);
+                        background: url(../img/contactIcoNameHover.png) 95% 50% no-repeat ;
+                        @include background-size(20px*$widthParam 22px*$heightParam);
+                      }
+                    }
+                  }
+                  textarea{
+                    width: 562px*$widthParam;
+                    height: 226px*$heightParam;
+                    padding: 0 30px*$widthParam 0 30px*$widthParam ;
+                    margin-bottom: 24px*$heightParam ;
+                    background: url(../img/contactIcoMessage.png) 95% 10% no-repeat ;
+                    @include background-size(20px*$widthParam 20px*$heightParam);
+                    &.ng-dirty.ng-invalid{
+                          outline: 1px solid red;
+                          @include box-shadow(0 0 5px red);
+                    }
+                    &.ng-dirty.ng-valid{
+                          outline: 1px solid green;
+                          @include box-shadow(0 0 5px green);
+                    }
+                    &:focus.ng-pristine{
+                      outline: #f39c12 solid 1px;
+                      @include box-shadow(0 0 10px #f39c12);
+                      background: url(../img/contactIcoMessageHover.png) 95% 10% no-repeat ;
+                      @include background-size(20px*$widthParam 20px*$heightParam);
+                    }
+                  }
+                button{
+                  display: block;
+                  width: 128px*$widthParam;
+                  height: 32px*$heightParam;
+                  border: 1px solid #f39c12;
+                  background-color: #fff;
+                  color:black;
+                  font-size: 14px*$fontParam ;
+                  &:hover{
+                    @include box-shadow(0 0 5px #f39c12);
+                    cursor: pointer;
+                  }
+                }
+              }
+            }
+            #contactInfo{
+              width: 485px*$widthParam ;
+              float: left;
+              padding-left: 60px*$widthParam;
+              h5{
+                font-size: 20px*$fontParam;
+                color:black;
+                font-weight: bold;
+                padding-bottom: 32px*$heightParam ;
+              }
+              p{
+                font-size: 16px*$fontParam;
+                color: #bcbcbc;
+                padding-bottom: 32px*$heightParam ;
+              }
+              ul{
+                padding: 0;
+                list-style-type: none;
+                padding-left: 50px*$widthParam;
+                font-size: 16px*$fontParam;
+                color:black;
+                li{
+                  margin-bottom: 10px ;
+                }
+                li:nth-child(1){
+                  list-style-image: url(../img/contactIcoAddr.png);
+                }
+                li:nth-child(2){
+                  list-style-image: url(../img/contactIcoPhon.png);
+                }
+                li:nth-child(3){
+                  list-style-image: url(../img/contactIcoMail.png);
+                }
+              }
+            }
+          }
+        }
+        footer{
+          height: 88px*$heightParam;
+          #copy{
+            font-size: 14px*$fontParam;
+            font-weight: bold;
+            height: 88px*$heightParam;
+            width: 700px*$widthParam ;
+            float: left;
+            span{
+              display: block;
+              width: 100%;
+              height: 88px*$heightParam;
+              line-height: 88px*$heightParam;
+            }
+          }
+          nav{
+            width: 300px*$widthParam;
+            height: 22px*$heightParam;
+            padding-top: 26px*$heightParam;
+            float: left;
+            &:after{
+              content:"";
+              display: block;
+              clear: both;
+            }
+            ul{
+              list-style-type: none;
+              width: 300px*$widthParam;
+              height: 22px*$heightParam;
+              li{
+                display: inline-block;
+                width: 26px*$widthParam;
+                height: 22px*$heightParam;
+                & #twitter{
+                  background: url(../img/footerTwiter.png) 0 0 no-repeat;
+                  @include background-size(26px*$widthParam 22px*$heightParam);
+                  &:hover{
+                    background: url(../img/footerTwiterHover.png) 0 0 no-repeat;
+                    @include background-size(26px*$widthParam 22px*$heightParam);
+                  }
+                }
+                & #facebook{
+                  background: url(../img/footerFacebook.png) 0 0 no-repeat;
+                  @include background-size(26px*$widthParam 22px*$heightParam);
+                  &:hover{
+                    background: url(../img/footerFacebookHover.png) 0 0 no-repeat;
+                    @include background-size(26px*$widthParam 22px*$heightParam);
+                  }
+                }
+                & #linkedin{
+                  background: url(../img/footerLinkedin.png) 0 0 no-repeat;
+                  @include background-size(26px*$widthParam 22px*$heightParam);
+                  &:hover{
+                    background: url(../img/footerLinkedinHover.png) 0 0 no-repeat;
+                    @include background-size(26px*$widthParam 22px*$heightParam);
+                  }
+                }
+                & #dribble{
+                  background: url(../img/footerDribble.png) 0 0 no-repeat;
+                  @include background-size(26px*$widthParam 22px*$heightParam);
+                  &:hover{
+                    background: url(../img/footerDribbleHover.png) 0 0 no-repeat;
+                    @include background-size(26px*$widthParam 22px*$heightParam);
+                  }
+                }
+                & #pinterest{
+                  background: url(../img/footerPin.png) 0 0 no-repeat;
+                  @include background-size(26px*$widthParam 22px*$heightParam);
+                  &:hover{
+                    background: url(../img/footerPinHover.png) 0 0 no-repeat;
+                    @include background-size(26px*$widthParam 22px*$heightParam);
+                  }
+                }
+                & #google{
+                  background: url(../img/footerGoogle.png) 0 0 no-repeat;
+                  @include background-size(26px*$widthParam 22px*$heightParam);
+                  &:hover{
+                    background: url(../img/footerGoogleHover.png) 0 0 no-repeat;
+                    @include background-size(26px*$widthParam 22px*$heightParam);
+                  }
+                }
+                & #rss{
+                  background: url(../img/footerRss.png) 0 0 no-repeat;
+                  @include background-size(26px*$widthParam 22px*$heightParam);
+                  &:hover{
+                    background: url(../img/footerRssHover.png) 0 0 no-repeat;
+                    @include background-size(26px*$widthParam 22px*$heightParam) ;
+                  }
+                }
+                a{
+                  display: block;
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

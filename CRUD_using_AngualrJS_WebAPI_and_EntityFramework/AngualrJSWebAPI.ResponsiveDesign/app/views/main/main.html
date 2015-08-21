@@ -1,0 +1,74 @@
+<div class="main_video">
+    <section class="main_video_info">
+        <h2><span ng-bind="mainNs.videos.videoTitle"></span><span class="video_info_date" ng-bind="mainNs.videos.videoDate"></span></h2>
+        <p ng-bind="mainNs.videos.videoDescription"></p>
+    </section>
+    <video id="main_video"  controls="controls" ng-src="{{mainNs.videos.videoSrc}}"></video>
+</div>
+<div class="main_tweets">
+    <div class="main_tweets_title"><span>Latest published Tweets</span></div>
+    <div class="tweets_block" ng-repeat="item in mainNs.tweees | limitTo:6">
+        <p class="tweet_info">{{item.tweetDescription}}<a href="">{{item.tweetAuthor}}</a></p>
+        <p class="tweet_date" ng-bind="item.tweetTime"></p>
+    </div>
+</div>
+<div class="main_draw">
+    <div class="main_draw_stats">
+        <div class="stats_title"><span>OS AUDIENCE STATS</span></div>
+        <div class="canvas_block">
+            <canvas id="stats_draw"></canvas>
+        </div>
+        <div class="stats_info">
+            <div class="stats_info_system">
+                <span class="info_system">IOS</span>
+                <span class="info_statistics">{{mainNs.osUse.osIOS}}%</span>
+            </div>
+            <div class="stats_info_system">
+                <span class="info_system">Mac</span>
+                <span class="info_statistics">{{mainNs.osUse.osMac}}%</span>
+            </div>
+            <div class="stats_info_system">
+                <span class="info_system">Linux</span>
+                <span class="info_statistics">{{mainNs.osUse.osLinux}}%</span>
+            </div>
+            <div class="stats_info_system">
+                <span class="info_system">Win</span>
+                <span class="info_statistics">{{mainNs.osUse.osWin}}%</span>
+            </div>
+        </div>
+    </div>
+    <div class="draw_draws">
+        <div class="draws_graph">
+            <canvas id="draw_graph"></canvas>
+            <div class="draws_grapf_nav">
+                <div><button ng-click="mainNs.getStatistics('weekPeriod')">Week</button></div>
+                <div><button ng-click="mainNs.getStatistics('monthPeriod')">Month</button></div>
+                <div><button ng-click="mainNs.getStatistics('yearPeriod')">Year</button></div>
+            </div>
+            <div class="draws_statistic">
+                <div class="statistic_date">
+                    <span ng-bind="mainNs.dataInterval[0]"></span><span ng-bind="mainNs.dataPeriod"></span>
+                </div>
+                <div class="statistic_info">
+                    <span ng-bind="mainNs.graphStatistic.intervals.beforeInt.result.sign"></span><span>{{mainNs.graphStatistic.intervals.beforeInt.result.pes}}%</span>
+                </div>
+            </div>
+            <div class="draws_statistic">
+                <div class="statistic_date">
+                    <span ng-bind="mainNs.dataInterval[1]"></span><span ng-bind="mainNs.dataPeriod"></span>
+                </div>
+                <div class="statistic_info">
+                    <span ng-bind="mainNs.graphStatistic.intervals.averageInt.result.sign"></span><span>{{mainNs.graphStatistic.intervals.averageInt.result.pes}}%</span>
+                </div>
+            </div>
+            <div class="draws_statistic">
+                <div class="statistic_date">
+                    <span ng-bind="mainNs.dataInterval[2]"></span><span ng-bind="mainNs.dataPeriod"></span>
+                </div>
+                <div class="statistic_info">
+                    <span ng-bind="mainNs.graphStatistic.intervals.afterInt.result.sign"></span><span>{{mainNs.graphStatistic.intervals.afterInt.result.pes}}%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

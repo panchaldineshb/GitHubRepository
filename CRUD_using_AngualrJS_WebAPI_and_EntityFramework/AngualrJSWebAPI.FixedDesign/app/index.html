@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Web Developer Studio</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <!--[if gt IE 8]>
+      <style type="text/css">
+          html body #wraper{
+              background: url(components/img/banner.png) 0 0 no-repeat;
+              -moz-background-size: contain;
+              -o-background-size: contain;
+              -webkit-background-size: contain;
+              background-size: contain;
+          }
+          section>.blocks{
+              background: url(components/img/blocks.png) 0 0 no-repeat;
+              -moz-background-size: contain;
+              -o-background-size: contain;
+              -webkit-background-size: contain;
+              background-size: contain;
+          }
+      </style>
+  <![endif]-->
+
+  <!--[if lt IE 9]>
+       <style type="text/css">
+           html body #wraper{
+               background: none;
+           }
+           section>.blocks{
+               background: none;
+           }
+       </style>
+  <![endif]-->
+</head>
+<body>
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div id="wraper" ng-controller="wraperCtrl">
+      <!--[if lt IE 9]>
+          <img src="img/banner.png" class="bg_wraper"/>
+      <![endif]-->
+      <div id="main">
+          <div id="banner">
+              <header>
+                  <div id="logo">
+                      <span>WDS</span>
+                  </div>
+                  <nav>
+                      <ul>
+                          <li><a href="#about">ABOUT</a></li>
+                          <li><a href="#team">TEAM</a></li>
+                          <li><a href="#services">SERVICES</a></li>
+                          <li><a href="#portfolio">WORKS</a></li>
+                          <li><a href="#blogs">BLOG</a></li>
+                          <li><a href="#ourClients">CONTACT</a></li>
+                      </ul>
+                  </nav>
+              </header>
+              <div id="sliders">
+                  <div id="slider" ng-controller="sliderCtrl">
+                     <div id="infoOne"><span>{{sliderNs.sliderInfo[sliderNs.cntItteration].infoOne}}</span></div>
+                     <div id="infoTwo"><span>{{sliderNs.sliderInfo[sliderNs.cntItteration].infoTwo}}</span></div>
+                     <div id="infoThree"><span>{{sliderNs.sliderInfo[sliderNs.cntItteration].infoThree}}</span></div>
+                     <div id="learnMore"ng-click="sliderNs.displaySlider()"><span>Learn More</span></div>
+                     <div id="before" ng-click="sliderNs.previousSlide()"><span>&lt;</span></div>
+                     <div id="next" ng-click="sliderNs.nextSlide()"><span>&gt;</span></div>
+                     <div id="navy"><span id="slide1" ng-style="sliderNs.navyStyleSlide1"></span><span id="slide2" ng-style="sliderNs.navyStyleSlide2"></span><span id="slide3" ng-style="sliderNs.navyStyleSlide3"></span></div>
+                  </div>
+                  <div id="dateTime" ng-controller="dateTimeCtrl">
+                      <span id="timeDisplay" ng-bind="dateTimeNs.value"></span>
+                  </div>
+              </div>
+          </div>
+          <section id="about" ng-controller="aboutCtrl">
+              <h2>ABOUT</h2>
+              <div class="promo">
+                  <p>Proin gravida nibh vel velit auctor aliquet.
+                      Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+                      Duis sed odio sit amet nibh vulputate cursus a sit amet
+                  </p>
+              </div>
+              <div id="aboutStory">
+                  <div id="aboutStoryText">
+                      <h3>Our Story</h3>
+                     <p>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit</p>
+                     <p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+                     Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                  </div>
+                  <div id="aboutStoryVideo"></div>
+              </div>
+              <div id="aboutSkills">
+                  <div id="aboutSkillsPhoto"></div>
+                  <div id="aboutSkillsText">
+                      <h2>Our Skills</h2>
+                      <p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.</p>
+                      <div class="statistics" directive-statistic="statisticType"></div>
+                  </div>
+              </div>
+
+          </section>
+          <section id="team" ng-controller="teamCtrl">
+              <div class="blocks">
+                  <!--[if lt IE 9]>
+                      <img src="/images/blocks.png" class="bg_blocks"/>
+                  <![endif]-->
+                  <div class="inBlocks">
+                      <h5>Simplicity is about subtracting the obvious and adding the meaningful</h5>
+                      <p>John Maeda</p>
+                  </div>
+              </div>
+              <div id="teamContent">
+                  <h2>TEAM</h2>
+                  <div class="promo">
+                      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
+                          nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet
+                      </p>
+                  </div>
+                  <div id="teamBlocks" directive-team="ourTeam"></div>
+              </div>
+          </section>
+          <section id="services">
+              <div class="blocks">
+                  <!--[if lt IE 9]>
+                      <img src="/images/blocks.png" class="bg_blocks"/>
+                  <![endif]-->
+                  <div class="inBlocks">
+                      <div class="servicesLink" id="ico1">
+                          <div class="servicesVisualIco"></div>
+                          <p class="servicesVisual">6K+</p>
+                          <p class="servicesVisualAbout">Coffees</p>
+                      </div>
+                      <div class="servicesLink" id="ico2">
+                          <div class="servicesVisualIco"></div>
+                          <p class="servicesVisual">743</p>
+                          <p class="servicesVisualAbout">Projects</p>
+                      </div>
+                      <div class="servicesLink" id="ico3">
+                          <div class="servicesVisualIco"></div>
+                          <p class="servicesVisual">435</p>
+                          <p class="servicesVisualAbout">Clients</p>
+                      </div>
+                      <div class="servicesLink" id="ico4">
+                          <div class="servicesVisualIco"></div>
+                          <p class="servicesVisual">225</p>
+                          <p class="servicesVisualAbout">Awards</p>
+                      </div>
+                  </div>
+              </div>
+              <div id="servicesContent">
+                  <h2>SERVICE</h2>
+                  <div class="promo">
+                      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+                          lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet
+                      </p>
+                  </div>
+                  <div class="servicesBlocks" id="block1">
+                      <div class="servicesBlockIco"></div>
+                      <h5 class="serviceBlock">DESINING</h5>
+                      <p class="serviceBlock">Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per</p>
+                  </div>
+                  <div class="servicesBlocks" id="block2">
+                      <div class="servicesBlockIco"></div>
+                      <h5 class="serviceBlock">DESINING</h5>
+                      <p class="serviceBlock">Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per</p>
+                  </div>
+                  <div class="servicesBlocks" id="block3">
+                      <div class="servicesBlockIco"></div>
+                      <h5 class="serviceBlock">DESINING</h5>
+                      <p class="serviceBlock">Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per</p>
+                  </div>
+                  <div class="servicesBlocks" id="block4">
+                      <div class="servicesBlockIco"></div>
+                      <h5 class="serviceBlock">DESINING</h5>
+                      <p class="serviceBlock">Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per</p>
+                  </div>
+                  <div id="serviceBlockTable">
+                      <div class="tableCell1">
+                          <div class="table">
+                              <div class="blockTableHeader"><p>BASIC</p><p>$35</p></div>
+                              <div class="tableRows even"><span>First Description</span></div>
+                              <div class="tableRows odd"><span>Second Description</span></div>
+                              <div class="tableRows even"><span>Third Description</span></div>
+                              <div class="tableRows odd"><span>Fourth Description</span></div>
+                              <div class="blockTableFooter"><div class="serviceButton"><span>PURCHASE</span></div></div>
+                          </div>
+                      </div>
+                      <div class="tableCell2">
+                          <div class="table">
+                              <div class="blockTableHeader"><p>GOLD</p><p>$99</p></div>
+                              <div class="tableRows even"><span>First Description</span></div>
+                              <div class="tableRows odd"><span>Second Description</span></div>
+                              <div class="tableRows even"><span>Third Description</span></div>
+                              <div class="tableRows odd"><span>Fourth Description</span></div>
+                              <div class="blockTableFooter"><div class="serviceButton"><span>PURCHASE</span></div></div>
+                          </div>
+                      </div>
+                      <div class="tableCell3">
+                          <div class="table">
+                              <div class="blockTableHeader"><p>SILVER</p><p>$65</p></div>
+                              <div class="tableRows even"><span>First Description</span></div>
+                              <div class="tableRows odd"><span>Second Description</span></div>
+                              <div class="tableRows even"><span>Third Description</span></div>
+                              <div class="tableRows odd"><span>Fourth Description</span></div>
+                              <div class="blockTableFooter"><div class="serviceButton"><span>PURCHASE</span></div></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+          <section id="portfolio">
+              <div class="blocks">
+                  <!--[if lt IE 9]>
+                      <img src="/images/blocks.png" class="bg_blocks"/>
+                  <![endif]-->
+                  <div class="inBlocks">
+                      <div class="portfolioSliders">
+                          <div class="portfolioSlide">
+                              <h5>Maria Jones</h5>
+                              <p>“Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
+                              auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.”</p>
+                              <div class="portfolioSlidePhoto"></div>
+                          </div>
+                          <div id="portfolioNavy"><span id="portfolioSlide1"></span><span id="portfolioSlide2"></span><span id="portfolioSlide3"></span><span id="portfolioSlide4"></span><span id="portfolioSlide5"></span></div>
+                      </div>
+                  </div>
+              </div>
+              <div id="portfolioContent">
+                  <h2>PORTFOLIO</h2>
+                  <div class="promo">
+                      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
+                          nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet </p>
+                  </div>
+                  <div id="portfolioArt">
+                       <div id="portfolioArtSlider">
+                          <div id="portfolioArtSliderNavy">
+                              <span id="artSlide1"></span><span id="artSlide2"></span><span id="artSlide3"></span>
+                          </div>
+                       </div>
+                      <div id="portfolioArtNavy">
+                          <div id="portfolioArtNavyButton">
+                              <span id="navyButton1">&lt;</span>
+                              <span id="navyButton2">&gt;</span>
+                              <span id="navyButton3">x</span>
+                          </div>
+                          <h5>Digital ArtWork</h5>
+                          <p>Graphic Design</p>
+                      </div>
+                  </div>
+                  <div id="portfolioWork">
+                      <div id="menuWork">
+                          <ul>
+                              <li><a href="">link 1</a></li>
+                              <li><a href="">link 2</a></li>
+                              <li><a href="">link 3</a></li>
+                              <li><a href="">link 4</a></li>
+                              <li><a href="">link 5</a></li>
+                              <li><a href="">link 6</a></li>
+                          </ul>
+                      </div>
+                      <div id="blocksWork">
+                          <div class="blockWork">
+                              <div class="workPhoto odd"></div>
+                              <h5>project Title Here</h5>
+                              <p>Graphics</p>
+                          </div><div class="blockWork">
+                              <div class="workPhoto"></div>
+                              <h5>project Title Here</h5>
+                              <p>Graphics</p>
+                          </div>
+                          <div class="blockWork">
+                              <div class="workPhoto odd"></div>
+                              <h5>project Title Here</h5>
+                              <p>Graphics</p>
+                          </div>
+                          <div class="blockWork">
+                              <div class="workPhoto"></div>
+                              <h5>project Title Here</h5>
+                              <p>Graphics</p>
+                          </div>
+                          <div class="blockWork">
+                              <div class="workPhoto"></div>
+                              <h5>project Title Here</h5>
+                              <p>Graphics</p>
+                          </div>
+                          <div class="blockWork">
+                              <div class="workPhoto odd"></div>
+                              <h5>project Title Here</h5>
+                              <p>Graphics</p>
+                          </div>
+                          <div class="blockWork">
+                              <div class="workPhoto"></div>
+                              <h5>project Title Here</h5>
+                              <p>Graphics</p>
+                          </div>
+                          <div class="blockWork">
+                              <div class="workPhoto odd"></div>
+                              <h5>project Title Here</h5>
+                              <p>Graphics</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+          <section id="blogs">
+              <div class="blocks">
+                  <!--[if lt IE 9]>
+                      <img src="/images/blocks.png" class="bg_blocks"/>
+                  <![endif]-->
+                  <div class="inBlocks">
+                      <div id="blogsPrev"></div>
+                      <h5>
+                          <span>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum,
+                              nec sagittis sem nibh id elit. Duis sed odio sit amet nibh</span>
+                          <a href="">ow.ly/ttlwd</a>
+                      </h5>
+                      <p>3 hours ago</p>
+                  </div></div>
+              <div id="blogsContent">
+                  <h2>BLOG</h2>
+                  <div class="promo">
+                      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+                          lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet </p>
+                  </div>
+                  <div id="blogBlocks">
+                      <div class="blogBlock">
+                          <div class="blogBlockPhoto"></div>
+                          <div class="blogBlockTitle">
+                              <span>Awesome Blog Post Title Goes Here</span>
+                          </div>
+                          <div class="blogBlockTime">
+                              <span>21 Feb ‘14 John Doe 24 Comments</span>
+                          </div>
+                          <div class="blogBlockContent">
+                              <span>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
+                                  Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.</span>
+                          </div>
+                          <div class="blogBlockButton"><span>READ ON</span></div>
+                      </div>
+                      <div class="blogBlock">
+                          <div class="blogBlockPhoto"></div>
+                          <div class="blogBlockTitle">
+                              <span>Awesome Blog Post Title Goes Here</span>
+                          </div>
+                          <div class="blogBlockTime">
+                              <span>21 Feb ‘14 John Doe 24 Comments</span>
+                          </div>
+                          <div class="blogBlockContent">
+                              <span>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
+                                  Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.</span>
+                          </div>
+                          <div class="blogBlockButton"><span>READ ON</span></div>
+                      </div>
+                      <div class="blogBlock">
+                          <div class="blogBlockPhoto"></div>
+                          <div class="blogBlockTitle">
+                              <span>Awesome Blog Post Title Goes Here</span>
+                          </div>
+                          <div class="blogBlockTime">
+                              <span>21 Feb ‘14 John Doe 24 Comments</span>
+                          </div>
+                          <div class="blogBlockContent">
+                              <span>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
+                                  Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.</span>
+                          </div>
+                          <div class="blogBlockButton"><span>READ ON</span></div>
+                      </div>
+                      <div class="blogBlock">
+                          <div class="blogBlockPhoto"></div>
+                          <div class="blogBlockTitle">
+                              <span>Awesome Blog Post Title Goes Here</span>
+                          </div>
+                          <div class="blogBlockTime">
+                              <span>21 Feb ‘14 John Doe 24 Comments</span>
+                          </div>
+                          <div class="blogBlockContent">
+                              <span>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
+                                  Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.</span>
+                          </div>
+                          <div class="blogBlockButton"><span>READ ON</span></div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+          <section id="ourClients" ng-controller="ourClientsCtrl">
+              <div class="blocks">
+                  <!--[if lt IE 9]>
+                      <img src="/images/blocks.png" class="bg_blocks"/>
+                  <![endif]-->
+                  <div class="inBlocks">
+                      <h5>OUR CLIENTS</h5>
+                      <div id="clientsPrev">
+                          <div class="clientPrev"></div>
+                          <div class="clientPrev"></div>
+                          <div class="clientPrev"></div>
+                          <div class="clientPrev"></div>
+                      </div>
+                  </div>
+              </div>
+              <div id="ourClientsContent">
+                  <h2>CONTACT</h2>
+                  <div class="promo">
+                      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
+                          nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+                          Duis sed odio sit amet nibh vulputate cursus a sit amet  </p>
+                  </div>
+                  <div id="contactMessage">
+                      <h5>Drop Us A Message</h5>
+                      <form name="contactForm" novalidate ng-submit="ourClientsNs.submitFunc(ourClientsNs.formData)">
+                          <input type="text"  name="nameForm" class="controlForm" required placeholder="Mike" ng-model="ourClientsNs.formData.name"/>
+                          <input type="text"  name="emailForm" class="controlForm" required placeholder="email@mike.com" ng-model="ourClientsNs.formData.email"/>
+                          <textarea placeholder="Message"  name="messageForm" required ng-model="ourClientsNs.formData.message"></textarea>
+                          <button type="submit" ng-disabled="contactForm.$invalid">SUBMIT</button>
+                      </form>
+                  </div>
+                  <div id="contactInfo">
+                      <h5>Contact Info</h5>
+                      <p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+                          Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.
+                          Sed non  mauris vitae erat consequat </p>
+                      <ul>
+                          <li><span>13/2 Elizabeth St, Melbourne VIC 3000, Australia</span></li>
+                          <li><span>+61 3146 8728, +61 0987 6543</span></li>
+                          <li><span>support@envato.net</span></li>
+                      </ul>
+                  </div>
+                  <div id="messageResponse"></div>
+              </div>
+          </section>
+          <footer>
+              <div id="copy">
+                  <span>&copy; WDS.IN.UA 2015, All rights reserved  |  Development By Vitaliy Fomenko</span>
+              </div>
+              <nav>
+                  <ul>
+                      <li><a id="twitter" href="/"></a></li>
+                      <li><a id="facebook" href=""></a></li>
+                      <li><a id="linkedin" href=""></a></li>
+                      <li><a id="dribble" href=""></a></li>
+                      <li><a id="pinterest" href=""></a></li>
+                      <li><a id="google" href=""></a></li>
+                      <li><a id="rss" href=""></a></li>
+                  </ul>
+              </nav>
+          </footer>
+          <div id="backTo"><a href="#main"></a></div>
+      </div>
+  </div>
+
+  <script src="bower_components/jquery/jquery-1.11.3.min.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="model.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

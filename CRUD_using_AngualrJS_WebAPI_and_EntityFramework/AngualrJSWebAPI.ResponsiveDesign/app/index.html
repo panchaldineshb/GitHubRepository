@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js">
+ <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>User Profile</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="app.css">
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"><span>Profile</span></div>
+            <nav class="header-nav" ng-controller="headerMenuCtrl">
+                <ul class="header-nav-collapse">
+                    <li><a ng-click="headerMenuNs.choiceMenu('settings')">Settings</a></li>
+                    <li><a ng-click="headerMenuNs.choiceMenu('profile')">Profile</a></li>
+                    <li><a ng-click="headerMenuNs.choiceMenu('messages')">Messages</a><span class="indicators" id="indicators" ng-bind="headerMenuNs.allMessages"></span></li>
+                    <li><a ng-click="headerMenuNs.choiceMenu('favorites')">Favorites</a></li>
+                </ul>
+                <ul class="header-nav-menu">
+                    <li>
+                        <a href="">Menu</a>
+                        <!--<div class="header-nav-img">
+                            <div><span>--</span></div>
+                            <div><span>--</span></div>
+                            <div><span>--</span></div>
+                        </div>-->
+                        <ul class="header-nav-menu-collapse">
+                            <li><a href="">Settings</a></li>
+                            <li><a href="">Profile</a></li>
+                            <li><a href="">Messages</a></li>
+                            <li><a href="">Favorites</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="wraper">
+            <aside class="left_bar">
+                <div class="left_bar_navigation" ng-controller="navigationCtrl">
+                    <div class="navigation_title"><span>NAVIGATION</span></div>
+                    <ul>
+                        <li><a ng-click="navigationNs.choiceMenu('messages')"><span>Messages</span></a><span ng-bind="navigationNs.allMessages"></span></li>
+                        <li><a ng-click="navigationNs.choiceMenu('invites')"><span>Invites</span></a><span ng-bind="navigationNs.allInvites"></span></li>
+                        <li><a ng-click="navigationNs.choiceMenu('news')"><span>New</span></a><span ng-bind="navigationNs.allNews"></span></li>
+                        <li><a ng-click="navigationNs.choiceMenu('settings')"><span>AccountSetings</span></a></li>
+                        <li><a ng-click="navigationNs.choiceMenu('statistics')"><span>Statistics</span></a></li>
+                    </ul>
+                </div>
+                <div class="left_bar_space" ng-controller="discSpaceCtrl">
+                    <div class="space_title"><span>DISC SPACE USING</span></div>
+                    <div class="space_download">
+                        <div class="progress_bar"><div class="progress_bar_active"></div></div>
+                        <div class="progress_info"><span>Downloading...</span><span class="progress_count" ng-bind="discSpaceNs.discStatus.download"></span></div>
+                    </div>
+                    <div class="space_upload">
+                        <div class="progress_bar"><div class="progress_bar_active"></div></div>
+                        <div class="progress_info"><span>Uploading...</span><span class="progress_count" ng-bind="discSpaceNs.discStatus.upload"></span></div>
+                    </div>
+                </div>
+            </aside>
+            <div class="main" ng-view></div>
+            <aside class="right_bar">
+                <div class="right_bar_user_info" ng-controller="userProfileCtrl">
+                    <div class="user_info_photo"><img ng-src="{{userProfileNs.userPhoto}}" width="150" height="150" /></div>
+                    <div class="user_info_name"><span ng-bind="userProfileNs.userLogin"></span></div>
+                    <p ng-bind="userProfileNs.userSlogan"></p>
+                    <div class="user_info_statistic">
+                        <div class="info_statistic"><span ng-bind="userProfileNs.userActivity.comment"></span></div>
+                        <div class="info_statistic"><span ng-bind="userProfileNs.userActivity.view"></span></div>
+                        <div class="info_statistic"><span ng-bind="userProfileNs.userActivity.like"></span></div>
+                    </div>
+                </div>
+                <div class="right_bar_calendar" ng-controller="calendarCtrl">
+                    <div class="calendar_title">
+                        <div id="calendar_month_before"><span>&lt;</span></div>
+                        <div><span id="calendar_month"></span></div>
+                        <div id="calendar_month_after"><span>&gt;</span></div>
+                    </div>
+                    <div class="calendar_body">
+                        <div class="calendar_body_head">
+                            <span class="calendar_weeks">П</span>
+                            <span class="calendar_weeks">В</span>
+                            <span class="calendar_weeks">С</span>
+                            <span class="calendar_weeks">Ч</span>
+                            <span class="calendar_weeks">П</span>
+                            <span class="calendar_weeks">С</span>
+                            <span class="calendar_weeks">В</span>
+                        </div>
+                        <div class="calendar_body_weeks" id="calendar_body_weeks"></div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <footer><span>&copy;WDS.IN.UA</span><span>2015</span><span>All rights reserved</span><span>Development By Vitaliy Fomenko</span></footer>
+    </div>
+    <script src="bower_components/jquery/jquery-1.11.3.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="model.js"></script>
+    <script src="app.js"></script>
+    <script src="views/main/main.js"></script>
+    <!--<script src="components/js/main.js"></script>-->
+</body>
+</html>

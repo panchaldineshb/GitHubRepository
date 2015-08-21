@@ -449,6 +449,8 @@
     <Content Include="Views\Organization\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_html5shiv.cshtml" />
+    <Content Include="Views\Home\RegisterOrganization.cshtml" />
+    <Content Include="Views\Organization\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

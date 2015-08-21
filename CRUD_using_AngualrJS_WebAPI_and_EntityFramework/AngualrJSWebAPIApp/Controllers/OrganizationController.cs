@@ -4,15 +4,25 @@ using AngualrJSWebAPIApp.ViewModels;
 
 namespace AngualrJSWebAPIApp.Web.Controllers
 {
+    [HandleError]
+
     public class OrganizationController : Controller
     {
         //
-        // GET: /Organization/Register
-
+        // GET: /Organization/Index
 
         [HttpGet]
         [AllowAnonymous]
+        public ActionResult Index()
+        {
+            return View();
+        }
 
+        //
+        // GET: /Organization/Register
+
+        [HttpGet]
+        [AllowAnonymous]
         public ActionResult Register()
         {
             return View();
@@ -23,7 +33,6 @@ namespace AngualrJSWebAPIApp.Web.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-
         public async Task<bool> Register(OrganizationViewModel model)
         {
             //var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
