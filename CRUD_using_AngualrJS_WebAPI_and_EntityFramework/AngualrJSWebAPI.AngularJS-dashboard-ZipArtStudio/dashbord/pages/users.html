@@ -1,0 +1,118 @@
+<header>
+<div class="db-page-header">
+<div class="row">
+<h1>Users</h1>
+<p>{{ message }}</p>
+        <div class="span2">
+            <div class="btn-group pull-right" data-toggle="buttons-radio">
+                <button class="btn active">All</button>
+                <button class="btn">Starred</button>
+            </div>
+        </div>
+        <div class="span4">
+        <form class="form-search">
+            <div class="input-append">
+                <input type="text" class="span2">
+                <button type="submit" class="btn">Search</button>
+            </div>
+        </form>
+        </div>
+    </div>
+	
+</div>
+</header>
+<div class="db-page-content">	
+<!-- <input class="form-control" type="text" ng-model="query">
+  <select ng-model="orderProp" class="form-control">
+      <option value="name">Alphabetical</option>
+      <option value="age">Newest</option>
+    </select>-->
+    
+ <div class="row" ng-repeat="users in users | filter:query | orderBy:orderProp">
+  	<div >
+    
+      <div>
+			<div class="panel-body user-profile">
+              		<div class="row">
+                      <div class="col-xs-12 col-sm-4 text-center">
+                                <img src="{{users.imageUrl}}"  class="center-block img-circle img-responsive user-profile-img" alt="{{users.name}}">
+                                <ul class="list-inline ratings text-center" title="Ratings">
+                                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                                </ul>
+                        </div><!--/col--> 
+                      
+                      
+                        <div class="col-xs-12 col-sm-6 ">
+                            <h2 >{{users.name}}</h2>
+                            <p><strong>About: </strong> {{users.about}} </p>
+                            <p><strong>Hobbies: </strong> {{users.hobbies}} </p>
+                            <p><strong>Skills: </strong>
+                            {{users.skills}}
+                                <span class="label label-info tags">html5</span> 
+                                <span class="label label-info tags">css3</span>
+                                <span class="label label-info tags">jquery</span>
+                                <span class="label label-info tags">bootstrap3</span>
+                            </p>
+                        </div><!--/col-->          
+                       
+<div class="col-xs-12 col-sm-2">
+<div class="row">
+                        <div class="">
+                            <p><strong>245</strong><br /><small>Following</small></p>                    
+                            
+                            
+                        </div><!--/col-->
+                        </div>
+                        <div class="row">
+                        <div class="">
+                            <p><strong>245</strong><br /><small>Following</small></p>                    
+                           
+                            
+                        </div><!--/col-->
+                        </div>
+                        <div class="row">
+                        <div class="">
+                            <p><strong>245</strong><br /><small>Following</small></p>                    
+                            
+                            
+                        </div><!--/col-->
+                        </div>
+                        </div>
+              		</div><!--/row-->
+              </div><!--/panel-body-->
+          </div><!--/panel-->
+
+    
+    
+    </div>
+  </div>   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+<!--<ul>
+  <li ng-repeat="users in users | filter:query | orderBy:orderProp" class="thumbnail">
+    <div class="row">
+      <div class="col-md-2"><a href="#/about/{{users.id}}" class="thumb"><img class="img-circle" ng-src="{{users.imageUrl}}"></a></div>
+      <div class="col-md-10"> <a href="#/about/{{users.id}}">{{users.name}}</a>
+        <p>{{users.snippet}}</p>
+        <button class="btn btn-primary" type="button" ng-click="showmodel()">Buy this</button>
+      </div>
+    </div>
+  </li>
+</ul>-->
+</div>
+
+
+
+
+

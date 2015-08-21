@@ -1,0 +1,5 @@
+[{ "text":"New Clients", "figer":"125" ,"imageUrl": "images/json/1.jpg" },
+ { "text":"New Workorders", "figer":"870" ,"imageUrl": "images/json/2.jpg"},
+ { "text":"New Quoats", "figer":"35" ,"imageUrl": "images/json/3.jpg" },
+ { "text":"New Invoices", "figer":"800" ,"imageUrl": "images/json/3.jpg" },
+ { "text":"Open Cases", "figer":"258", "imageUrl": "images/json/1.jpg" }]

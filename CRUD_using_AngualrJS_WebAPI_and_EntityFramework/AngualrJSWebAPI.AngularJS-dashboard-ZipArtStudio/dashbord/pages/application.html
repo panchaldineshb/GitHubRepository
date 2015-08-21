@@ -1,0 +1,41 @@
+<div>
+<header>
+<div class="db-page-header">
+	<h1>Applications</h1>
+    <p>{{ message }}</p>
+</div>
+</header>	
+<div class="db-page-content white-bg">	
+    <div class="row filter-bar">
+ <div class="col-md-2">Search:</div>
+  <div class="col-md-4"> 
+    <input class="form-control" type="text" ng-model="query">
+  </div>
+  <div class="col-md-2">Sort by:</div>
+  <div class="col-md-4"> 
+    <select ng-model="orderProp" class="form-control">
+      <option value="name">Alphabetical</option>
+      <option value="age">Newest</option>
+    </select>
+  </div>
+</div>
+</div>
+<div class="row">    
+    <ul class="applications" style="margin-left:0px; padding-left:0px;">
+  <li class="col-md-6" style="display:inline-block; min-height:200px;" ng-repeat="application in applications | filter:query | orderBy:orderProp" >
+    <div class="row">
+      
+      <div class="row"><a href="#/about/{{application.id}}" class="thumb"><img class="img-responsive"  ng-src="{{application.imageUrl}}"></a></div>
+      <div "row"> <a href="#/about/{{application.id}}">{{application.name}}</a>
+        <p>{{application.discription}}</p>
+        <button class="btn btn-primary" type="button" ng-click="showmodel()">More...</button>
+      </div>
+      
+    </div>
+  </li>
+</ul>
+</div>
+    
+    
+    
+</div>

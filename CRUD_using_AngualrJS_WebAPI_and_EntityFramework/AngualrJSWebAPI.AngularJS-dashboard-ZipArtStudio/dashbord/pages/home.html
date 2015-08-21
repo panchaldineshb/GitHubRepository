@@ -1,0 +1,144 @@
+<div>
+<header>
+<div class="db-page-header">
+	<h1>Dashboard</h1>
+    <p>{{ message }}</p>
+</div>
+</header>	
+<div class="db-page-content white-bg">	
+    <div class="top-figers-board">
+    <ul>
+    <li ng-repeat="topvalues in topvalues">
+    <div class="detail-top"><img ng-src="{{topvalues.imageUrl}}" ng-click="setImage(img)"><a class="title1">{{topvalues.text}}</a><a class="title2">Date</a></div>
+    <div class="detail-figer">{{topvalues.figer}}</div>
+     
+    </li>
+  </ul>
+  </div>
+</div>
+
+
+
+<div class="row">
+        <div class="[ col-xs-12  col-sm-6 ]">
+         <div ng-controller="ModalDemoCtrl"> 
+    <button type="button" class="btn btn-default new-post" data-animation="am-fade-and-slide-top" data-template="pages/add-post.html" bs-modal="modal">Post Massages
+      </button>
+      </div>
+        <h4>Corporate Massage Board</h4>
+            <div class="[ panel panel-default ] dashboard-post">
+                <div class="dropdown">
+                    <span class="dropdown-toggle" type="button" data-toggle="dropdown">
+                        <span class="[ glyphicon glyphicon-chevron-down ]"></span>
+                    </span>
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                    </ul>
+                </div>
+                <div class="panel-google-plus-tags">
+                    <ul>
+                        <li>#Millennials</li>
+                        <li>#Generation</li>
+                    </ul>
+                </div>
+                <div class="panel-heading">
+                    <img class="[ img-circle pull-left ]" src="images/profile/sithila1234.jpg" alt="Mouse0270" />
+                    <h3>Loku Appuhami</h3>
+                    <h5><span>Shared publicly</span> - <span>Jul 10, 2014</span> </h5>
+                </div>
+                <div class="panel-body">
+                    <p> Integer et neque ac tortor viverra vehicula. Suspendisse auctor molestie sem non venenatis. Vivamus leo eros, venenatis vel ipsum </p>
+                </div>
+                <div class="panel-footer">
+                    <button type="button" class="[ btn btn-default ]">+1</button>
+                    <button type="button" class="[ btn btn-default ]">
+                        <span class="[ glyphicon glyphicon-share-alt ]"></span>
+                    </button>
+                    <div class="input-placeholder">Add a comment...</div>
+                </div>
+                <div class="panel-google-plus-comment">
+                    <img class="img-circle" src="images/profile/sithila1234.jpg" alt="User Image" />
+                    <div class="panel-google-plus-textarea">
+                        <textarea rows="4"></textarea>
+                        <button type="submit" class="[ btn btn-success disabled ]">Post comment</button>
+                        <button type="reset" class="[ btn btn-default ]">Cancel</button>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="[ col-xs-12 col-sm-6 ]">
+       <!-- <div ng-controller="ModalDemoCtrl"> 
+    <button type="button" class="btn btn-default new-post" data-animation="am-fade-and-slide-top" data-template="modal.tpl.demo.html" bs-modal="modal">Post Massages
+      </button>
+      </div>-->
+        <h4>Yout Network</h4>
+            <div class="[ panel panel-default ] dashboard-post">
+                <div class="dropdown">
+                    <span class="dropdown-toggle" type="button" data-toggle="dropdown">
+                        <span class="[ glyphicon glyphicon-chevron-down ]"></span>
+                    </span>
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                    </ul>
+                </div>
+                <div class="panel-google-plus-tags">
+                    <ul>
+                        <li>#Snippet</li>
+                    </ul>
+                </div>
+                <div class="panel-heading">
+                    <img class="[ img-circle pull-left ]" src="images/profile/sithila1234.jpg" alt="Mouse0270" />
+                    <h3>Loku Appuhami</h3>
+                    <h5><span>Shared publicly</span> - <span>Jun 25, 2014</span> </h5>
+                </div>
+                <div class="panel-body">
+                    <p> Integer et neque ac tortor viverra vehicula. Suspendisse auctor molestie sem non venenatis. Vivamus leo eros, venenatis vel ipsum </a></p>
+                    <a class="panel-google-plus-image" href="https://plus.google.com/photos/115077481218689845626/albums/6028961040749409985/6028961040650432498">
+                        <img src="images/post/post.png" />
+                    </a>
+                </div>
+                <div class="panel-footer">
+                    <button type="button" class="[ btn btn-default ]">+1</button>
+                    <button type="button" class="[ btn btn-default ]">
+                        <span class="[ glyphicon glyphicon-share-alt ]"></span>
+                    </button>
+                    <div class="input-placeholder">Add a comment...</div>
+                </div>
+                <div class="panel-google-plus-comment">
+                    <img class="img-circle" src="https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s46" alt="User Image" />
+                    <div class="panel-google-plus-textarea">
+                        <textarea rows="4"></textarea>
+                        <button type="submit" class="[ btn btn-success disabled ]">Post comment</button>
+                        <button type="reset" class="[ btn btn-default ]">Cancel</button>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

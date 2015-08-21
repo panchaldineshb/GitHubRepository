@@ -1,0 +1,5 @@
+[{ "text":"learn angular", "done":"20.5" ,"imageUrl": "images/json/1.jpg" },
+ { "text":"build an ang", "done":"20.5" ,"imageUrl": "images/json/2.jpg"},
+ { "text":"something", "done":"20.5" ,"imageUrl": "images/json/3.jpg" },
+ { "text":"another todo", "done":"20.5" ,"imageUrl": "images/json/3.jpg" },
+ { "text":"another todo", "done":"20.5", "imageUrl": "images/json/1.jpg" }]

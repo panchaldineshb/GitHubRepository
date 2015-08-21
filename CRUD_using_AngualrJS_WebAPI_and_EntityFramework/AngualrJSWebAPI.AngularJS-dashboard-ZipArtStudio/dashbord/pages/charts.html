@@ -1,0 +1,276 @@
+<style type="text/css">
+        #placeholder,#placeholder2,#placeholder3,#placeholder4,#placeholder5,#placeholder6,#placeholder7{width:350px;height:300px;} 
+		chart {
+    display: block;
+    width:350px;
+    height:200px;
+}     
+charts {
+    display: block;
+    width:350px;
+    height:200px;
+} 
+chartk{
+   display: block;
+    width:350px;
+    height:200px;
+} 
+chartpie{
+   display: block;
+    width:350px;
+    height:200px;
+}
+#placeholder,#placeholder2,#placeholder3,#placeholder4,#placeholder6,#placeholder7 {
+   display: block;
+    width:350px;
+    height:200px;
+}
+
+.axisLabel {
+    position: absolute;
+    text-align: center;
+    font-size: 11px;
+	color:#CCC;
+}
+
+.xaxisLabel {
+    bottom: 3px;
+    left: 0;
+    right: 0;
+}     
+    </style>
+<header>
+<div class="db-page-header">
+	<h1>Chart Page</h1>
+    <p>{{ message }}</p>
+</div>
+</header>
+<div class="db-page-content white-bg">   
+<div class="row">
+<div class="col-md-6">  
+     <div ng-controller='ChartController'>        
+       <chart data='data'></chart>       
+    </div>
+</div>
+<div class="col-md-6">  
+     <div ng-controller='ChartController'>        
+       <chartk data='data'></chartk>    
+    </div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+    <div ng-controller='ChartController'>             
+          <charts data='data'></charts>
+    </div>
+</div>
+<div class="col-md-6">
+     <div ng-controller='ChartController'>             
+          <chartpie data='data'></chartpie>
+    </div>
+</div>
+</div>    
+    
+
+<div class="row">
+            
+            <div class="col-md-12 mid-content-area">    
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+  <div class="demo-container">
+			<div id="placeholder" class="demo-placeholder"></div>
+        </div>
+  
+  </div>
+  <div class="col-xs-6 col-md-6"> 
+  <div class="demo-container">
+			<div id="placeholder2" class="demo-placeholder"></div>
+		</div> 
+  </div>
+</div>
+
+      
+ 	<div class="row">
+  <div class="col-xs-12 col-md-6">
+  <div class="demo-container">
+			<div id="placeholder3" class="demo-placeholder"></div>
+        </div>
+  
+  </div>
+  <div class="col-xs-6 col-md-6">  
+  			<div id="placeholder4" class="demo-placeholder"></div>
+  </div>
+</div>	
+
+<div class="row">
+  <div class="col-xs-6 col-md-6">
+  <div class="demo-container">
+			<div id="placeholder6" class="demo-placeholder"></div>
+        </div>
+  
+  </div>
+  <div class="col-xs-6 col-md-6">
+  <div class="demo-container">
+			<div id="placeholder7" class="demo-placeholder"></div>
+        </div>
+  
+  </div>
+  
+</div>
+
+<div class="row">
+  
+  
+</div>
+         
+               
+              
+            </div>
+          </div>
+          
+<!--flot chart-->
+<link href="css/flot-chart/examples.css" rel="stylesheet" type="text/css">
+	<script language="javascript" type="text/javascript" src="js/flot-chart/jquery.js"></script>
+	<script language="javascript" type="text/javascript" src="js/flot-chart/jquery.flot.js"></script>
+	<script language="javascript" type="text/javascript" src="js/flot-chart/jquery.flot.categories.js"></script>
+    <script language="javascript" type="text/javascript" src="js/flot-chart/jquery.flot.pie.js"></script>
+    <script type="text/javascript" src="js/flot-chart/jquery.flot.axislabels.js"></script>
+    
+    
+    
+	<script type="text/javascript">
+
+	$(function() {
+
+		var data = [ {label:"January", data:30 ,color:"#4072B4" }, {label:"Feb", data:50 ,color:"#4679BD" },{label:"Mar", data:10 ,color:"#4072B4" }, {label:"Apr", data:10 ,color:"#4679BD" }, {label:"May", data:25 ,color:"#4072B4" }, {label:"Jun", data:10 ,color:"#4679BD" } ];
+		var data2 = [{ label: "Series1",  data: 10},
+		{ label: "Series2",  data: 30},
+		{ label: "Series3",  data: 90},
+		{ label: "Series4",  data: 70},
+		{ label: "Series5",  data: 80},
+		{ label: "Series6",  data: 110} ];
+		
+		var data3 = [{ label: "Series1",  data: 10},
+		{ label: "Series2",  data: 30},
+		{ label: "Series3",  data: 90},
+		{ label: "Series4",  data: 70},
+		{ label: "Series5",  data: 80},
+		{ label: "Series6",  data: 110} ];
+		
+		var data4 = [{ label: "Series1",  data: 10 ,color:"#4679BD"},
+		{ label: "Series2",  data: 30 ,color:"#4072B4"},
+		{ label: "Series3",  data: 90, color:"#4679BD"},
+		{ label: "Series4",  data: 70, color:"#4072B4"},
+		{ label: "Series5",  data: 80, color:"#4679BD"},
+		{ label: "Series6",  data: 110, color:"#4072B4"} ];
+		
+		var data6 = [{ label: "Series1",  data: 10},
+		{ label: "Series2",  data: 30},
+		{ label: "Series3",  data: 90},
+		{ label: "Series4",  data: 70},
+		{ label: "Series5",  data: 80},
+		{ label: "Series6",  data: 110} ];
+		
+		var data7 = [{ label: "Series1",  data: 10},
+		{ label: "Series2",  data: 30},
+		{ label: "Series3",  data: 90},
+		{ label: "Series4",  data: 70},
+		{ label: "Series5",  data: 80},
+		{ label: "Series6",  data: 110} ];
+		
+		
+		$.plot('#placeholder7', data7, {
+    series: {
+        pie: {
+            show: true,
+            radius: 1,
+            label: {
+                show: true,
+                radius: 2/3,
+                formatter: labelFormatter,
+                threshold: 0.1
+            }
+        }
+    },
+    legend: {
+        show: false
+    }
+});
+		
+		
+		$.plot('#placeholder6', data, {
+    series: {
+        pie: {
+            innerRadius: 0.9,
+            show: true
+        }
+    }
+});
+
+		$.plot("#placeholder", [ data2 ], {
+			series: {
+				bars: { show: true, fill: 1, fillColor: "#757dad", align:"center",barWidth: 0.6,lineWidth: 0 }, 
+			 color: {color:"#454d7d"}
+			
+			
+			},
+			grid: {
+    borderWidth: {top: 0, right: 0, bottom: 1, left: 1},
+    borderColor: {top: "#FFF", left: "#ccc", bottom: "#ccc"},
+	hoverable: true
+},
+			xaxis: {
+				mode: "categories",
+				tickLength: 0
+			}
+		});
+		
+		$.plot('#placeholder2', data, {
+    series: {
+        pie: {
+            show: true
+        }
+    }
+});
+
+$.plot('#placeholder3', data4, {
+				series: {
+					pie: { 
+						show: true
+					}
+				},
+				legend: {
+					show: false
+				}
+			});
+
+function labelFormatter(label, series) {
+		return "<div style='font-size:8pt; text-align:center; padding:2px; color:white;'>" + label + "<br/>" + Math.round(series.percent) + "%</div>";
+	}
+$.plot('#placeholder4', data4, {
+				series: {
+					pie: { 
+						show: true,
+						radius: 1,
+						label: {
+							show: true,
+							radius: 1,
+							formatter: labelFormatter,
+							background: {
+								opacity: 0.8
+							}
+						}
+					}
+				},
+				legend: {
+					show: false
+				}
+			});
+
+		// Add the Flot version string to the footer
+
+		$("#footer").prepend("Flot " + $.plot.version + " &ndash; ");
+	});
+
+	</script>          
+</div>          

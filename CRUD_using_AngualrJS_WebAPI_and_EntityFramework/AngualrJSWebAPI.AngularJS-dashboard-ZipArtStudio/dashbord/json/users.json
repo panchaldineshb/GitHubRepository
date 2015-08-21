@@ -1,0 +1,26 @@
+[
+    {
+        "userid": 0, 
+        "imageUrl": "images/profile/janith1234.jpg", 
+		"ranking": 1, 
+        "name": "Janith Bandara", 
+        "about": "Software Developer",
+		"hobbies": "Collect Stamps , Hiking",
+		"skills": "Web Designer / UI",
+		"following": 30,
+		"followers": 35,
+		"likes": 35
+    }, 
+    {
+        "userid": 2, 
+        "imageUrl": "images/profile/sithila1234.jpg", 
+		"ranking": 1, 
+        "name": "Sithila Waduge", 
+        "about": "Web Designer / UI",
+		"hobbies": "Web Designer / UI",
+		"skills": "Web Designer / UI",
+		"following": 30,
+		"followers": 35,
+		"likes": 35
+    } 
+    ]
