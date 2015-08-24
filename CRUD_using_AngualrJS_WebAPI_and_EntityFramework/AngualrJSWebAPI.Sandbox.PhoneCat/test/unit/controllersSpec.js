@@ -14,7 +14,7 @@ describe('PhoneCat controllers', function() {
   beforeEach(module('phonecatApp'));
   beforeEach(module('phonecatServices'));
 
-  describe('PhoneListCtrl', function(){
+  describe('PhoneListController', function(){
     var scope, ctrl, $httpBackend;
 
     beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
@@ -23,7 +23,7 @@ describe('PhoneCat controllers', function() {
           respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
 
       scope = $rootScope.$new();
-      ctrl = $controller('PhoneListCtrl', {$scope: scope});
+      ctrl = $controller('PhoneListController', {$scope: scope});
     }));
 
 
@@ -42,7 +42,7 @@ describe('PhoneCat controllers', function() {
   });
 
 
-  describe('PhoneDetailCtrl', function(){
+  describe('PhoneDetailController', function(){
     var scope, $httpBackend, ctrl,
         xyzPhoneData = function() {
           return {
@@ -58,7 +58,7 @@ describe('PhoneCat controllers', function() {
 
       $routeParams.phoneId = 'xyz';
       scope = $rootScope.$new();
-      ctrl = $controller('PhoneDetailCtrl', {$scope: scope});
+      ctrl = $controller('PhoneDetailController', {$scope: scope});
     }));
 
 
