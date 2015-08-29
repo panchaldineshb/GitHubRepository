@@ -88,3 +88,4 @@ C:\Projects\CRUD_using_AngualrJS_WebAPI_and_EntityFramework\AngualrJSWebAPIApp.A
 C:\Projects\CRUD_using_AngualrJS_WebAPI_and_EntityFramework\AngualrJSWebAPIApp.API\obj\Debug\AngualrJSWebAPIApp.API.csprojResolveAssemblyReference.cache
 C:\Projects\CRUD_using_AngualrJS_WebAPI_and_EntityFramework\AngualrJSWebAPIApp.API\obj\Debug\AngualrJSWebAPIApp.API.dll
 C:\Projects\CRUD_using_AngualrJS_WebAPI_and_EntityFramework\AngualrJSWebAPIApp.API\obj\Debug\AngualrJSWebAPIApp.API.pdb
+C:\Projects\GitHub\GitHubRepository\CRUD_using_AngualrJS_WebAPI_and_EntityFramework\AngualrJSWebAPIApp.API\bin\zh-Hans\Microsoft.Data.OData.resources.dll
