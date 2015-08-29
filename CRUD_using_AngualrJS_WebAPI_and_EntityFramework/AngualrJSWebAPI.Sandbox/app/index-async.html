@@ -10,6 +10,8 @@
     </style>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <link href="styles/main.css" rel="stylesheet" />
+    <link href="styles/dashboard.css" rel="stylesheet" />
     <script>
         // include angular loader, which allows the files to load in any order
 
@@ -47,8 +49,6 @@
 
         // load all of the dependencies asynchronously.
         $script([
-        'bower_components/jquery/dist/jquery.min.js',
-        'bower_components/bootstrap/dist/js/bootstrap.min.js',
         'bower_components/angular/angular.js',
         'bower_components/angular-animate/angular-animate.js',
         'bower_components/angular-cookies/angular-cookies.js',
@@ -66,7 +66,6 @@
         ], function () {
             // when all is done, execute bootstrap angular application
             debugger;
-
             angular.bootstrap(document, ['angularjsDashboardApp']);
         })
     </script>
