@@ -2,6 +2,22 @@
 
 /* Controllers */
 
+angular.module('phonecatApp')
+.service('Home', function () { /* ... */ })
+.controller('HomeController', ['$scope', 'Home',
+  function ($scope, Home) {
+      $scope.message = 'Hello from HomeController';
+  }]);
+
+angular.module('phonecatApp')
+.service('About', function () { /* ... */ })
+.controller('AboutController', ['$scope', 'About',
+  function ($scope, About) {
+      $scope.message = 'Hello from AboutController';
+  }]);
+
+
+
 var phonecatControllers = angular.module('phonecatControllers', []);
 
 phonecatControllers.controller('PhoneListController', ['$scope', 'Phone',

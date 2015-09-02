@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="appAngular">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular simple 1</title>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/enric.css" rel="stylesheet">
+
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="app/app.services.js"></script>
+    <script type="text/javascript" src="app/app.core.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/directives.js"></script>
+    <script type="text/javascript" src="app/routes.js"></script>
+    <!-- Modulo Menu -->
+    <script type="text/javascript" src="app/components/menu/menu.constants.js"></script>
+    <script type="text/javascript" src="app/components/menu/directives/appmenu.directive.js"></script>
+    <script type="text/javascript" src="app/components/menu/menu.ctrl.js"></script>
+    <!-- Modulo Home -->
+    <script type="text/javascript" src="app/components/home/home.routes.js"></script>
+    <script type="text/javascript" src="app/components/home/home.ctrl.js"></script>
+    <!-- Modulo Users -->
+    <script type="text/javascript" src="app/components/users/users.routes.js"></script>
+    <script type="text/javascript" src="app/components/users/controllers/users.ctrl.js"></script>
+    <script type="text/javascript" src="app/components/users/controllers/list-users.ctrl.js"></script>
+    <script type="text/javascript" src="app/components/users/services/users.service.js"></script> <!-- acceso a datos -->
+    <!-- Modulo Movies -->
+    <script type="text/javascript" src="app/components/movies/movies.routes.js"></script>
+    <script type="text/javascript" src="app/components/movies/services/movies.service.js"></script>
+    <script type="text/javascript" src="app/components/movies/controllers/movies.ctrl.js"></script>
+</head>
+<body>
+    <appheader></appheader>
+    <div class="full">
+
+        <div class="container">
+            <appmenu></appmenu>
+            <hr>
+            <div ng-view>
+            </div>
+        </div>
+    </div>
+
+    <appfooter></appfooter>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<div ng-controller="MenuController as nav" class="row">
+    <div class="col-xs-12">
+        <div class="jumbotron">
+
+            <h1 class="bg-primary "> Menú navegación con
+                <small>{{nav.textoConstante}}</small>
+            </h1>
+        </div>
+    </div>
+
+    <nav class="col-xs-12">
+
+
+        <ul class="nav nav-pills">  <!-- añadir nav-stacked para menu vertical-->
+            <li class="active"><a href="#/home">Inicio</a></li>
+            <li><a href="#/users">Lista usuarios</a></li>
+            <li><a href="#/edit-users">Editar usuarios</a></li>
+            <li><a href="#/movies/popular">Peliculas</a></li>
+            <li class="disabled"><a href="#">Desabilitada</a></li>
+            <!--<li class="active"><a href="">Activa</a></li>-->
+        </ul>
+
+
+        <p> Estoy en:{{nav.estoyEn()}} </p>
+    </nav>
+
+
+
+
+
+
+</div>

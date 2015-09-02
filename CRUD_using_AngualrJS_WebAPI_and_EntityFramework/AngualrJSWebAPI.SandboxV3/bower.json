@@ -1,0 +1,10 @@
+{
+  "name": "AngularSimple",
+  "version": "0.1",
+  "dependencies": {
+    "angular": "1.4.0-build.3896+sha.9b2a4c6",
+    "bootstrap": "3.3.2",
+    "angular-route": "1.4.0-build.3896+sha.9b2a4c6",
+    "angular-maps": "0.0.2"
+  }
+}

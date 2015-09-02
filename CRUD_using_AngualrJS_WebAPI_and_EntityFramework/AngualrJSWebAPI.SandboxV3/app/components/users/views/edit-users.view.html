@@ -1,0 +1,143 @@
+<p>{{usersCtrl.texto}}</p>
+
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <!--<div class="jumbotron">-->
+
+        <h3 class="bg-primary "> Tabla de usuarios</h3> <!-- añadir text-center para centrar texto-->
+
+        <!--<div class="table-responsive">-->
+
+        <!--<table class="table table-bordered table-striped table-condensed table-hover">-->
+        <table class="table table-bordered table-condensed ">
+            <thead>
+            <th>id</th>
+            <th>nombre</th>
+            <th>telefono</th>
+            <th>saludo</th>
+            <th>orden</th>
+            </thead>
+            <tbody>
+
+            <tr ng-repeat="varUsuario in usersCtrl.arrUsuarios | filter:usersCtrl.busqueda
+                            | filter:usersCtrl.buscar "
+                ng-if="varUsuario.activo">
+
+                <td><a href="#/edit-users" ng-click="usersCtrl.seleccionar(varUsuario.id)">{{varUsuario.id}} </a></td>
+                <td>{{varUsuario.nombre}} </td>
+                <td>{{varUsuario.telefono}}</td>
+                <td>{{ usersCtrl.saludar(varUsuario.nombre) }}</td>
+                <td >{{varUsuario.indice=$index}}</td>
+
+            </tr>
+
+            </tbody>
+        </table>
+
+        <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>
+
+
+
+
+
+
+<div class="row">
+    <div class="col-xs-12">
+
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="id">id: </label>
+                <div class="col-sm-5">
+                    <input type="number" class="form-control" name="id" ng-model="usersCtrl.usuario.id" required />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="nombre">nombre: </label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" name="nombre" ng-model="usersCtrl.usuario.nombre" required />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="telefono">Telefono:</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" name="telefono" ng-model="usersCtrl.usuario.telefono"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-5">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" ng-model="usersCtrl.usuario.activo"> Activo
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-sm-offset-2 col-sm-5">
+
+                <div class="form-group">
+                    <div class="btn-group">
+                        <button class="btn btn-primary" ng-click="usersCtrl.guardar()"  ng-disabled="usersCtrl.isDisabled">Añadir</button>
+                        <button class="btn btn-primary" ng-click="usersCtrl.eliminar()" ng-disabled="!usersCtrl.isDisabled">Eliminar</button>
+                        <button class="btn btn-primary" ng-click="usersCtrl.modificar()" ng-disabled="!usersCtrl.isDisabled">modificar</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+</div>
+
+
+
+<!-- Formulario -->
+
+<div class="row">
+    <div class="col-xs-12">
+
+        <form class="form-horizontal" role="form">
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="buscar">Buscar usuario</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" name="buscar" ng-model="usersCtrl.busqueda"/>
+                </div>
+                <span>  {{usersCtrl.busqueda}} <BR> </span>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="buscarNombre">Buscar usuario por nombre</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" name="buscarNombre" ng-model="usersCtrl.buscar.nombre"/>
+                </div>
+                <span>  {{usersCtrl.buscar.nombre}} <BR> </span>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="buscarTelefono">Buscar usuario por telefono</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" name="buscarTelefono" ng-model="usersCtrl.buscar.telefono"/>
+                </div>
+                <span>  {{usersCtrl.buscar.telefono}} <BR> </span>
+            </div>
+
+
+
+        </form>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,18 @@
+{
+  "name": "angular",
+  "version": "1.4.0-build.3896+sha.9b2a4c6",
+  "main": "./angular.js",
+  "ignore": [],
+  "dependencies": {},
+  "homepage": "https://github.com/angular/bower-angular",
+  "_release": "1.4.0-build.3896+sha.9b2a4c6",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.4.0-build.3896+sha.9b2a4c6",
+    "commit": "e94611e30b9be17f4af4918179e7268f911981de"
+  },
+  "_source": "git://github.com/angular/bower-angular.git",
+  "_target": "1.4.0-build.3896+sha.9b2a4c6",
+  "_originalSource": "angular",
+  "_direct": true
+}

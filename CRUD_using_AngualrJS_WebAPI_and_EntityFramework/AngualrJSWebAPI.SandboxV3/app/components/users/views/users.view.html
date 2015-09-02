@@ -1,0 +1,14 @@
+<p>{{listUsersCtrl.texto}}</p>
+
+<div class="row">
+    <div class="col-xs-12">
+        <!--<div class="jumbotron">-->
+
+        <h3 class="bg-primary "> Lista de usuarios</h3> <!-- añadir text-center para centrar texto-->
+
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-info" ng-repeat="varUsuario in listUsersCtrl.arrUsuarios">{{varUsuario.nombre}}</li>
+        </ul>
+        <!--</div>-->
+    </div>
+</div>
