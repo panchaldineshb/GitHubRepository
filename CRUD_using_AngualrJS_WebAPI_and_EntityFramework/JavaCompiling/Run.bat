@@ -1,0 +1,1 @@
+java -cp bin; crunchify.com.tutorial.CrunchifyReadConfigMain
