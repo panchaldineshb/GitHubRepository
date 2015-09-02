@@ -19,132 +19,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngualrJSWebAPIApp.ViewMode
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngualrJSWebAPIApp.API", "AngualrJSWebAPIApp.API\AngualrJSWebAPIApp.API.csproj", "{1C7A2A53-D942-4A7D-A83B-D9C09D14587B}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AngualrJSWebAPI.ResponsiveDesign", "http://localhost:59185", "{368AD79D-B0EC-41E1-B6DD-81BA7DD00AC1}"
-	ProjectSection(WebsiteProperties) = preProject
-		UseIISExpress = "true"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_59185"
-		Debug.AspNetCompiler.PhysicalPath = "AngualrJSWebAPI.ResponsiveDesign\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59185\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_59185"
-		Release.AspNetCompiler.PhysicalPath = "AngualrJSWebAPI.ResponsiveDesign\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59185\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "AngualrJSWebAPI.ResponsiveDesign\"
-	EndProjectSection
-EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AngualrJSWebAPI.FixedDesign", "http://localhost:61992", "{8C8BF959-5290-4D12-AB96-85B4D93E04D2}"
-	ProjectSection(WebsiteProperties) = preProject
-		UseIISExpress = "true"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_61992"
-		Debug.AspNetCompiler.PhysicalPath = "AngualrJSWebAPI.FixedDesign\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_61992\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_61992"
-		Release.AspNetCompiler.PhysicalPath = "AngualrJSWebAPI.FixedDesign\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_61992\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "AngualrJSWebAPI.FixedDesign\"
-	EndProjectSection
-EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AngualrJSWebAPI.AngularJs-mdl-dashboard", "http://localhost:50811", "{EA2DC543-CC21-4A33-89C3-4F9C72635DB9}"
-	ProjectSection(WebsiteProperties) = preProject
-		UseIISExpress = "true"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_50811"
-		Debug.AspNetCompiler.PhysicalPath = "AngualrJSWebAPI.AngularJs-mdl-dashboard\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50811\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_50811"
-		Release.AspNetCompiler.PhysicalPath = "AngualrJSWebAPI.AngularJs-mdl-dashboard\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50811\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "AngualrJSWebAPI.AngularJs-mdl-dashboard\"
-	EndProjectSection
-EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AngualrJSWebAPI.AngularJs-Dashboard", "http://localhost:51071", "{3FCD23D8-28C2-40FE-BEBA-B969FCF4D6A4}"
-	ProjectSection(WebsiteProperties) = preProject
-		UseIISExpress = "true"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_51071"
-		Debug.AspNetCompiler.PhysicalPath = "AngualrJSWebAPI.AngularJs-Dashboard\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51071\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_51071"
-		Release.AspNetCompiler.PhysicalPath = "AngualrJSWebAPI.AngularJs-Dashboard\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51071\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "AngualrJSWebAPI.AngularJs-Dashboard\"
-	EndProjectSection
-EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AngualrJSWebAPI.Sandbox.PhoneCat", "http://localhost:56863", "{6920A80D-12BD-4937-9512-807C1F20A1E6}"
-	ProjectSection(WebsiteProperties) = preProject
-		UseIISExpress = "true"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_56863"
-		Debug.AspNetCompiler.PhysicalPath = "AngualrJSWebAPI.Sandbox.PhoneCat\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56863\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_56863"
-		Release.AspNetCompiler.PhysicalPath = "AngualrJSWebAPI.Sandbox.PhoneCat\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56863\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "AngualrJSWebAPI.Sandbox.PhoneCat\"
-	EndProjectSection
-EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AngualrJSWebAPI.AngularJS-dashboard-ZipArtStudio", "http://localhost:56976", "{59401945-49B7-4A9B-8808-189356F63FBB}"
-	ProjectSection(WebsiteProperties) = preProject
-		UseIISExpress = "true"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_56976"
-		Debug.AspNetCompiler.PhysicalPath = "AngualrJSWebAPI.AngularJS-dashboard-ZipArtStudio\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56976\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_56976"
-		Release.AspNetCompiler.PhysicalPath = "AngualrJSWebAPI.AngularJS-dashboard-ZipArtStudio\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56976\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "AngualrJSWebAPI.AngularJS-dashboard-ZipArtStudio\"
-	EndProjectSection
-EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AngualrJSWebAPI.SandboxV1", "http://localhost:53616", "{7F189139-AF50-46C3-9288-37EB95FA63DC}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
@@ -187,48 +61,25 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AngualrJSWebAPI.SandboxV2",
 		SlnRelativePath = "AngualrJSWebAPI.SandboxV2\"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavaCompiling", "JavaCompiling\JavaCompiling.csproj", "{1E1C9F7F-6466-4AD0-8AB8-630AAB143C6D}"
-EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AngualrJSWebAPI.SandboxV3", "http://localhost:60264", "{4694C341-F55D-4E46-8430-D39F200E01CB}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AngualrJSWebAPI.Sandbox.PhoneCat", "http://localhost:56863", "{6920A80D-12BD-4937-9512-807C1F20A1E6}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_60264"
-		Debug.AspNetCompiler.PhysicalPath = "AngualrJSWebAPI.SandboxV3\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60264\"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_56863"
+		Debug.AspNetCompiler.PhysicalPath = "AngualrJSWebAPI.Sandbox.PhoneCat\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56863\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_60264"
-		Release.AspNetCompiler.PhysicalPath = "AngualrJSWebAPI.SandboxV3\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60264\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_56863"
+		Release.AspNetCompiler.PhysicalPath = "AngualrJSWebAPI.Sandbox.PhoneCat\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56863\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "AngualrJSWebAPI.SandboxV3\"
-	EndProjectSection
-EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AngualrJSWebAPI.SandboxV4", "http://localhost:60403", "{F2184B1B-91AE-4F98-82E8-D90DEEF209B9}"
-	ProjectSection(WebsiteProperties) = preProject
-		UseIISExpress = "true"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_60403"
-		Debug.AspNetCompiler.PhysicalPath = "AngualrJSWebAPI.SandboxV4\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60403\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_60403"
-		Release.AspNetCompiler.PhysicalPath = "AngualrJSWebAPI.SandboxV4\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60403\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "AngualrJSWebAPI.SandboxV4\"
+		SlnRelativePath = "AngualrJSWebAPI.Sandbox.PhoneCat\"
 	EndProjectSection
 EndProject
 Global
@@ -269,30 +120,6 @@ Global
 		{1C7A2A53-D942-4A7D-A83B-D9C09D14587B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C7A2A53-D942-4A7D-A83B-D9C09D14587B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C7A2A53-D942-4A7D-A83B-D9C09D14587B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{368AD79D-B0EC-41E1-B6DD-81BA7DD00AC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{368AD79D-B0EC-41E1-B6DD-81BA7DD00AC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{368AD79D-B0EC-41E1-B6DD-81BA7DD00AC1}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{368AD79D-B0EC-41E1-B6DD-81BA7DD00AC1}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{8C8BF959-5290-4D12-AB96-85B4D93E04D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8C8BF959-5290-4D12-AB96-85B4D93E04D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8C8BF959-5290-4D12-AB96-85B4D93E04D2}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{8C8BF959-5290-4D12-AB96-85B4D93E04D2}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{EA2DC543-CC21-4A33-89C3-4F9C72635DB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA2DC543-CC21-4A33-89C3-4F9C72635DB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EA2DC543-CC21-4A33-89C3-4F9C72635DB9}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA2DC543-CC21-4A33-89C3-4F9C72635DB9}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{3FCD23D8-28C2-40FE-BEBA-B969FCF4D6A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3FCD23D8-28C2-40FE-BEBA-B969FCF4D6A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3FCD23D8-28C2-40FE-BEBA-B969FCF4D6A4}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{3FCD23D8-28C2-40FE-BEBA-B969FCF4D6A4}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{6920A80D-12BD-4937-9512-807C1F20A1E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6920A80D-12BD-4937-9512-807C1F20A1E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6920A80D-12BD-4937-9512-807C1F20A1E6}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{6920A80D-12BD-4937-9512-807C1F20A1E6}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{59401945-49B7-4A9B-8808-189356F63FBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{59401945-49B7-4A9B-8808-189356F63FBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{59401945-49B7-4A9B-8808-189356F63FBB}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{59401945-49B7-4A9B-8808-189356F63FBB}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{7F189139-AF50-46C3-9288-37EB95FA63DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7F189139-AF50-46C3-9288-37EB95FA63DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F189139-AF50-46C3-9288-37EB95FA63DC}.Release|Any CPU.ActiveCfg = Debug|Any CPU
@@ -301,18 +128,10 @@ Global
 		{4274C526-FDCB-4A11-A3F9-A7E8A02B9086}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4274C526-FDCB-4A11-A3F9-A7E8A02B9086}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{4274C526-FDCB-4A11-A3F9-A7E8A02B9086}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{1E1C9F7F-6466-4AD0-8AB8-630AAB143C6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1E1C9F7F-6466-4AD0-8AB8-630AAB143C6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1E1C9F7F-6466-4AD0-8AB8-630AAB143C6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1E1C9F7F-6466-4AD0-8AB8-630AAB143C6D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4694C341-F55D-4E46-8430-D39F200E01CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4694C341-F55D-4E46-8430-D39F200E01CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4694C341-F55D-4E46-8430-D39F200E01CB}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{4694C341-F55D-4E46-8430-D39F200E01CB}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{F2184B1B-91AE-4F98-82E8-D90DEEF209B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F2184B1B-91AE-4F98-82E8-D90DEEF209B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F2184B1B-91AE-4F98-82E8-D90DEEF209B9}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{F2184B1B-91AE-4F98-82E8-D90DEEF209B9}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{6920A80D-12BD-4937-9512-807C1F20A1E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6920A80D-12BD-4937-9512-807C1F20A1E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6920A80D-12BD-4937-9512-807C1F20A1E6}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{6920A80D-12BD-4937-9512-807C1F20A1E6}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
