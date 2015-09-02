@@ -1,0 +1,126 @@
+﻿<!doctype html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+    <meta charset="utf-8">
+    <title>Angular application</title>
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.5/custom/bootstrap.min.css" rel="stylesheet" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/app.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-animate.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-resource.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/animations.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Tutorial Republic</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/Home">Home</a></li>
+                    <li><a href="/About">About</a></li>
+                    <li><a href="/Contact">Contact</a></li>
+                    <li class="disabled"><a href="#">Desabilitada</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Page Content -->
+    <div class="container" ng-controller="HomeController">
+
+        <!-- Post Content -->
+
+        <div class="content-wrapper" ng-view></div>
+
+        <div class="gridStyle" ng-grid="gridOptions"></div>
+
+        <form name="myForm" class="form-horizontal">
+            <fieldset>
+                <legend>User Details</legend>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="inputId">Id</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" id="inputId" type="text" ng-model="New.Id" placeholder="Id">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="inputName">Name</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" id="inputName" type="text" ng-model="New.Name" placeholder="Name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="inputCity">City</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" id="inputCity" type="text" ng-model="New.City" placeholder="City">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="inputAddress">Address</label>
+                    <div class="col-lg-10">
+                        <textarea class="form-control" id="inputAddress" ng-model="New.Address" placeholder="Address" rows="3"></textarea>
+                        <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="inputContactNo">ContactNo</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" id="inputContactNo" type="text" ng-model="New.ContactNo" placeholder="ContactNo">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="inputEmailId">Email</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" id="inputEmailId" type="text" ng-model="New.EmailId" placeholder="EmailId">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button class="btn btn-default" type="reset">Cancel</button>
+                        <button class="btn btn-primary" type="submit" ng-click="update()">Submit</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+        <hr>
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy;2014 Sarabi LLC | <a href="panchaldineshb@gmail.com">Contact Us</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

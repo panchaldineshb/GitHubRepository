@@ -2,24 +2,71 @@
 <html lang="en" ng-app="phonecatApp">
 <head>
     <meta charset="utf-8">
-    <title>Google Phone Gallery</title>
+    <title>Angular application</title>
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.5/custom/bootstrap.min.css" rel="stylesheet" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.min.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <script src="lib/jquery/jquery-1.10.2.js"></script>
-    <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular/angular-animate.js"></script>
-    <script src="lib/angular/angular-resource.js"></script>
-    <script src="lib/angular/angular-route.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-animate.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-resource.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+
     <script src="js/app.js"></script>
-    <script src="js/animations.js"></script>
+    <script src="js/services.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/filters.js"></script>
-    <script src="js/services.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/animations.js"></script>
 </head>
 <body>
-    <div class="view-container">
-        <div ng-view class="view-frame"></div>
+    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Tutorial Republic</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html#/home">Home</a></li>
+                    <li><a href="index.html#/about">About</a></li>
+                    <li><a href="index.html#/contact">Contact</a></li>
+                    <li class="disabled"><a href="#">Desabilitada</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Post Content -->
+
+        <div class="view-container">
+            <div ng-view class="view-frame"></div>
+        </div>
+
+        <hr>
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy;2014 Sarabi LLC | <a href="panchaldineshb@gmail.com">Contact Us</a></p>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
