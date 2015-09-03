@@ -58,16 +58,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AngualrJSWebAPI.Shared\AngualrJSWebAPI.Shared.csproj">
-      <Project>{50907560-09ac-4e2a-b3c8-6e0d2eff23af}</Project>
-      <Name>AngualrJSWebAPI.Shared</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AngualrJSWebAPIModel\AngualrJSWebAPIApp.Models.csproj">
-      <Project>{8328dba0-3ad7-40c4-afc7-cf103a746d53}</Project>
-      <Name>AngualrJSWebAPIApp.Models</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

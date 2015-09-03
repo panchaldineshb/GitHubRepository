@@ -203,10 +203,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AngualrJSWebAPI.Shared\AngualrJSWebAPI.Shared.csproj">
-      <Project>{50907560-09ac-4e2a-b3c8-6e0d2eff23af}</Project>
-      <Name>AngualrJSWebAPI.Shared</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AngualrJSWebAPIApp.ViewModels\AngualrJSWebAPIApp.ViewModels.csproj">
       <Project>{d33c3969-d281-4844-b8a3-9e6394fe6cb2}</Project>
       <Name>AngualrJSWebAPIApp.ViewModels</Name>
@@ -214,10 +210,6 @@
     <ProjectReference Include="..\AngualrJSWebAPIDAL\AngualrJSWebAPIApp.DAL.csproj">
       <Project>{1cc6aa4a-9760-4da0-a78d-81524aca06ab}</Project>
       <Name>AngualrJSWebAPIApp.DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AngualrJSWebAPIModel\AngualrJSWebAPIApp.Models.csproj">
-      <Project>{8328dba0-3ad7-40c4-afc7-cf103a746d53}</Project>
-      <Name>AngualrJSWebAPIApp.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
