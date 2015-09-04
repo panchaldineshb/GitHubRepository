@@ -12,4 +12,3 @@ C:\Projects\CRUD_using_AngualrJS_WebAPI_and_EntityFramework\AngualrJSWebAPIDAL\b
 C:\Projects\CRUD_using_AngualrJS_WebAPI_and_EntityFramework\AngualrJSWebAPIDAL\obj\Debug\AngualrJSWebAPIApp.DAL.csprojResolveAssemblyReference.cache
 C:\Projects\CRUD_using_AngualrJS_WebAPI_and_EntityFramework\AngualrJSWebAPIDAL\obj\Debug\AngualrJSWebAPIApp.DAL.dll
 C:\Projects\CRUD_using_AngualrJS_WebAPI_and_EntityFramework\AngualrJSWebAPIDAL\obj\Debug\AngualrJSWebAPIApp.DAL.pdb
-C:\Projects\GitHub\GitHubRepository\CRUD_using_AngualrJS_WebAPI_and_EntityFramework\AngualrJSWebAPIDAL\bin\Debug\EntityFramework.dll

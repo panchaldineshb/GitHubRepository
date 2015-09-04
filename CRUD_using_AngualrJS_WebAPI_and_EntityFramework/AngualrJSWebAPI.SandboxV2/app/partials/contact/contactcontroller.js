@@ -9,6 +9,21 @@ angular.module('phonecatApp')
           query: { method: 'GET', params: { phoneId: 'phones' }, isArray: true }
       });
   }])
+.factory('Contact2', function ($http, $q) { /* parameters not working properly */
+    return {
+        query: function () {
+            var deferred = $q.defer();
+            $http({ method: "GET", url: 'phones/:phoneId.json', params: { phoneId: 'phones' }, isArray: true })
+                .success(function (data, status, headers, config) {
+                    deferred.resolve(data);
+                }).error(function (data, status, headers, config) {
+                    deferred.reject(data);
+                });
+            return deferred.promise;
+        }
+    }
+})
+
 .controller('ContactController', ['$scope', 'Contact',
   function ($scope, Contact) {
       $scope.phones = Contact.query();
