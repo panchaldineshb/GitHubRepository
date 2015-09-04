@@ -16,12 +16,7 @@ angular.module('phonecatApp')
       $scope.message = 'Hello from AboutController';
   }]);
 
-angular.module('phonecatApp')
-.service('Contact', function () { /* ... */ })
-.controller('ContactController', ['$scope', 'Contact',
-  function ($scope, Contact) {
-      $scope.message = 'Hello from ContactController';
-  }]);
+
 
 var phonecatControllers = angular.module('phonecatControllers', []);
 

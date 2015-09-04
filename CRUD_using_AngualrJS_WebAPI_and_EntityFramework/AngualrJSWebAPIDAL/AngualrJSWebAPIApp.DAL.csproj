@@ -60,6 +60,12 @@
   <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AngualrJSWebAPIModel\AngualrJSWebAPIApp.Models.csproj">
+      <Project>{8328dba0-3ad7-40c4-afc7-cf103a746d53}</Project>
+      <Name>AngualrJSWebAPIApp.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

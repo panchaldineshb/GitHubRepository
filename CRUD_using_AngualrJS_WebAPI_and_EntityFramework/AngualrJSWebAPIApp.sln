@@ -45,6 +45,14 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AngualrJSWebAPI.Sandbox.Pho
 		SlnRelativePath = "AngualrJSWebAPI.Sandbox.PhoneCat\"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngualrJSWebAPIApp.API", "AngualrJSWebAPIApp.API\AngualrJSWebAPIApp.API.csproj", "{1C7A2A53-D942-4A7D-A83B-D9C09D14587B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngualrJSWebAPIApp.DAL", "AngualrJSWebAPIDAL\AngualrJSWebAPIApp.DAL.csproj", "{1CC6AA4A-9760-4DA0-A78D-81524ACA06AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngualrJSWebAPIApp.Models", "AngualrJSWebAPIModel\AngualrJSWebAPIApp.Models.csproj", "{8328DBA0-3AD7-40C4-AFC7-CF103A746D53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngualrJSWebAPIApp.ViewModels", "AngualrJSWebAPIApp.ViewModels\AngualrJSWebAPIApp.ViewModels.csproj", "{D33C3969-D281-4844-B8A3-9E6394FE6CB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +67,22 @@ Global
 		{6920A80D-12BD-4937-9512-807C1F20A1E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6920A80D-12BD-4937-9512-807C1F20A1E6}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{6920A80D-12BD-4937-9512-807C1F20A1E6}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{1C7A2A53-D942-4A7D-A83B-D9C09D14587B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C7A2A53-D942-4A7D-A83B-D9C09D14587B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C7A2A53-D942-4A7D-A83B-D9C09D14587B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C7A2A53-D942-4A7D-A83B-D9C09D14587B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CC6AA4A-9760-4DA0-A78D-81524ACA06AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CC6AA4A-9760-4DA0-A78D-81524ACA06AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CC6AA4A-9760-4DA0-A78D-81524ACA06AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CC6AA4A-9760-4DA0-A78D-81524ACA06AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8328DBA0-3AD7-40C4-AFC7-CF103A746D53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8328DBA0-3AD7-40C4-AFC7-CF103A746D53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8328DBA0-3AD7-40C4-AFC7-CF103A746D53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8328DBA0-3AD7-40C4-AFC7-CF103A746D53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D33C3969-D281-4844-B8A3-9E6394FE6CB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D33C3969-D281-4844-B8A3-9E6394FE6CB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D33C3969-D281-4844-B8A3-9E6394FE6CB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D33C3969-D281-4844-B8A3-9E6394FE6CB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

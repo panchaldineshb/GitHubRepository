@@ -19,3 +19,4 @@ C:\Projects\CRUD_using_AngualrJS_WebAPI_and_EntityFramework\AngualrJSWebAPIApp.V
 C:\Projects\CRUD_using_AngualrJS_WebAPI_and_EntityFramework\AngualrJSWebAPIApp.ViewModels\bin\Debug\System.Web.Http.xml
 C:\Projects\CRUD_using_AngualrJS_WebAPI_and_EntityFramework\AngualrJSWebAPIApp.ViewModels\obj\Debug\AngualrJSWebAPIApp.ViewModels.dll
 C:\Projects\CRUD_using_AngualrJS_WebAPI_and_EntityFramework\AngualrJSWebAPIApp.ViewModels\obj\Debug\AngualrJSWebAPIApp.ViewModels.pdb
+C:\Projects\GitHub\GitHubRepository\CRUD_using_AngualrJS_WebAPI_and_EntityFramework\AngualrJSWebAPIApp.ViewModels\bin\Debug\Autofac.Integration.WebApi.xml

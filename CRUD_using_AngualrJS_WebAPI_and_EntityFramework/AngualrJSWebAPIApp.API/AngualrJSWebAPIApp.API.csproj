@@ -211,6 +211,10 @@
       <Project>{1cc6aa4a-9760-4da0-a78d-81524aca06ab}</Project>
       <Name>AngualrJSWebAPIApp.DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AngualrJSWebAPIModel\AngualrJSWebAPIApp.Models.csproj">
+      <Project>{8328dba0-3ad7-40c4-afc7-cf103a746d53}</Project>
+      <Name>AngualrJSWebAPIApp.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
