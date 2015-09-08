@@ -1,0 +1,112 @@
+<div style="margin-top: 50px;">  
+    <div class="row">
+        <div class="col-md-2">
+            <h3>Sida {{currentPage}}</h3>
+        </div>
+        <div class="col-md-3">
+            <h3>Antal sessions {{sessions.length}}</h3>
+        </div>
+        <div class="col-md-3">
+            <label for="search">Sök:</label>
+            <input style="width: " type="text" ng-model="search" placeholder="jag söker " class="form-control" >
+        </div>
+        <div class="col-md-3">
+            <label for="size">Visa per Sida</label>
+            <input class="form-control" type="number" ng-model="pageSize" min="1" max="20">
+        </div>
+        <div class="col-md-1">
+            <div style="margin-top: 25px;" class="onoffswitch">
+                <input type="checkbox" name="onoffswitch"  ng-init="session = true" class="onoffswitch-checkbox" id="sessions" ng-model="session" ng-click="manage(session)">
+                <label class="onoffswitch-label" for="sessions">
+                    <span class="onoffswitch-inner"></span>
+                    <span class="onoffswitch-switch"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+<div class='row'>
+    <div>
+        <table class='table'>
+            <thead>
+                <tr>
+                <th>ID</th>
+                <th>Förnamn</th>
+                <th>Efternamn</th>
+                <th>Användarnamn</th>
+                <th>Email</th>
+                <th>Avdelning</th>
+                <th>Utgående datum</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-switch="session.state" dir-paginate="session in sessions| filter:search|orderBy:'id' |itemsPerPage: pageSize" current-page="currentPage" ng-hide="session.show">
+                <td ng-class="setClass(session)" ng-switch-default>{{session.id}}</td>
+                <td ng-class="setClass(session)" ng-switch-default>{{session.firstname}}</td>
+                <td ng-class="setClass(session)" ng-switch-default>{{session.lastname}}</td>
+                <td ng-class="setClass(session)" ng-switch-default>{{session.username}}</td>
+                <td ng-class="setClass(session)" ng-switch-default>{{session.email}}</td>
+                <td ng-class="setClass(session)" ng-switch-default>{{session.department}}</td>
+                <td ng-class="setClass(session)" ng-switch-default>{{session.expiredate| date:"MM/dd/yyyy 'kl' h:mma"}}</td>
+                <td ng-switch-default="">
+                    <div class="onoffswitch">
+                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="sessionId{{$index + 1}}" ng-model="session.isvalid" ng-click="manageOneAtTime(session)">
+                        <label class="onoffswitch-label" for="sessionId{{$index + 1}}">
+                            <span class="onoffswitch-inner"></span>
+                            <span class="onoffswitch-switch"></span>
+                        </label>
+                    </div>
+                </td>
+                <td ng-switch-default>
+                    <input type="button" class="btn btn-primary btn-sm" ng-model="session.id" ng-click="getReadyForEdit(session)" value="edit">
+                </td>
+                <td ng-switch-default="">
+                    <a class="btn btn-danger btn-sm" ng-click="delete(session)">Delete</a>
+                </td>
+
+                <td ng-switch-when="editing" colspan="10">
+                    <form  class='form-inline'>
+                        <div class="form-group col-md-2">
+                            <label for="Förnamn">Förnamn</label>
+                            <input class='form-control' ng-model="session.firstname" placeholder="Förnamn" required="" />
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="Efternamn">Efternamn</label>
+                            <input class='form-control' ng-model="session.lastname" placeholder="Efternamn" required/>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="Användnamn">Användnamn</label>
+                            <input class='form-control' ng-readonly="diableUserName" ng-model="session.username" placeholder="Användnamn" required/>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="Email">Email</label>
+                            <input class='form-control' ng-model="session.email" placeholder="Email" required/>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="Avdelning">Avdelning</label>
+                            <input class='form-control' ng-model="session.department" placeholder="Avdelning" required/>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <div class="input-group">
+                                <script type="text/javascript">
+                                    $(function () {
+                                        $('#LifeTimePicker').datetimepicker();
+                                    });
+                                </script>
+                                <label for="UtgåendeDatum">UtgåendeDatum</label>
+                                <input type="text" id="LifeTimePicker" ng-model="session.expiredate" class="form-control"/>
+                            </div>
+                        </div>
+                        <input type='submit' ng-click="cancelUpdate(session)" class='btn btn-primary pull-right' value="Avbryt" />
+                        <input type='submit' ng-click="update(session)" class='btn btn-primary pull-right' value="Spara" />
+                    </form>
+                </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="other-controller">
+            <div class="text-center">
+                <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="Partials/dirPagination.html"></dir-pagination-controls>
+            </div>
+        </div>
+    </div>

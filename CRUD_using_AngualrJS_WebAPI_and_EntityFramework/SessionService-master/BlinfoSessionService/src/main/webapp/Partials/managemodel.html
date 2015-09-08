@@ -1,0 +1,38 @@
+<div ng-controller="ManageSessionCtrl" id="manageModel" class="modal fade manage" tabindex="-1" role="dialog" aria-labelledby="managModel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Hantera</h4>
+            </div>
+            <div class="modal-body row">
+                <div class="col-lg-6">
+                    <form ng-submit="deleteSessionByDays(manage)">
+                    Ta bort alla som är äldre än 
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="ange dagar" min="1"  ng-model="manage.days" required="required" numbers-only="numbers-only">
+                        <span class="input-group-btn">
+                            <input class="btn btn-danger" type="submit" value="Ta bort">
+                        </span>
+                    </div>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <form ng-submit="validateSessionByHours(manage)">
+                        Inaktivera alla som är äldre än  
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="ange timmar" min="1" ng-model="manage.hours"  required="required" numbers-only="numbers-only">
+                            <span class="input-group-btn">
+                                <input class="btn btn-danger" type="submit" value="Inaktivera">
+                                 <img ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Stäng</button>
+            </div>
+        </div>
+    </div>
+</div>

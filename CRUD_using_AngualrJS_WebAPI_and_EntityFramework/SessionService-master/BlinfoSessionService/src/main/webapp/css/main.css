@@ -1,0 +1,78 @@
+#loginBox {
+    margin: auto;
+    position: absolute;
+    width: 300px;
+    top: 300px; left: 0; bottom: 0; right: 0;
+}
+#logo{
+    background: url("http://www.blinfo.se/images/blinfo.png")no-repeat center;
+    height: 150px;
+}
+.disable{
+    text-decoration: line-through;
+    font-weight: bold;
+    color: white;
+    background-color: red;
+    opacity: 0.5;
+}.enable{
+    font-weight: bold;
+    color: white;
+    background-color: green;
+    opacity: 0.5;
+} .onoffswitch {
+    position: relative; 
+    width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; 
+    width: 200%; margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s; 
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; 
+    float: left; 
+    width: 50%; height: 30px; 
+    padding: 0; line-height: 30px;
+    font-size: 14px; color: white; 
+    font-family: Trebuchet, Arial, sans-serif; 
+    font-weight: bold;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "Slå av";
+    padding-left: 10px;
+    background-color: #0FCF0F; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "Slå på";
+    padding-right: 10px;
+    background-color: #D93636; color: #FFFFFF;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #FFFFFF;
+    border: 2px solid #999999; border-radius: 20px;
+    position: absolute; top: 0; bottom: 0; right: 56px;
+    -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
+    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}  
+
+

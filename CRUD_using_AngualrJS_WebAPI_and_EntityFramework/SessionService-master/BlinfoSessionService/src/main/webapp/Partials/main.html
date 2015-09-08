@@ -1,0 +1,17 @@
+
+<div id="mainPage" ng-init="getAllSessions();">
+    <div class="row">
+        <div class="pull-right">
+            <ul class="nav nav-pills">
+                <li><a class="btn btn-link" ng-click="addNewSession()">Lägg till</a></li>
+                <li><a class="btn btn-link" data-toggle="modal" data-target=".manage">Hantera</a></li>
+                <li><a class="btn btn-link" data-toggle="modal" data-target=".settings">Inställnigar</a></li>
+                <li> <a href="#login" class="btn btn-link" >Logga ut</a></li>
+            </ul>
+        </div>
+    </div> 
+    <session-form></session-form>
+    <sessions></sessions>
+    <manage></manage>
+    <setting></setting>
+</div> 
