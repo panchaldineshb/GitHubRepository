@@ -27,6 +27,18 @@ phonecatApp.config(['$routeProvider', '$locationProvider', '$httpProvider',
              templateUrl: 'partials/about/about.html',
              controller: 'AboutController'
          }).
+         when('/register', {
+             templateUrl: 'partials/organization/register.html',
+             controller: 'OrganizationController'
+         }).
+         when('/login', {
+             templateUrl: 'partials/account/login.html',
+             controller: 'AccountController'
+         }).
+         when('/logoff', {
+             templateUrl: 'partials/account/logoff.html',
+             controller: 'AccountController'
+         }).
          when('/contact', {
              templateUrl: 'partials/contact/contact.html',
              controller: 'ContactController'
@@ -51,12 +63,9 @@ phonecatApp.run(['$rootScope', '$location', '$cookieStore', '$http',
        if ($rootScope.globals.currentUser) {
            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
        }
-
        $rootScope.$on('$locationChangeStart', function (event, next, current) {
-           // redirect to login page if not logged in and trying to access a restricted page
-           var restrictedPage = $.inArray($location.path(), ['/login', '/register']) === -1;
-           var loggedIn = $rootScope.globals.currentUser;
-           if (restrictedPage && !loggedIn) {
+           // redirect to login page if not logged in
+           if ($location.path() !== '/login' && !$rootScope.globals.currentUser) {
                $location.path('/login');
            }
        });
