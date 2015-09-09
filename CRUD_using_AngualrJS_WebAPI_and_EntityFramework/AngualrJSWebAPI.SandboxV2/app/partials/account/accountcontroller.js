@@ -1,7 +1,17 @@
 'use strict';
 
-/* Example used was 
+/* Examples
+
+This example is where Login logic was picked-up from:
 http://jasonwatmore.com/post/2014/05/26/AngularJS-Basic-HTTP-Authentication-Example.aspx
+
+
+Another example where structure is defined properly along with good promise objects:
+
+http://jasonwatmore.com/post/2015/03/10/AngularJS-User-Registration-and-Login-Example.aspx
+
+
+
 */
 
 /* Controllers */
