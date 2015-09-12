@@ -58,12 +58,13 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbarCollapse">
+
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="index.html#/home">Home</a></li>
                     <li><a href="index.html#/about">About</a></li>
                     <li><a href="index.html#/register">Register</a></li>
-                    <li><a href="index.html#/login">Login</a></li>
-                    <li><a class="disabled" href="index.html#/logoff">LogOff</a></li>
+                    <li><a ng-hide="{{LoggedIn()}}" href="index.html#/login">Login</a></li>
+                    <li><a ng-show="{{LoggedIn()}}" href="index.html#/logoff">LogOff</a></li>
                     <li><a href="index.html#/contact">Contact</a></li>
                 </ul>
             </div>
@@ -73,7 +74,15 @@
     <!-- Page Content -->
     <div class="container">
 
+        <hr>
+        <hr>
+        <hr>
+
         <!-- Post Content -->
+        <span class="user-info">
+            <small>Welcome,</small>
+            {{$rootScope.globals.currentUser.username}}
+        </span>
 
         <div class="view-container">
             <div ng-view class="view-frame"></div>

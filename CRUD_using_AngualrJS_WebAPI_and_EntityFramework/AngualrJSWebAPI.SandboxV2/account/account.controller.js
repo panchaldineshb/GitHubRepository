@@ -32,13 +32,10 @@ ROOT
         register.view.html
     app.js
     index.html
- 
 
 Another example where structure is defined properly along with good promise objects:
 
 http://jasonwatmore.com/post/2015/03/10/AngularJS-User-Registration-and-Login-Example.aspx
-
-
 
 */
 
@@ -48,18 +45,17 @@ angular
 .module('phonecatApp')
 .controller('AccountController', ['$scope', '$rootScope', '$location', 'Account',
     function ($scope, $rootScope, $location, Account) {
-        // reset login status
-        Account.ClearCredentials();
-
         $scope.logoff = function () {
+            // reset login status
             Account.ClearCredentials();
-            $location.path('/');
+            $location.path('/login');
         };
 
         $scope.login = function () {
             $scope.dataLoading = true;
             Account.Login($scope.username, $scope.password, function (response) {
                 if (response.success) {
+                    console.log('Username:' + $scope.username);
                     Account.SetCredentials($scope.username, $scope.password);
                     $location.path('/');
                 } else {
