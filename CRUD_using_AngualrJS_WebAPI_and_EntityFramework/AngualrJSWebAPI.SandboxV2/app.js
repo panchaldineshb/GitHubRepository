@@ -5,42 +5,38 @@
 var phonecatApp = angular.module('phonecatApp', [
   'ngRoute',
   'ngResource',
-  'ngCookies',
-  'phonecatAnimations',
-  'phonecatControllers',
-  'phonecatFilters',
-  'phonecatServices'
+  'ngCookies'
 ]);
 
 phonecatApp.config(['$routeProvider', '$locationProvider', '$httpProvider',
    function ($routeProvider, $locationProvider, $httpProvider) {
        $routeProvider.
          when('/', {
-             templateUrl: 'partials/home/home.html',
+             templateUrl: 'home/home.view.html',
              controller: 'HomeController'
          }).
          when('/home', {
-             templateUrl: 'partials/home/home.html',
+             templateUrl: 'home/home.view.html',
              controller: 'HomeController'
          }).
          when('/about', {
-             templateUrl: 'partials/about/about.html',
+             templateUrl: 'about/about.view.html',
              controller: 'AboutController'
          }).
          when('/register', {
-             templateUrl: 'partials/organization/register.html',
+             templateUrl: 'organization/register.view.html',
              controller: 'OrganizationController'
          }).
          when('/login', {
-             templateUrl: 'partials/account/login.html',
+             templateUrl: 'account/login.view.html',
              controller: 'AccountController'
          }).
          when('/logoff', {
-             templateUrl: 'partials/account/logoff.html',
+             templateUrl: 'account/logoff.view.html',
              controller: 'AccountController'
          }).
          when('/contact', {
-             templateUrl: 'partials/contact/contact.html',
+             templateUrl: 'contact/contact.view.html',
              controller: 'ContactController'
          }).
          when('/phones', {

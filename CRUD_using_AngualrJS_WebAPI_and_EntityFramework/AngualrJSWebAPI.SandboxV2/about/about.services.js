@@ -3,9 +3,9 @@
 /* Services */
 
 angular.module('phonecatApp')
-.factory('Home', ['$resource',
+.factory('About', ['$resource',
   function ($resource) {
-      return $resource('phones/home.json', {}, {
+      return $resource('app/phones/about.json', {}, {
           query: { method: 'GET', isArray: true }
       });
   }])
