@@ -19,6 +19,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
 
     <script src="app.js"></script>
+    <script src="config.js"></script>
 
     <!--<script src="js/services.js"></script>
     <script src="js/controllers.js"></script>
@@ -44,10 +45,11 @@
     <script src="organization/organization.services.js"></script>
     <script src="organization/organization.controller.js"></script>
 </head>
-<body>
-    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" data-ng-controller="NavigationController">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="container">
+<body class="fullscreen">
+    <div class="container-fluid">
+        <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" data-ng-controller="NavigationController">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -56,10 +58,11 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#">Tutorial Republic</a>
+                <a class="navbar-brand" href="#">{{$root.globals.currentUser.username}}</a>
             </div>
+
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbarCollapse">
-
                 <ul class="nav navbar-nav">
                     <li data-ng-class="{'active':isActive('/home')}"><a href="index.html#/home">Home</a></li>
                     <li data-ng-class="{'active':isActive('/about')}"><a href="index.html#/about">About</a></li>
@@ -69,22 +72,10 @@
                     <li data-ng-class="{'active':isActive('/contact')}"><a href="index.html#/contact">Contact</a></li>
                 </ul>
             </div>
-        </div>
-    </nav>
-
-    <!-- Page Content -->
-    <div class="container">
+        </nav>
 
         <hr>
-        <hr>
-        <hr>
-
-        <!-- Post Content -->
-
-        <span class="user-info">
-            <small>Welcome,</small>
-            {{globals.currentUser.username}}
-        </span>
+        <!-- Page Content -->
 
         <div class="view-container">
             <div ng-view class="view-frame"></div>

@@ -9,6 +9,7 @@ namespace AngualrJSWebAPIApp.DAL.Context
         public AngualrJSWebAPIAppDbContext()
             : base("name=Default")
         {
+            Database.SetInitializer(new DbContextInitializer());
         }
 
         public DbSet<Organization> Organizations { get; set; }

@@ -172,10 +172,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Concrete\UserSearchOptions.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Concrete\ApplicationRepository.cs" />
+    <Compile Include="Abstract\ISearchOptions.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">

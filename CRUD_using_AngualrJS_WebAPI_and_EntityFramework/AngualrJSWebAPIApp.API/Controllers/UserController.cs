@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Web.Http;
 using AngualrJSWebAPIApp.API.Abstract;
+using AngualrJSWebAPIApp.API.Concrete;
 using AngualrJSWebAPIApp.Models;
 
 namespace AngualrJSWebAPIApp.Web.ApiControllers
@@ -18,24 +19,35 @@ namespace AngualrJSWebAPIApp.Web.ApiControllers
 
         // GET api/<controller>
 
-        [AllowAnonymous]
-        public async Task<IHttpActionResult> Get()
-        {
-            var list = await _repUser.GetAllAsync();
+        //[AllowAnonymous]
+        //public async Task<IHttpActionResult> Get()
+        //{
+        //    var list = await _repUser.GetAllAsync();
 
-            return Ok(list);
-        }
+        //    return Ok(list);
+        //}
 
         // GET api/<controller>/5
 
+        // GET api/products?Id=1&Name=Product1&CreatedBy=1/4/2013&StockNumber=ABC0001
         [AllowAnonymous]
-        public async Task<IHttpActionResult> Get(string id)
+        public async Task<IHttpActionResult> Get([FromUri] UserSearchOptions searchOptions)
         {
-            if (id == null) return BadRequest();
+            if (!string.IsNullOrEmpty(searchOptions.Id))
+            {
+                var q = await _repUser.FindAsync(x => x.Id == searchOptions.Id);
 
-            var q = await _repUser.FindAsync(x => x.Id == id);
+                return Ok(new { User = q });
+            }
 
-            return Ok(new { User = q });
+            if (!string.IsNullOrEmpty(searchOptions.Name))
+            {
+                var q = await _repUser.FindAsync(x => x.Name == searchOptions.Name);
+
+                return Ok(new { User = q });
+            }
+
+            return BadRequest();
         }
 
         // POST api/<controller>

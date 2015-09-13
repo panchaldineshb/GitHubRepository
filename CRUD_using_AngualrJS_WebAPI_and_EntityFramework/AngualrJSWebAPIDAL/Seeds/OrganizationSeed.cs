@@ -1,6 +1,4 @@
-﻿using System;
-
-using AngualrJSWebAPIApp.DAL.Context;
+﻿using AngualrJSWebAPIApp.DAL.Context;
 using AngualrJSWebAPIApp.Models;
 
 namespace AngualrJSWebAPIApp.DAL.Seeds
@@ -27,10 +25,9 @@ namespace AngualrJSWebAPIApp.DAL.Seeds
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data. E.g.
             //
+            var organizations = new MockData(_dbContext).GetOrganizations().ToArray();
 
-            var organization = new Organization { Id = "1", Name = "Sarabi LLC", Address = "39 Henry Street", City = "Edison", CreatedOn = DateTime.Now, Active = true };
-
-            var organizationSeedBuilder = new SeedBuilder<Organization>(_dbContext).Create(organization);
+            var organizationSeedBuilder = new SeedBuilder<Organization>(_dbContext).Create(organizations);
 
             return this;
         }

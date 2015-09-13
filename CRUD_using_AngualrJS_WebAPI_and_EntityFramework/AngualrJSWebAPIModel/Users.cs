@@ -6,6 +6,8 @@
 
         public Organization Organization { get; set; }
 
+        public string Pin { get; set; }
+
         public string City { get; set; }
 
         public string Name { get; set; }

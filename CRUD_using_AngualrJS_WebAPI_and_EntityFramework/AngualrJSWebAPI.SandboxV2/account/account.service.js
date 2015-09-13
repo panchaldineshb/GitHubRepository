@@ -7,10 +7,27 @@ angular.module('phonecatApp')
     function (Base64, $http, $cookieStore, $rootScope, $timeout) {
     var service = {};
 
+    var baseUrl = config.apiurl;
+
+    var url = baseUrl + 'api/User';
+
     service.Login = function (username, password, callback) {
         /* Dummy authentication for testing, uses $timeout to simulate api call
              ----------------------------------------------*/
         $timeout(function () {
+            var urlToMakeCall = url + '?Name=' + username;
+            $http({ method: 'GET', url: urlToMakeCall }).
+              success(function (data, status, headers, config) {
+                  // this callback will be called asynchronously
+                  // when the response is available
+                  debugger;
+              }).
+              error(function (data, status, headers, config) {
+                  // called asynchronously if an error occurs
+                  // or server returns response with an error status.
+                  debugger;
+              });
+
             var response = { success: username === 'test' && password === 'test' };
             if (!response.success) {
                 response.message = 'Username or password is incorrect';
