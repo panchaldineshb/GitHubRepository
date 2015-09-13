@@ -12,6 +12,31 @@ angular.module('phonecatApp')
 
 */
 
+/*
+Examples referred
+http://www.masnun.com/2013/08/28/rest-access-in-angularjs-using-ngresource.html
+http://devdactic.com/improving-rest-with-ngresource/
+
+*/
+
+
+// Authenticate Resource
+angular.module('phonecatApp')
+.factory('Authenticate', ['Base64', '$http', '$resource', '$cookieStore', '$rootScope', '$timeout',
+    function (Base64, $http, $resource, $cookieStore, $rootScope, $timeout) {
+        var baseUrl = config.apiurl;
+        var url = baseUrl + 'api/User?Name=:Name';
+
+        return $resource(
+           "/api/booking/:Id",
+           { Id: "@Id" },
+           {
+               "update": { method: "PUT" },
+               "reviews": { 'method': 'GET', 'params': { 'reviews_only': "true" }, isArray: true }
+           }
+       );
+    }])
+
 angular.module('phonecatApp')
 .factory('Account', ['Base64', '$http', '$resource', '$cookieStore', '$rootScope', '$timeout',
     function (Base64, $http, $resource, $cookieStore, $rootScope, $timeout) {
