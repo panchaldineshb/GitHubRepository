@@ -36,6 +36,7 @@
 
     <script src="account/account.service.js"></script>
     <script src="account/account.controller.js"></script>
+    <script src="account/navigation.controller.js"></script>
 
     <script src="contact/contact.services.js"></script>
     <script src="contact/contact.controller.js"></script>
@@ -44,7 +45,7 @@
     <script src="organization/organization.controller.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" data-ng-controller="NavigationController">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="container">
             <div class="navbar-header">
@@ -60,12 +61,12 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
 
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html#/home">Home</a></li>
-                    <li><a href="index.html#/about">About</a></li>
-                    <li><a href="index.html#/register">Register</a></li>
-                    <li><a ng-hide="{{LoggedIn()}}" href="index.html#/login">Login</a></li>
-                    <li><a ng-show="{{LoggedIn()}}" href="index.html#/logoff">LogOff</a></li>
-                    <li><a href="index.html#/contact">Contact</a></li>
+                    <li data-ng-class="{'active':isActive('/home')}"><a href="index.html#/home">Home</a></li>
+                    <li data-ng-class="{'active':isActive('/about')}"><a href="index.html#/about">About</a></li>
+                    <li data-ng-class="{'active':isActive('/register')}"><a href="index.html#/register">Register</a></li>
+                    <li data-ng-class="{'active':isActive('/login')}" ng-if="!globals.currentUser.username"><a href="index.html#/login">Login</a></li>
+                    <li data-ng-class="{'active':isActive('/logoff')}" ng-if="globals.currentUser.username"><a href="index.html#/logoff">LogOff</a></li>
+                    <li data-ng-class="{'active':isActive('/contact')}"><a href="index.html#/contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -79,9 +80,10 @@
         <hr>
 
         <!-- Post Content -->
+
         <span class="user-info">
             <small>Welcome,</small>
-            {{$rootScope.globals.currentUser.username}}
+            {{globals.currentUser.username}}
         </span>
 
         <div class="view-container">

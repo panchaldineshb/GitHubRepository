@@ -60,12 +60,6 @@ phonecatApp.run(['$rootScope', '$location', '$cookieStore', '$http',
            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
        }
 
-       $rootScope.LoggedIn = function () {
-           var loggedIn = $rootScope.globals.currentUser || false;
-           console.log('loggedIn:' + loggedIn);
-           return loggedIn;
-       };
-
        $rootScope.$on('$locationChangeStart', function (event, next, current) {
            // redirect to login page if not logged in and trying to access a restricted page
            var restrictedPage = $.inArray($location.path(), ['/login', '/register']) === -1;

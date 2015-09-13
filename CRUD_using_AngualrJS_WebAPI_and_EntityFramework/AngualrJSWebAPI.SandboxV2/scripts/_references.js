@@ -1,16 +1,23 @@
-﻿/// <reference path="../app/js/animations.js" />
-/// <reference path="../app/js/app.js" />
-/// <reference path="../app/js/controllers.js" />
-/// <reference path="../app/js/directives.js" />
-/// <reference path="../app/js/filters.js" />
-/// <reference path="../app/js/services.js" />
-/// <reference path="../app/partials/about/aboutcontroller.js" />
-/// <reference path="../app/partials/about/aboutservices.js" />
-/// <reference path="../app/partials/home/homecontroller.js" />
-/// <reference path="../app/partials/home/homeservices.js" />
-/// <reference path="../app/partials/contact/contactcontroller.js" />
-/// <reference path="../app/partials/contact/contactservices.js" />
-/// <reference path="../app/partials/account/accountservice.js" />
-/// <reference path="../app/partials/account/accountcontroller.js" />
-/// <reference path="../app/partials/organization/organizationservice.js" />
-/// <reference path="../app/partials/organization/organizationcontroller.js" />
+﻿/// <reference path="/app-services/animations.js" />
+/// <reference path="/app-services/app.js" />
+/// <reference path="/app-services/controllers.js" />
+/// <reference path="/app-services/directives.js" />
+/// <reference path="/app-services/filters.js" />
+/// <reference path="/app-services/.services.js" />
+
+/// <reference path="/about/about.controller.js" />
+/// <reference path="/about/about.services.js" />
+
+/// <reference path="/home/home.controller.js" />
+/// <reference path="/home/home.services.js" />
+
+/// <reference path="/contact/contact.controller.js" />
+/// <reference path="/contact/contact.services.js" />
+
+/// <reference path="/account/account.service.js" />
+/// <reference path="/account/account.controller.js" />
+/// <reference path="/account/navigation.controller.js" />
+
+/// <reference path="/organization/organization.service.js" />
+/// <reference path="/organization/organization.controller.js" />
+
