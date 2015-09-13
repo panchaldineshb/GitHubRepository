@@ -50,6 +50,9 @@ phonecatApp.config(['$routeProvider', '$locationProvider', '$httpProvider',
          otherwise({
              redirectTo: '/'
          });
+
+       $httpProvider.defaults.useXDomain = true;
+       delete $httpProvider.defaults.headers.common['X-Requested-With'];
    }]);
 
 phonecatApp.run(['$rootScope', '$location', '$cookieStore', '$http',

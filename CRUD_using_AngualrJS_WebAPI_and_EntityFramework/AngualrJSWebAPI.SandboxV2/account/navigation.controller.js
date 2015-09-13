@@ -47,7 +47,6 @@ angular
     function ($scope, $rootScope, $location, Account) {
         $scope.isActive = function (path) {
             var active = $location.path().substr(0, path.length) == path;
-            console.log('Path:' + path + ' isActive:' + active);
             return active;
         };
 

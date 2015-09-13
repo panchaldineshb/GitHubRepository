@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Web.Http;
+
 using AngualrJSWebAPIApp.API.Abstract;
 using AngualrJSWebAPIApp.API.Concrete;
 using AngualrJSWebAPIApp.Models;
@@ -19,6 +20,7 @@ namespace AngualrJSWebAPIApp.Web.ApiControllers
 
         // GET api/<controller>
 
+        //[HttpGet]
         //[AllowAnonymous]
         //public async Task<IHttpActionResult> Get()
         //{
@@ -30,6 +32,7 @@ namespace AngualrJSWebAPIApp.Web.ApiControllers
         // GET api/<controller>/5
 
         // GET api/products?Id=1&Name=Product1&CreatedBy=1/4/2013&StockNumber=ABC0001
+        [HttpGet]
         [AllowAnonymous]
         public async Task<IHttpActionResult> Get([FromUri] UserSearchOptions searchOptions)
         {

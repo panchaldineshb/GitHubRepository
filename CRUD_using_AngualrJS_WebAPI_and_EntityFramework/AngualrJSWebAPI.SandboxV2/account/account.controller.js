@@ -55,7 +55,6 @@ angular
             $scope.dataLoading = true;
             Account.Login($scope.username, $scope.password, function (response) {
                 if (response.success) {
-                    console.log('Username:' + $scope.username);
                     Account.SetCredentials($scope.username, $scope.password);
                     $location.path('/');
                 } else {

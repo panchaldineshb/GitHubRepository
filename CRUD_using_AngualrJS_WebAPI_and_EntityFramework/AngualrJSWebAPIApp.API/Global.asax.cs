@@ -22,7 +22,11 @@ namespace AngualrJSWebAPIApp.API
         protected void Application_Start()
         {
             //To enable CORS for all Web API controllers in your application, pass an EnableCorsAttribute instance to the EnableCors method:
-            var enableCorsAttribute = new EnableCorsAttribute("*", "Origin, Content-Type, Accept", "GET, PUT, POST, DELETE, OPTIONS");
+            //var enableCorsAttribute = new EnableCorsAttribute("*", "Origin, Content-Type, Accept", "GET, PUT, POST, DELETE, OPTIONS");
+            //Earlier we had specified certain details for CORS (as you can see above), but then as per following link we stopped constraining
+            //https://github.com/mattmeisinger/ebay-watcher/blob/e141dcda6d97054d3e376b3fdf012589000350d0/eBayWatcher.WebAPI/App_Start/WebApiConfig.cs
+
+            var enableCorsAttribute = new EnableCorsAttribute("*", "*", "*");
             GlobalConfiguration.Configuration.EnableCors(enableCorsAttribute);
 
             AreaRegistration.RegisterAllAreas();
