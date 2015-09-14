@@ -45,7 +45,7 @@ namespace AngualrJSWebAPIApp.DAL.Seeds
         {
             return new List<User>
             {
-                new User() { Id = "1", Pin = "Jane", Organization = organization, Name = "Jane Austen", Address = "", City = "", CreatedOn = DateTime.Now, Active = true },
+                new User() { Id = "1", Pin = "Jane", Organization = organization, EmailId = "Jane.Austen@gmail.com", Name = "Jane Austen", Address = "", City = "", CreatedOn = DateTime.Now, Active = true },
                 new User() { Id = "2", Pin = "Miguel", Organization = organization, Name = "Miguel de Cervantes" },
                 new User() { Id = "3", Pin = "Charles", Organization = organization, Name = "Charles Dickens" },
                 new User() { Id = "4", Pin = "Shoya", Organization = organization, Name = "Shoya Bali" }

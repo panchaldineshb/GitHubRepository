@@ -10,6 +10,49 @@ angular.module('phonecatApp')
       });
   }])
 
+var User = $resource('/user/:userId', { userId: '@id' });
+var user = User.get({ userId: 123 }, function () {
+    user.abc = true;
+    user.$save();
+});
+
+angular.module('phonecatApp')
+.factory("SweetFactory", ["$http", "$q", "$resource", function ($http, $q, $resource) {
+    return $resource("/sweet/app", {}, {
+        "put": {
+            method: "PUT",
+            isArray: false
+        }, "get": {
+            method: "GET",
+            isArray: false
+        }
+    });
+}]);
+
+angular.module('phonecatApp')
+.service('$job', function ($resource) {
+    var job = $resource(service_base_url + 'jobs.json/:id');
+    return job;
+});
+
+angular.module('phonecatApp')
+.service('$job', function ($resource) {
+    var job = $resource(service_base_url + 'jobs.json/:id', {}, {
+        'query': {
+            method: 'GET',
+            isArray: true,
+            interceptor: {
+                'response': function (response) {
+                    var headers = response.headers();
+                    some_function(headers.user);
+                    return response;
+                }
+            }
+        }
+    });
+    return job;
+});
+
 */
 
 /*
@@ -19,17 +62,16 @@ http://devdactic.com/improving-rest-with-ngresource/
 
 */
 
-
 // Authenticate Resource
 angular.module('phonecatApp')
-.factory('Authenticate', ['Base64', '$http', '$resource', '$cookieStore', '$rootScope', '$timeout',
-    function (Base64, $http, $resource, $cookieStore, $rootScope, $timeout) {
-        var baseUrl = config.apiurl;
-        var url = baseUrl + 'api/User?Name=:Name';
+.factory('Authenticate', ['$resource',
+    function ($resourceut) {
+        var serviceBaseUrl = config.apiurl;
+        var url = serviceBaseUrl + 'api/User?Name=:Name';
 
         return $resource(
-           "/api/booking/:Id",
-           { Id: "@Id" },
+           "'api/User?Name=:Name",
+           { Name: "@Name" },
            {
                "update": { method: "PUT" },
                "reviews": { 'method': 'GET', 'params': { 'reviews_only': "true" }, isArray: true }
@@ -42,14 +84,14 @@ angular.module('phonecatApp')
     function (Base64, $http, $resource, $cookieStore, $rootScope, $timeout) {
     var service = {};
 
-    var baseUrl = config.apiurl;
+    var serviceBaseUrl = config.apiurl;
 
     service.Login = function (username, password, callback) {
         /* Dummy authentication for testing, uses $timeout to simulate api call
            ----------------------------------------------*/
 
         // http://localhost:58045/api/User?Name=Shoya+Bali
-        var url = baseUrl + 'api/User?Name=:Name';
+        var url = serviceBaseUrl + 'api/User?Name=:Name';
 
         var User = $resource(url);
 
