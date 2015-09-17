@@ -7,27 +7,27 @@
                 <div class="form-group">
                     <label class="col-lg-2 control-label" for="inputId">Id</label>
                     <div class="col-lg-10">
-                        <input class="form-control" id="inputId" type="text" ng-model="New.Id" placeholder="Id">
+                        <input class="form-control" id="inputId" type="text" ng-model="Id" placeholder="Id">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-lg-2 control-label" for="inputName">Name</label>
                     <div class="col-lg-10">
-                        <input class="form-control" id="inputName" type="text" ng-model="New.Name" placeholder="Name">
+                        <input class="form-control" id="inputName" type="text" ng-model="Name" placeholder="Name">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-lg-2 control-label" for="inputCity">City</label>
                     <div class="col-lg-10">
-                        <input class="form-control" id="inputCity" type="text" ng-model="New.City" placeholder="City">
+                        <input class="form-control" id="inputCity" type="text" ng-model="City" placeholder="City">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-lg-2 control-label" for="inputAddress">Address</label>
                     <div class="col-lg-10">
-                        <textarea class="form-control" id="inputAddress" ng-model="New.Address" placeholder="Address" rows="3"></textarea>
+                        <textarea class="form-control" id="inputAddress" ng-model="Address" placeholder="Address" rows="3"></textarea>
                         <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
                     </div>
                 </div>
@@ -35,20 +35,20 @@
                 <div class="form-group">
                     <label class="col-lg-2 control-label" for="inputContactNo">ContactNo</label>
                     <div class="col-lg-10">
-                        <input class="form-control" id="inputContactNo" type="text" ng-model="New.ContactNo" placeholder="ContactNo">
+                        <input class="form-control" id="inputContactNo" type="text" ng-model="ContactNo" placeholder="ContactNo">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-lg-2 control-label" for="inputEmailId">Email</label>
                     <div class="col-lg-10">
-                        <input class="form-control" id="inputEmailId" type="text" ng-model="New.EmailId" placeholder="EmailId">
+                        <input class="form-control" id="inputEmailId" type="text" ng-model="EmailId" placeholder="EmailId">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
-                        <button class="btn btn-danger" type="reset" ng-disabled="form.$invalid || dataLoading">Cancel</button>
-                        <button class="btn btn-primary" type="submit" ng-disabled="form.$invalid || dataLoading" ng-click="update()">Submit</button>
+                        <button class="btn btn-danger" type="reset" ng-disabled="form.$invalid || dataLoading" ng-click="cancel()">Cancel</button>
+                        <button class="btn btn-primary" type="submit" ng-disabled="form.$invalid || dataLoading" ng-click="register()">Submit</button>
                         <img ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
                     </div>
                 </div>
