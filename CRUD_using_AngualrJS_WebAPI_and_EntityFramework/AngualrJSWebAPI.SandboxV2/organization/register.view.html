@@ -3,17 +3,18 @@
         <div ng-show="error" class="alert alert-danger">{{error}}</div>
         <form name="myForm" class="form-horizontal">
             <fieldset>
-                <legend>User Details</legend>
-                <div class="form-group">
-                    <label class="col-lg-2 control-label" for="inputId">Id</label>
-                    <div class="col-lg-10">
-                        <input class="form-control" id="inputId" type="text" ng-model="Id" placeholder="Id">
-                    </div>
-                </div>
+                <legend>Organization Details</legend>
                 <div class="form-group">
                     <label class="col-lg-2 control-label" for="inputName">Name</label>
                     <div class="col-lg-10">
                         <input class="form-control" id="inputName" type="text" ng-model="Name" placeholder="Name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="inputDescription">Description</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" id="inputDescription" type="text" ng-model="Description" placeholder="Description">
                     </div>
                 </div>
 
