@@ -1,7 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+
 using AngualrJSWebAPIApp.DAL.Context;
+
 using AngualrJSWebAPIApp.Models;
+
+using AngualrJSWebAPIApp.API.Abstract;
 
 namespace AngualrJSWebAPIApp.API.Repositories
 {
@@ -19,7 +23,7 @@ namespace AngualrJSWebAPIApp.API.Repositories
             return _dbContext.Users.ToArray();
         }
 
-        public User GetById(string id)
+        public User GetById(int id)
         {
             return _dbContext.Users.FirstOrDefault(p => p.Id == id);
         }

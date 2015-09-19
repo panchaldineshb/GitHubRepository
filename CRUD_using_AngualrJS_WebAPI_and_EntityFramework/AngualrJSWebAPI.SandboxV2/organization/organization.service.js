@@ -33,26 +33,28 @@ angular.module('phonecatApp')
 
         var serviceBaseUrl = config.apiurl;
 
+        // http://localhost:58045/api/Organization?Name=Shoya+Bali
+        var url = serviceBaseUrl + 'api/Organization';
+
+        // we need parameters to be mapped to the query parameters, not the path parameters
+        // referred -- http://devdactic.com/improving-rest-with-ngresource/
+        var Organization = $resource(url, { id: "@id" });
+
         service.Register = function (name, city, address, contactNo, emailId, callback) {
             /* Dummy authentication for testing, uses $timeout to simulate api call
            ----------------------------------------------*/
 
-            // http://localhost:58045/api/User?Name=Shoya+Bali
-            var url = serviceBaseUrl + 'api/Organization';
-
-            // we need parameters to be mapped to the query parameters, not the path parameters
-            var User = $resource(url, {});
-
-            User.get({ Name: username }).$promise.then(function (data) {
+            Organization.save({ Name: name })
+                .$promise.then(function (data) {
                 // success
-                var response = { success: password === data.User.Pin };
+                var response = { success: password === data.Organization.Pin };
                 if (!response.success) {
-                    response.message = 'Username or password is incorrect';
+                    response.message = 'Organizationname or password is incorrect';
                 }
                 callback(response);
             }, function (errResponse) {
                 // fail
-                var response = { success: false, message: 'Username is invalid' };
+                var response = { success: false, message: 'Organizationname is invalid' };
                 callback(response);
             });
         };

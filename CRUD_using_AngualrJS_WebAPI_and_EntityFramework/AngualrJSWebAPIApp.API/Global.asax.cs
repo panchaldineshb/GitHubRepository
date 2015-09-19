@@ -7,10 +7,12 @@ using System.Web.Routing;
 using AngualrJSWebAPIApp.API.Abstract;
 using AngualrJSWebAPIApp.API.Concrete;
 using AngualrJSWebAPIApp.API.Repositories;
+using AngualrJSWebAPIApp.API.Concrete.Repositories;
 using AngualrJSWebAPIApp.DAL.Context;
 using AngualrJSWebAPIApp.Models;
 using Autofac;
 using Autofac.Integration.WebApi;
+
 
 namespace AngualrJSWebAPIApp.API
 {
@@ -64,8 +66,9 @@ namespace AngualrJSWebAPIApp.API
             builder.RegisterType<AngualrJSWebAPIAppDbContext>().AsSelf().InstancePerRequest();
 
             builder.RegisterType<ApplicationRepository<User>>().As<IRepository<User>>().InstancePerRequest();
+            builder.RegisterType<ApplicationRepository<Organization>>().As<IRepository<Organization>>().InstancePerRequest();
 
-            builder.Register<IUsersRepository>(c => new UsersRepository(c.Resolve<AngualrJSWebAPIAppDbContext>())).InstancePerRequest();
+            //builder.Register<IUsersRepository>(c => new UsersRepository(c.Resolve<AngualrJSWebAPIAppDbContext>())).InstancePerRequest();
         }
     }
 }

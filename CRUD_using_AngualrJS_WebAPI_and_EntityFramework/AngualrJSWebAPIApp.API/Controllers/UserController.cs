@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Web.Http;
-
 using AngualrJSWebAPIApp.API.Abstract;
-using AngualrJSWebAPIApp.API.Concrete;
+using AngualrJSWebAPIApp.API.Concrete.SearchOptions;
 using AngualrJSWebAPIApp.Models;
 
 namespace AngualrJSWebAPIApp.Web.ApiControllers
 {
+    [RoutePrefix("api/User")]
     public class UserController : ApiController
     {
         private readonly IRepository<User> _repUser;
@@ -20,23 +20,11 @@ namespace AngualrJSWebAPIApp.Web.ApiControllers
 
         // GET api/<controller>
 
-        //[HttpGet]
-        //[AllowAnonymous]
-        //public async Task<IHttpActionResult> Get()
-        //{
-        //    var list = await _repUser.GetAllAsync();
-
-        //    return Ok(list);
-        //}
-
-        // GET api/<controller>/5
-
-        // GET api/products?Id=1&Name=Product1&CreatedBy=1/4/2013&StockNumber=ABC0001
         [HttpGet]
         [AllowAnonymous]
         public async Task<IHttpActionResult> Get([FromUri] UserSearchOptions searchOptions)
         {
-            if (!string.IsNullOrEmpty(searchOptions.Id))
+            if (searchOptions.Id > 0)
             {
                 var q = await _repUser.FindAsync(x => x.Id == searchOptions.Id);
 
@@ -68,7 +56,7 @@ namespace AngualrJSWebAPIApp.Web.ApiControllers
         // PUT api/<controller>/5
 
         [AllowAnonymous]
-        public async Task<IHttpActionResult> Put(string id, [FromBody]User user)
+        public async Task<IHttpActionResult> Put(int id, [FromBody]User user)
         {
             if (user == null) return BadRequest();
 
@@ -86,10 +74,8 @@ namespace AngualrJSWebAPIApp.Web.ApiControllers
 
         // DELETE api/<controller>/5
         [AllowAnonymous]
-        public async Task<IHttpActionResult> Delete(string id)
+        public async Task<IHttpActionResult> Delete(int id)
         {
-            if (id == null) return BadRequest();
-
             var userToRemove = _repUser.Find(x => x.Id == id);
 
             if (userToRemove == null) return BadRequest();

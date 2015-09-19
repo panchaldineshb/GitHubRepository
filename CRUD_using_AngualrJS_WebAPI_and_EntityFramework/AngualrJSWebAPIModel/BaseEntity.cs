@@ -1,11 +1,15 @@
 ﻿using System;
 
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace AngualrJSWebAPIApp.Models
 {
     public class BaseEntity<T>
         where T : BaseEntity<T>
     {
-        public string Id { get; set; }
+        [Key]
+        public int Id { get; set; }
 
         public string Description { get; set; }
 

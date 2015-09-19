@@ -32,6 +32,27 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AngualrJSWebAPI.SandboxV2",
 		SlnRelativePath = "AngualrJSWebAPI.SandboxV2\"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "movieApp", "http://localhost:60019", "{E3826FE2-83A9-468E-982E-7DEEB4E2990D}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_60019"
+		Debug.AspNetCompiler.PhysicalPath = "movieApp\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60019\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_60019"
+		Release.AspNetCompiler.PhysicalPath = "movieApp\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60019\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "movieApp\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +79,10 @@ Global
 		{4274C526-FDCB-4A11-A3F9-A7E8A02B9086}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4274C526-FDCB-4A11-A3F9-A7E8A02B9086}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{4274C526-FDCB-4A11-A3F9-A7E8A02B9086}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{E3826FE2-83A9-468E-982E-7DEEB4E2990D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3826FE2-83A9-468E-982E-7DEEB4E2990D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3826FE2-83A9-468E-982E-7DEEB4E2990D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3826FE2-83A9-468E-982E-7DEEB4E2990D}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
