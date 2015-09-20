@@ -92,3 +92,9 @@ ul.specs {
 h1 {
 	border-bottom: 1px solid gray;
 }
+
+
+.gridStyle {
+    border: 1px solid rgb(212,212,212);
+    height: 400px;
+}

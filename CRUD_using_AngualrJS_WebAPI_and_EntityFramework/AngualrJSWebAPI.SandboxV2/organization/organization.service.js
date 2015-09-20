@@ -37,27 +37,41 @@ angular.module('phonecatApp')
         var url = serviceBaseUrl + 'api/Organization';
 
         // we need parameters to be mapped to the query parameters, not the path parameters
-        // referred -- 
+        // referred --
         // http://devdactic.com/improving-rest-with-ngresource/
         // https://docs.angularjs.org/api/ngResource/service/$resource#creating-a-custom-put-request
         // http://devdactic.com/improving-rest-with-ngresource/
         // http://stackoverflow.com/questions/17131643/promise-on-angularjs-resource-save-action
 
-        var Organization = $resource(url, { id: "@id" });
+        var Entity = $resource(url, {});
+
+        service.GetAll = function (callback) {
+            Entity.query({ FetchAll: true })
+                .$promise.then(function (data) {
+                    debugger;
+                    // success
+                    callback({ success: true, data: data });
+                }, function (errResponse) {
+                    debugger;
+                    // fail
+                    var response = { success: false, message: 'Failed to query...' };
+                    callback(response);
+                });
+        };
 
         service.Register = function (name, description, city, address, contactNo, emailId, callback) {
             /* Dummy authentication for testing, uses $timeout to simulate api call
            ----------------------------------------------*/
 
-            Organization.save({ Name: name, Description: description, City: city, Address: address, ContactNo: contactNo, EmailId: emailId })
+            Entity.save({ Name: name, Description: description, City: city, Address: address, ContactNo: contactNo, EmailId: emailId })
                 .$promise.then(function (data) {
-                // success
-                callback({ success: true });
-            }, function (errResponse) {
-                // fail
-                var response = { success: false, message: 'Failed to save...' };
-                callback(response);
-            });
+                    // success
+                    callback({ success: true });
+                }, function (errResponse) {
+                    // fail
+                    var response = { success: false, message: 'Failed to save...' };
+                    callback(response);
+                });
         };
 
         service.ClearRegistration = function () {

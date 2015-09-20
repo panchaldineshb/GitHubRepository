@@ -24,6 +24,13 @@ namespace AngualrJSWebAPIApp.Web.ApiControllers
         [AllowAnonymous]
         public async Task<IHttpActionResult> Get([FromUri] UserSearchOptions searchOptions)
         {
+            if (searchOptions.FetchAll)
+            {
+                var q = await _repUser.FindAllAsync(x => x.Id > 0);
+
+                return Ok(q);
+            }
+
             if (searchOptions.Id > 0)
             {
                 var q = await _repUser.FindAsync(x => x.Id == searchOptions.Id);

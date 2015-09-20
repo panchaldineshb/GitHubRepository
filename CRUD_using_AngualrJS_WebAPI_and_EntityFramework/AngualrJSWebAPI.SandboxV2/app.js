@@ -3,6 +3,7 @@
 /* App Module */
 
 var phonecatApp = angular.module('phonecatApp', [
+  'ngGrid',
   'ngRoute',
   'ngResource',
   'ngCookies'
