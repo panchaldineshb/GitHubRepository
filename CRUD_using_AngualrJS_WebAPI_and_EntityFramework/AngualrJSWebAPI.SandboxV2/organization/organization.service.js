@@ -47,13 +47,9 @@ angular.module('phonecatApp')
 
         service.GetAll = function (callback) {
             Entity.query({ FetchAll: true })
-                .$promise.then(function (data) {
-                    debugger;
-                    // success
+                .$promise.then(function (data) { // success
                     callback({ success: true, data: data });
-                }, function (errResponse) {
-                    debugger;
-                    // fail
+                }, function (errResponse) { // fail
                     var response = { success: false, message: 'Failed to query...' };
                     callback(response);
                 });
@@ -64,17 +60,19 @@ angular.module('phonecatApp')
            ----------------------------------------------*/
 
             Entity.save({ Name: name, Description: description, City: city, Address: address, ContactNo: contactNo, EmailId: emailId })
-                .$promise.then(function (data) {
-                    // success
+                .$promise.then(function (data) { // success
                     callback({ success: true });
-                }, function (errResponse) {
-                    // fail
+                }, function (errResponse) { // fail
                     var response = { success: false, message: 'Failed to save...' };
                     callback(response);
                 });
         };
 
-        service.ClearRegistration = function () {
+        service.ClearRegistration = function (name, description, city, address, contactNo, emailId, callback) {
+            /* Right now there is not much logic being added
+           ----------------------------------------------*/
+
+            callback({ success: true });
         };
 
         return service;
