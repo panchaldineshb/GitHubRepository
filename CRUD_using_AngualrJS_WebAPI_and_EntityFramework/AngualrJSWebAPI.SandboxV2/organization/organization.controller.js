@@ -8,20 +8,6 @@ angular
     function ($scope, $rootScope, $location, Organization) {
         $scope.userData = [];
 
-        getOrganizations();
-
-        function getOrganizations() {
-            $scope.dataLoading = true;
-            Organization.GetAll(function (response) {
-                if (response.success && response.data) {
-                    $scope.userData = response.data;
-                } else {
-                    $scope.error = response.message;
-                }
-            });
-            $scope.dataLoading = false;
-        }
-
         $scope.gridOptions = {
             data: 'userData',
             multiSelect: false,
@@ -38,16 +24,20 @@ angular
             ]
         };
 
-        $scope.list = function () {
+        $scope.init = function () {
+            $scope.all();
+        };
+
+        $scope.all = function () {
             $scope.dataLoading = true;
-            Organization.GetAll(function (data) {
-                if (response.success) {
-                    $location.path('/');
+            Organization.GetAll(function (response) {
+                if (response.success && response.data) {
+                    $scope.userData = response.data;
                 } else {
                     $scope.error = response.message;
-                    $scope.dataLoading = false;
                 }
             });
+            $scope.dataLoading = false;
         };
 
         $scope.cancel = function () {

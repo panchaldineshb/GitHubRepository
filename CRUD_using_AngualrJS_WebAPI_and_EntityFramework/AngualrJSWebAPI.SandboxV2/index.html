@@ -10,7 +10,7 @@
 
     <link href="app-content/app.css" rel="stylesheet" />
     <link href="app-content/ng-grid.min.css" rel="stylesheet" />
-    
+
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-animate.min.js"></script>
@@ -51,7 +51,9 @@
 </head>
 <body class="fullscreen">
     <div class="container-fluid">
-        <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" data-ng-controller="NavigationController">
+
+        <!-- Top navigation bar -->
+        <nav class="navbar navbar-inverse navbar-default" data-ng-controller="NavigationController">
 
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -61,8 +63,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Tutorial Republic</a>
-                <a class="navbar-brand" href="#">{{$root.globals.currentUser.username}}</a>
+                <a class="navbar-brand" href="#">Sarabi (Egg Curry)</a>
+                <a class="navbar-brand" href="#" ng-bind="$root.globals.currentUser.username"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -75,8 +77,34 @@
                     <li data-ng-class="{'active':isActive('/logoff')}" ng-if="globals.currentUser.username"><a href="index.html#/logoff">LogOff</a></li>
                     <li data-ng-class="{'active':isActive('/contact')}"><a href="index.html#/contact">Contact</a></li>
                 </ul>
+
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
             </div>
+
+
         </nav>
+
+        <!-- Left navigation bar -->
+
 
         <hr>
         <!-- Page Content -->
