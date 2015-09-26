@@ -53,48 +53,6 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "movieApp", "http://localhos
 		SlnRelativePath = "movieApp\"
 	EndProjectSection
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SlidePushMenus", "http://localhost:53575", "{EA039A17-2E5A-4F4F-BDBA-0D124C39699A}"
-	ProjectSection(WebsiteProperties) = preProject
-		UseIISExpress = "true"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_53575"
-		Debug.AspNetCompiler.PhysicalPath = "SlidePushMenus\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53575\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_53575"
-		Release.AspNetCompiler.PhysicalPath = "SlidePushMenus\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53575\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "SlidePushMenus\"
-	EndProjectSection
-EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "simple_fb_html5_sidebar-master", "http://localhost:53954", "{A9B3A96A-CF01-4163-84C1-E45342005E88}"
-	ProjectSection(WebsiteProperties) = preProject
-		UseIISExpress = "true"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_53954"
-		Debug.AspNetCompiler.PhysicalPath = "simple_fb_html5_sidebar-master\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53954\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_53954"
-		Release.AspNetCompiler.PhysicalPath = "simple_fb_html5_sidebar-master\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53954\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "simple_fb_html5_sidebar-master\"
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -125,14 +83,6 @@ Global
 		{E3826FE2-83A9-468E-982E-7DEEB4E2990D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3826FE2-83A9-468E-982E-7DEEB4E2990D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{E3826FE2-83A9-468E-982E-7DEEB4E2990D}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{EA039A17-2E5A-4F4F-BDBA-0D124C39699A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA039A17-2E5A-4F4F-BDBA-0D124C39699A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EA039A17-2E5A-4F4F-BDBA-0D124C39699A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA039A17-2E5A-4F4F-BDBA-0D124C39699A}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{A9B3A96A-CF01-4163-84C1-E45342005E88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A9B3A96A-CF01-4163-84C1-E45342005E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A9B3A96A-CF01-4163-84C1-E45342005E88}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{A9B3A96A-CF01-4163-84C1-E45342005E88}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
