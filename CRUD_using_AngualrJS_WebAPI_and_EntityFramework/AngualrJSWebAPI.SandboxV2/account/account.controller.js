@@ -48,7 +48,7 @@ angular
         $scope.logoff = function () {
             // reset login status
             Account.ClearCredentials();
-            $location.path('/login');
+            $location.path('/');
         };
 
         $scope.login = function () {

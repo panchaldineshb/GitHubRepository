@@ -95,6 +95,118 @@ h1 {
 
 
 .gridStyle {
-    border: 1px solid rgb(212,212,212);
-    height: 400px;
+	border: 1px solid rgb(212,212,212);
+	height: 400px;
+}
+
+
+/*
+	Colors
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,700,300|Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic);
+
+br {
+	clear: both;
+}
+
+.demo {
+	padding: 5px;
+	color: #FFF;
+	box-sizing: border-box;
+}
+
+.demo,
+.demo-default {
+	background-color: transparent;
+}
+
+.demo-primary {
+	background-color: #4285f4;
+}
+
+.demo-success {
+	background-color: #0f9d58;
+}
+
+.demo-info {
+	background-color: #3498db;
+}
+
+.demo-warning {
+	background-color: #ff5722;
+}
+
+.demo-danger {
+	background-color: #f44336;
+}
+
+.demo-material-red {
+	background-color: #f44336;
+}
+
+.demo-material-pink {
+	background-color: #e91e63;
+}
+
+.demo-material-purple {
+	background-color: #9c27b0;
+}
+
+.demo-material-deeppurple {
+	background-color: #673ab7;
+}
+
+.demo-material-indigo {
+	background-color: #3f51b5;
+}
+
+.demo-material-lightblue {
+	background-color: #03a9f4;
+}
+
+.demo-material-cyan {
+	background-color: #00bcd4;
+}
+
+.demo-material-teal {
+	background-color: #009688;
+}
+
+.demo-material-lightgreen {
+	background-color: #8bc34a;
+}
+
+.demo-material-lime {
+	background-color: #cddc39;
+}
+
+.demo-material-lightyellow {
+	background-color: #ffeb3b;
+	color: #4D4D4D;
+}
+
+.demo-material-orange {
+	background-color: #ff9800;
+}
+
+.demo-material-deeporange {
+	background-color: #ff5722;
+}
+
+.demo-material-grey {
+	background-color: #9e9e9e;
+}
+
+.demo-material-bluegrey {
+	background-color: #607d8b;
+}
+
+.demo-material-brown {
+	background-color: #795548;
+}
+
+.demo-material-lightgrey {
+	background-color: #ececec;
+	color: #4D4D4D;
 }
