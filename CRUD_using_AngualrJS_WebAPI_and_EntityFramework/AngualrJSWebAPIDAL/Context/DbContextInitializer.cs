@@ -33,7 +33,17 @@ namespace AngualrJSWebAPIApp.DAL.Context
             var usersToBeAdded = mockData.GetUsers(organizationToBeAdded, userRole).ToArray();
             foreach (var user in usersToBeAdded)
             {
+                user.Role = userRole;
+                user.Organization = organizationToBeAdded;
                 dbContext.Set<User>().Add(user);
+            }
+
+            // Products
+            var productsToBeAdded = mockData.GetProducts(organizationToBeAdded).ToArray();
+            foreach (var product in productsToBeAdded)
+            {
+                product.Organization = organizationToBeAdded;
+                dbContext.Set<Product>().Add(product);
             }
 
             base.Seed(dbContext);

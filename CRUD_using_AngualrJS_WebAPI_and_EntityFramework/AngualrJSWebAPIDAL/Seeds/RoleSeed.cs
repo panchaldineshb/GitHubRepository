@@ -15,9 +15,9 @@ namespace AngualrJSWebAPIApp.DAL.Seeds
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data. E.g.
             //
-            var organizations = new MockData(_dbContext).GetRoles().ToArray();
+            var roles = new MockData(_dbContext).GetRoles().ToArray();
 
-            var organizationSeedBuilder = new SeedBuilder<Role>(_dbContext).Create(organizations);
+            var roleSeedBuilder = new SeedBuilder<Role>(_dbContext).Create(roles);
 
             return this;
         }

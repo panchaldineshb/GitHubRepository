@@ -22,6 +22,10 @@ namespace AngualrJSWebAPIApp.DAL.Seeds
             var organization = _dbContext.Organizations.Single(e => e.Name == "Sarabi LLC");
 
             var usersToBeAdded = new MockData(_dbContext).GetUsers(organization, userRole).ToArray();
+            foreach (var user in usersToBeAdded) {
+                user.Organization = organization;
+                user.Role = userRole;
+            }
 
             var userSeedBuilder = new SeedBuilder<User>(_dbContext).Create(usersToBeAdded);
 

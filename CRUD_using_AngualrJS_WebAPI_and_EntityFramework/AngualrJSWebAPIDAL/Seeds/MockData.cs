@@ -64,5 +64,17 @@ namespace AngualrJSWebAPIApp.DAL.Seeds
                 new User() { Id = 4, Pin = "Shoya", Role = role, Organization = organization, Name = "Shoya Bali" }
             };
         }
+
+
+        public List<Product> GetProducts(Organization organization)
+        {
+            return new List<Product>
+            {
+                new Product() { Id = 1, Organization = organization, Name = "Egg Curry", Description = "Egg Curry", CreatedOn = DateTime.Now, Active = true },
+                new Product() { Id = 2, Organization = organization, Name = "Leaf", Description = "Leaf", CreatedOn = DateTime.Now, Active = true },
+                new Product() { Id = 3, Organization = organization, Name = "Sarabi", Description = "Sarabi", CreatedOn = DateTime.Now, Active = true },
+                new Product() { Id = 4, Organization = organization, Name = "Pilaf", Description = "Pilaf", CreatedOn = DateTime.Now, Active = true }
+            };
+        }
     }
 }
