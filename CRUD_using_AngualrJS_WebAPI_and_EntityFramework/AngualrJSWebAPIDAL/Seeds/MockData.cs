@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using AngualrJSWebAPIApp.DAL.Context;
@@ -32,6 +31,20 @@ namespace AngualrJSWebAPIApp.DAL.Seeds
             return sb.ToString();
         }
 
+        public List<Role> GetRoles()
+        {
+            return new List<Role>
+            {
+                new Role { Id = 1, Name = "Default User", Description = "Default User", CreatedOn = DateTime.Now, Active = true },
+                new Role { Id = 4, Name = "Super User", Description = "Super User", CreatedOn = DateTime.Now, Active = true },
+                 new Role { Id = 6, Name = "Administrator", Description = "Administrator", CreatedOn = DateTime.Now, Active = true },
+                 new Role { Id = 8, Name = "Guest", Description = "Guest", CreatedOn = DateTime.Now, Active = true },
+                 new Role { Id = 10, Name = "Product Owner", Description = "Product Owner", CreatedOn = DateTime.Now, Active = true },
+                 new Role { Id = 12, Name = "Scrum Master", Description = "Scrum Master", CreatedOn = DateTime.Now, Active = true },
+                 new Role { Id = 14, Name = "Scrum Team Member", Description = "Scrum Team Member", CreatedOn = DateTime.Now, Active = true }
+            };
+        }
+
         public List<Organization> GetOrganizations()
         {
             return new List<Organization>
@@ -41,14 +54,14 @@ namespace AngualrJSWebAPIApp.DAL.Seeds
             };
         }
 
-        public List<User> GetUsers(Organization organization)
+        public List<User> GetUsers(Organization organization, Role role)
         {
             return new List<User>
             {
-                new User() { Id = 1, Pin = "Jane", Organization = organization, EmailId = "Jane.Austen@gmail.com", Name = "Jane Austen", Address = "", City = "", CreatedOn = DateTime.Now, Active = true },
-                new User() { Id = 2, Pin = "Miguel", Organization = organization, Name = "Miguel de Cervantes" },
-                new User() { Id = 3, Pin = "Charles", Organization = organization, Name = "Charles Dickens" },
-                new User() { Id = 4, Pin = "Shoya", Organization = organization, Name = "Shoya Bali" }
+                new User() { Id = 1, Pin = "Jane", Role = role, Organization = organization, EmailId = "Jane.Austen@gmail.com", Name = "Jane Austen", Address = "", City = "", CreatedOn = DateTime.Now, Active = true },
+                new User() { Id = 2, Pin = "Miguel", Role = role, Organization = organization, Name = "Miguel de Cervantes" },
+                new User() { Id = 3, Pin = "Charles", Role = role, Organization = organization, Name = "Charles Dickens" },
+                new User() { Id = 4, Pin = "Shoya", Role = role, Organization = organization, Name = "Shoya Bali" }
             };
         }
     }

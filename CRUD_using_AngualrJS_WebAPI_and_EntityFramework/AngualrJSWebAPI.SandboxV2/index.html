@@ -48,6 +48,9 @@
 
     <script src="organization/organization.service.js"></script>
     <script src="organization/organization.controller.js"></script>
+
+    <script src="role/role.service.js"></script>
+    <script src="role/role.controller.js"></script>
 </head>
 <body class="fullscreen">
     <div class="container-fluid">
@@ -72,6 +75,7 @@
                 <ul class="nav navbar-nav">
                     <li ng-class="{'active':isActive('/home')}"><a href="index.html#/home">Home</a></li>
                     <li ng-class="{'active':isActive('/about')}"><a href="index.html#/about">About</a></li>
+                    <li ng-class="{'active':isActive('/role')}"><a href="index.html#/role">Role</a></li>
                     <li ng-class="{'active':isActive('/register')}"><a href="index.html#/register">Register</a></li>
                     <li ng-class="{'active':isActive('/login')}" ng-if="!globals.currentUser.username"><a href="index.html#/login">Login</a></li>
                     <li ng-class="{'active':isActive('/logoff')}" ng-if="globals.currentUser.username"><a href="index.html#/logoff">LogOff</a></li>

@@ -49,6 +49,8 @@
     <Compile Include="Context\DbContextInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seeds\MockData.cs" />
+    <Compile Include="Seeds\BaseRepository.cs" />
+    <Compile Include="Seeds\RoleSeed.cs" />
     <Compile Include="Seeds\SeedBuilder.cs" />
     <Compile Include="Seeds\OrganizationSeed.cs" />
     <Compile Include="Seeds\UserSeed.cs" />

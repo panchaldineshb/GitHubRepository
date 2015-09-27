@@ -172,6 +172,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Concrete\SearchOptions\RoleSearchOptions.cs" />
     <Compile Include="Concrete\SearchOptions\OrganizationSearchOptions.cs" />
     <Compile Include="Concrete\SearchOptions\UserSearchOptions.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -179,6 +180,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Concrete\Repositories\ApplicationRepository.cs" />
     <Compile Include="Abstract\ISearchOptions.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\OrganizationController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />

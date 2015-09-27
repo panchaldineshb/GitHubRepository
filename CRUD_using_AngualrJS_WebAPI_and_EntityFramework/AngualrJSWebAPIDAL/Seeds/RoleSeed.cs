@@ -3,21 +3,21 @@ using AngualrJSWebAPIApp.Models;
 
 namespace AngualrJSWebAPIApp.DAL.Seeds
 {
-    public class OrganizationSeed : SeedBuilder<Organization>
+    public class RoleSeed : SeedBuilder<Role>
     {
-        public OrganizationSeed(AngualrJSWebAPIAppDbContext dbContext)
+        public RoleSeed(AngualrJSWebAPIAppDbContext dbContext)
             : base(dbContext)
         {
         }
 
-        public OrganizationSeed Build()
+        public RoleSeed Build()
         {
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data. E.g.
             //
-            var organizations = new MockData(_dbContext).GetOrganizations().ToArray();
+            var organizations = new MockData(_dbContext).GetRoles().ToArray();
 
-            var organizationSeedBuilder = new SeedBuilder<Organization>(_dbContext).Create(organizations);
+            var organizationSeedBuilder = new SeedBuilder<Role>(_dbContext).Create(organizations);
 
             return this;
         }

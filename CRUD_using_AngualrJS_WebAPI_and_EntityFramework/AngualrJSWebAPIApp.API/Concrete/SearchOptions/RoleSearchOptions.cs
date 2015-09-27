@@ -1,8 +1,10 @@
 ﻿using AngualrJSWebAPIApp.API.Abstract;
 
+using AngualrJSWebAPIApp.Models;
+
 namespace AngualrJSWebAPIApp.API.Concrete.SearchOptions
 {
-    public class OrganizationSearchOptions : ISearchOptions
+    public class RoleSearchOptions : ISearchOptions
     {
         public int Id { get; set; }
 

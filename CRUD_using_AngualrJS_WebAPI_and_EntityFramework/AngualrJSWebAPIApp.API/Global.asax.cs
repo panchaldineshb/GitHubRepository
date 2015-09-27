@@ -66,6 +66,7 @@ namespace AngualrJSWebAPIApp.API
             builder.RegisterType<AngualrJSWebAPIAppDbContext>().AsSelf().InstancePerRequest();
 
             builder.RegisterType<ApplicationRepository<User>>().As<IRepository<User>>().InstancePerRequest();
+            builder.RegisterType<ApplicationRepository<Role>>().As<IRepository<Role>>().InstancePerRequest();
             builder.RegisterType<ApplicationRepository<Organization>>().As<IRepository<Organization>>().InstancePerRequest();
 
             //builder.Register<IUsersRepository>(c => new UsersRepository(c.Resolve<AngualrJSWebAPIAppDbContext>())).InstancePerRequest();

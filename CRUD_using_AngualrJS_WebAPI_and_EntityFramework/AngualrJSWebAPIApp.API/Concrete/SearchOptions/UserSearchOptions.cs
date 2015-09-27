@@ -2,7 +2,7 @@
 
 namespace AngualrJSWebAPIApp.API.Concrete.SearchOptions
 {
-    public class UserSearchOptions : ISearchOptions<int>
+    public class UserSearchOptions : ISearchOptions
     {
         public int Id { get; set; }
 

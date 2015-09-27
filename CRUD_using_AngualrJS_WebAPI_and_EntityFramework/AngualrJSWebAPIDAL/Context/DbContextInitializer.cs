@@ -11,17 +11,26 @@ namespace AngualrJSWebAPIApp.DAL.Context
         protected override void Seed(AngualrJSWebAPIAppDbContext dbContext)
         {
             var mockData = new MockData(dbContext);
-            var organizations = mockData.GetOrganizations().ToArray();
 
+            // Roles
+            var roles = mockData.GetRoles().ToArray();
+            foreach (var role in roles)
+            {
+                dbContext.Set<Role>().Add(role);
+            }
+
+            // Organizations
+            var organizations = mockData.GetOrganizations().ToArray();
             foreach (var organization in organizations)
             {
                 dbContext.Set<Organization>().Add(organization);
             }
 
+            // Users
+            var userRole = roles.Single(e => e.Name == "Default User");
+            var administratorRole = roles.Single(e => e.Name == "Administrator");
             var organizationToBeAdded = organizations.FirstOrDefault();
-
-            var usersToBeAdded = mockData.GetUsers(organizationToBeAdded).ToArray();
-
+            var usersToBeAdded = mockData.GetUsers(organizationToBeAdded, userRole).ToArray();
             foreach (var user in usersToBeAdded)
             {
                 dbContext.Set<User>().Add(user);
