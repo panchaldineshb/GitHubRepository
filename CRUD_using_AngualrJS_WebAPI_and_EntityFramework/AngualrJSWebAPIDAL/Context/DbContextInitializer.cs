@@ -2,7 +2,6 @@
 using System.Linq;
 
 using AngualrJSWebAPIApp.DAL.Seeds;
-using AngualrJSWebAPIApp.Models;
 
 namespace AngualrJSWebAPIApp.DAL.Context
 {
@@ -13,38 +12,27 @@ namespace AngualrJSWebAPIApp.DAL.Context
             var mockData = new MockData(dbContext);
 
             // Roles
-            var roles = mockData.GetRoles().ToArray();
-            foreach (var role in roles)
-            {
-                dbContext.Set<Role>().Add(role);
-            }
+            var roles = mockData.GetRoles();
+            dbContext.Roles.AddRange(roles);
+            dbContext.SaveChanges();
 
             // Organizations
-            var organizations = mockData.GetOrganizations().ToArray();
-            foreach (var organization in organizations)
-            {
-                dbContext.Set<Organization>().Add(organization);
-            }
+            var organizations = mockData.GetOrganizations();
+            dbContext.Organizations.AddRange(organizations);
+            dbContext.SaveChanges();
 
             // Users
             var userRole = roles.Single(e => e.Name == "Default User");
             var administratorRole = roles.Single(e => e.Name == "Administrator");
             var organizationToBeAdded = organizations.FirstOrDefault();
-            var usersToBeAdded = mockData.GetUsers(organizationToBeAdded, userRole).ToArray();
-            foreach (var user in usersToBeAdded)
-            {
-                user.Role = userRole;
-                user.Organization = organizationToBeAdded;
-                dbContext.Set<User>().Add(user);
-            }
+            var users = mockData.GetUsers(organizationToBeAdded, userRole);
+            dbContext.Users.AddRange(users);
+            dbContext.SaveChanges();
 
             // Products
-            var productsToBeAdded = mockData.GetProducts(organizationToBeAdded).ToArray();
-            foreach (var product in productsToBeAdded)
-            {
-                product.Organization = organizationToBeAdded;
-                dbContext.Set<Product>().Add(product);
-            }
+            var products = mockData.GetProducts(organizationToBeAdded);
+            dbContext.Products.AddRange(products);
+            dbContext.SaveChanges();
 
             base.Seed(dbContext);
         }

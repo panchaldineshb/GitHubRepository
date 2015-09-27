@@ -14,6 +14,8 @@ namespace AngualrJSWebAPIApp.DAL.Context
 
         public DbSet<Organization> Organizations { get; set; }
 
+        public DbSet<Attachment> Attachments { get; set; }
+
         public DbSet<Address> Addresses { get; set; }
 
         public DbSet<Product> Products { get; set; }
@@ -25,6 +27,10 @@ namespace AngualrJSWebAPIApp.DAL.Context
         public DbSet<ProductBacklog> ProductBacklogs { get; set; }
 
         public DbSet<DefinitionOfDone> DefinitionOfDones { get; set; }
+
+        public DbSet<ProductBacklogItem> ProductBacklogItems { get; set; }
+
+        public DbSet<Retrospection> Retrospections { get; set; }
 
         public DbSet<SprintGoal> SprintGoals { get; set; }
 

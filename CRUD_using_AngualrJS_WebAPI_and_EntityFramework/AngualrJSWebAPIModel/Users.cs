@@ -2,9 +2,20 @@
 {
     public class User : BaseEntity<User>
     {
-        public Role Role { get; set; }
+        //
+        // http://www.ladislavmrnka.com/2011/05/foreign-key-vs-independent-associations-in-ef-4/
+        // http://stackoverflow.com/questions/5281974/code-first-independent-associations-vs-foreign-key-associations
+        // Example of code-first entity using Foreign key association:
+        // Make your entity references virtual to allow for lazy loading
+        //
 
-        public Organization Organization { get; set; }
+        public int RoleId { get; set; }
+
+        public virtual Role Role { get; set; }
+
+        public int OrganizationId { get; set; }
+
+        public virtual Organization Organization { get; set; }
 
         public string Pin { get; set; }
 

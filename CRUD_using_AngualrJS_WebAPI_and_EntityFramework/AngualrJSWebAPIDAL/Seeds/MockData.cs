@@ -58,22 +58,21 @@ namespace AngualrJSWebAPIApp.DAL.Seeds
         {
             return new List<User>
             {
-                new User() { Id = 1, Pin = "Jane", Role = role, Organization = organization, EmailId = "Jane.Austen@gmail.com", Name = "Jane Austen", Address = "", City = "", CreatedOn = DateTime.Now, Active = true },
-                new User() { Id = 2, Pin = "Miguel", Role = role, Organization = organization, Name = "Miguel de Cervantes" },
-                new User() { Id = 3, Pin = "Charles", Role = role, Organization = organization, Name = "Charles Dickens" },
-                new User() { Id = 4, Pin = "Shoya", Role = role, Organization = organization, Name = "Shoya Bali" }
+                new User() { Id = 1, Pin = "Jane", RoleId = role.Id, OrganizationId = organization.Id, EmailId = "Jane.Austen@gmail.com", Name = "Jane Austen", Address = "", City = "", CreatedOn = DateTime.Now, Active = true },
+                new User() { Id = 2, Pin = "Miguel", RoleId = role.Id, OrganizationId = organization.Id, Name = "Miguel de Cervantes" },
+                new User() { Id = 3, Pin = "Charles", RoleId = role.Id, OrganizationId = organization.Id, Name = "Charles Dickens" },
+                new User() { Id = 4, Pin = "Shoya", RoleId = role.Id, OrganizationId = organization.Id, Name = "Shoya Bali" }
             };
         }
-
 
         public List<Product> GetProducts(Organization organization)
         {
             return new List<Product>
             {
-                new Product() { Id = 1, Organization = organization, Name = "Egg Curry", Description = "Egg Curry", CreatedOn = DateTime.Now, Active = true },
-                new Product() { Id = 2, Organization = organization, Name = "Leaf", Description = "Leaf", CreatedOn = DateTime.Now, Active = true },
-                new Product() { Id = 3, Organization = organization, Name = "Sarabi", Description = "Sarabi", CreatedOn = DateTime.Now, Active = true },
-                new Product() { Id = 4, Organization = organization, Name = "Pilaf", Description = "Pilaf", CreatedOn = DateTime.Now, Active = true }
+                new Product() { Id = 1, OrganizationId = organization.Id, Name = "Egg Curry", Description = "Egg Curry", CreatedOn = DateTime.Now, Active = true },
+                new Product() { Id = 2, OrganizationId = organization.Id, Name = "Leaf", Description = "Leaf", CreatedOn = DateTime.Now, Active = true },
+                new Product() { Id = 3, OrganizationId = organization.Id, Name = "Sarabi", Description = "Sarabi", CreatedOn = DateTime.Now, Active = true },
+                new Product() { Id = 4, OrganizationId = organization.Id, Name = "Pilaf", Description = "Pilaf", CreatedOn = DateTime.Now, Active = true }
             };
         }
     }

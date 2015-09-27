@@ -2,11 +2,13 @@
 {
     public class ProductBacklog : BaseEntity<ProductBacklog>
     {
-        public Product Product { get; set; }
+        public virtual Organization Organization { get; set; }
 
-        public User ProductOwner { get; set; }
+        public virtual Product Product { get; set; }
 
-        public User ScrumMaster { get; set; }
+        public virtual User ProductOwner { get; set; }
+
+        public virtual User ScrumMaster { get; set; }
 
         public string Name { get; set; }
     }

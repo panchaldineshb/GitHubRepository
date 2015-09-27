@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace AngualrJSWebAPIApp.Models
 {
@@ -8,16 +9,16 @@ namespace AngualrJSWebAPIApp.Models
 
         public DateTime? Starts { get; set; }
 
-        public User ProductOwner { get; set; }
-
-        public User ScrumMaster { get; set; }
-
-        public User[] SprintTeam { get; set; }
-
-        public DefinitionOfDone[] DefinitionOfDones { get; set; }
-
-        public SprintGoal[] SprintGoals { get; set; }
-
         public DateTime? Ends { get; set; }
+
+        public virtual User ProductOwner { get; set; }
+
+        public virtual User ScrumMaster { get; set; }
+
+        public virtual ICollection<User> SprintTeam { get; set; }
+
+        public virtual ICollection<DefinitionOfDone> DefinitionOfDones { get; set; }
+
+        public ICollection<SprintGoal> SprintGoals { get; set; }
     }
 }

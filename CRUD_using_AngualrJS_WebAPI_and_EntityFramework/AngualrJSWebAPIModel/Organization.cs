@@ -8,8 +8,6 @@
 
         public string Address { get; set; }
 
-        public User[] Administrators { get; set; }
-
         public string ContactNo { get; set; }
 
         public string EmailId { get; set; }
