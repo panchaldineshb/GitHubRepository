@@ -175,6 +175,7 @@
     <Compile Include="Concrete\SearchOptions\ProductSearchOptions.cs" />
     <Compile Include="Concrete\SearchOptions\RoleSearchOptions.cs" />
     <Compile Include="Concrete\SearchOptions\OrganizationSearchOptions.cs" />
+    <Compile Include="Concrete\SearchOptions\SprintSearchOptions.cs" />
     <Compile Include="Concrete\SearchOptions\UserSearchOptions.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -184,6 +185,7 @@
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\OrganizationController.cs" />
+    <Compile Include="Controllers\SprintController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">

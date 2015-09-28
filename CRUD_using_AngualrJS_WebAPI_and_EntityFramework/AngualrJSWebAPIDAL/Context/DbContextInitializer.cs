@@ -14,12 +14,10 @@ namespace AngualrJSWebAPIApp.DAL.Context
             // Roles
             var roles = mockData.GetRoles();
             dbContext.Roles.AddRange(roles);
-            dbContext.SaveChanges();
 
             // Organizations
             var organizations = mockData.GetOrganizations();
             dbContext.Organizations.AddRange(organizations);
-            dbContext.SaveChanges();
 
             // Users
             var userRole = roles.Single(e => e.Name == "Default User");
@@ -27,12 +25,16 @@ namespace AngualrJSWebAPIApp.DAL.Context
             var organizationToBeAdded = organizations.FirstOrDefault();
             var users = mockData.GetUsers(organizationToBeAdded, userRole);
             dbContext.Users.AddRange(users);
-            dbContext.SaveChanges();
 
             // Products
             var products = mockData.GetProducts(organizationToBeAdded);
             dbContext.Products.AddRange(products);
-            dbContext.SaveChanges();
+
+            // Sprints
+            var jane = users.Single(e => e.Name == "Jane Austen");
+            var miguel = users.Single(e => e.Name == "Miguel de Cervantes");
+            var sprints = mockData.GetSprints(jane, miguel);
+            dbContext.Sprints.AddRange(sprints);
 
             base.Seed(dbContext);
         }

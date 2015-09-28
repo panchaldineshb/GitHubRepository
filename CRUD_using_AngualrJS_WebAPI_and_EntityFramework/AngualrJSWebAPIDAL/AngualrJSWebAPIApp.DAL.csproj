@@ -54,6 +54,7 @@
     <Compile Include="Seeds\SeedBuilder.cs" />
     <Compile Include="Seeds\OrganizationSeed.cs" />
     <Compile Include="Seeds\ProductSeed.cs" />
+    <Compile Include="Seeds\SprintSeed.cs" />
     <Compile Include="Seeds\UserSeed.cs" />
   </ItemGroup>
   <ItemGroup>

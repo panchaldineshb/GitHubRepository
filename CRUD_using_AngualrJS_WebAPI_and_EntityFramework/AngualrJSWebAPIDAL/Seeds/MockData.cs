@@ -75,5 +75,17 @@ namespace AngualrJSWebAPIApp.DAL.Seeds
                 new Product() { Id = 4, OrganizationId = organization.Id, Name = "Pilaf", Description = "Pilaf", CreatedOn = DateTime.Now, Active = true }
             };
         }
+
+
+        public List<Sprint> GetSprints(User productOwner, User scrumMaster)
+        {
+            return new List<Sprint>
+            {
+                new Sprint() { Id = 1, Name = "Iteration-1", ProductOwner = productOwner, ScrumMaster = scrumMaster, CreatedOn = DateTime.Now, Active = true },
+                new Sprint() { Id = 2, Name = "Iteration-2", ProductOwner = productOwner, ScrumMaster = scrumMaster, CreatedOn = DateTime.Now, Active = true }
+            };
+        }
+
+
     }
 }
