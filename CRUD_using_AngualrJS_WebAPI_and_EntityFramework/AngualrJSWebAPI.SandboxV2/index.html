@@ -52,6 +52,9 @@
     <script src="product/product.service.js"></script>
     <script src="product/product.controller.js"></script>
 
+    <script src="sprint/sprint.service.js"></script>
+    <script src="sprint/sprint.controller.js"></script>
+
     <script src="role/role.service.js"></script>
     <script src="role/role.controller.js"></script>
 </head>
@@ -79,6 +82,7 @@
                     <li ng-class="{'active':isActive('/home')}"><a href="index.html#/home">Home</a></li>
                     <li ng-class="{'active':isActive('/about')}"><a href="index.html#/about">About</a></li>
                     <li ng-class="{'active':isActive('/role')}"><a href="index.html#/role">Role</a></li>
+                    <li ng-class="{'active':isActive('/sprint')}"><a href="index.html#/sprint">Sprint</a></li>
                     <li ng-class="{'active':isActive('/product')}"><a href="index.html#/product">Product</a></li>
                     <li ng-class="{'active':isActive('/register')}"><a href="index.html#/register">Register</a></li>
                     <li ng-class="{'active':isActive('/login')}" ng-if="!globals.currentUser.username"><a href="index.html#/login">Login</a></li>

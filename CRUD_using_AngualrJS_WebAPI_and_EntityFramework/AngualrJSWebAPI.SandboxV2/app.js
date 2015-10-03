@@ -28,13 +28,17 @@ phonecatApp.config(['$routeProvider', '$locationProvider', '$httpProvider',
              templateUrl: 'organization/register.view.html',
              controller: 'OrganizationController'
          }).
-         when('/product', {
-             templateUrl: 'product/product.view.html',
-             controller: 'ProductController'
-         }).
          when('/role', {
              templateUrl: 'role/role.view.html',
              controller: 'RoleController'
+         }).
+         when('/sprint', {
+             templateUrl: 'sprint/sprint.view.html',
+             controller: 'SprintController'
+         }).
+         when('/product', {
+             templateUrl: 'product/product.view.html',
+             controller: 'ProductController'
          }).
          when('/login', {
              templateUrl: 'account/login.view.html',

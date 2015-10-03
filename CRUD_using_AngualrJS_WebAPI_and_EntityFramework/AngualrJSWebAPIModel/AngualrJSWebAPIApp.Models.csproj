@@ -72,6 +72,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contact.cs" />
     <Compile Include="Organization.cs" />
     <Compile Include="BaseEntity.cs" />
     <Compile Include="Retrospection.cs" />

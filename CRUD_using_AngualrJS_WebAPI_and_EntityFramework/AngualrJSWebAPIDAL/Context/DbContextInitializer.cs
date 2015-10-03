@@ -33,7 +33,9 @@ namespace AngualrJSWebAPIApp.DAL.Context
             // Sprints
             var jane = users.Single(e => e.Name == "Jane Austen");
             var miguel = users.Single(e => e.Name == "Miguel de Cervantes");
-            var sprints = mockData.GetSprints(jane, miguel);
+            var organization = organizations.Single(e => e.Name == "Sarabi LLC");
+            var product = products.Single(e => e.Name == "Egg Curry");
+            var sprints = mockData.GetSprints(organization, product, jane, miguel);
             dbContext.Sprints.AddRange(sprints);
 
             base.Seed(dbContext);
