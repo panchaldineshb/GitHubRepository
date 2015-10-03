@@ -86,5 +86,27 @@ namespace AngualrJSWebAPIApp.DAL.Seeds
                 new User() { Id = 4, Pin = "Shoya", Role = role, Organization = organization, Name = "Shoya Bali" }
             };
         }
-    }
-}
+
+        public List<ProductBacklog> GetProductBacklogs(Organization organization, Product product)
+        {
+            return new List<ProductBacklog>
+            {
+                new ProductBacklog() { Id = 1, Name = "Jane", Product = product, Organization = organization, CreatedOn = DateTime.Now, Active = true },
+                new ProductBacklog() { Id = 2, Name = "Miguel", Product = product, Organization = organization, CreatedOn = DateTime.Now, Active = true },
+                new ProductBacklog() { Id = 3, Name = "Charles", Product = product, Organization = organization, CreatedOn = DateTime.Now, Active = true },
+                new ProductBacklog() { Id = 4, Name = "Shoya", Product = product, Organization = organization, CreatedOn = DateTime.Now, Active = true }
+            };
+        }
+
+        public List<ProductBacklogItem> GetProductBacklogItems(ProductBacklog productBacklog)
+        {
+            return new List<ProductBacklogItem>
+            {
+                new ProductBacklogItem() { Id = 1, Name = "Jane", ProductBacklog = productBacklog, CreatedOn = DateTime.Now, Active = true },
+                new ProductBacklogItem() { Id = 2, Name = "Miguel", ProductBacklog = productBacklog, CreatedOn = DateTime.Now, Active = true },
+                new ProductBacklogItem() { Id = 3, Name = "Charles", ProductBacklog = productBacklog, CreatedOn = DateTime.Now, Active = true },
+                new ProductBacklogItem() { Id = 4, Name = "Shoya", ProductBacklog = productBacklog, CreatedOn = DateTime.Now, Active = true }
+            };
+        }
+    } // class
+} // namespace

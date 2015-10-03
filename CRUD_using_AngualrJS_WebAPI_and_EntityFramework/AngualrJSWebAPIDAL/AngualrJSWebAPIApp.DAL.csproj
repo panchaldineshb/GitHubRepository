@@ -50,11 +50,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seeds\MockData.cs" />
     <Compile Include="Seeds\BaseRepository.cs" />
+    <Compile Include="Seeds\ProductBacklogSeed.cs" />
     <Compile Include="Seeds\RoleSeed.cs" />
     <Compile Include="Seeds\SeedBuilder.cs" />
     <Compile Include="Seeds\OrganizationSeed.cs" />
     <Compile Include="Seeds\ProductSeed.cs" />
     <Compile Include="Seeds\SprintSeed.cs" />
+    <Compile Include="Seeds\ProductBacklogItemSeed.cs" />
     <Compile Include="Seeds\UserSeed.cs" />
   </ItemGroup>
   <ItemGroup>
