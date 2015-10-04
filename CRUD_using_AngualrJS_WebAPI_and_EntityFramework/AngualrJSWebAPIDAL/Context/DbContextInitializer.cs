@@ -30,11 +30,22 @@ namespace AngualrJSWebAPIApp.DAL.Context
             var products = mockData.GetProducts(organizationToBeAdded);
             dbContext.Products.AddRange(products);
 
-            // Sprints
+            // Inputs
             var jane = users.Single(e => e.Name == "Jane Austen");
             var miguel = users.Single(e => e.Name == "Miguel de Cervantes");
             var organization = organizations.Single(e => e.Name == "Sarabi LLC");
             var product = products.Single(e => e.Name == "Egg Curry");
+
+            // ProductBacklogs
+            var ProductBacklogs = mockData.GetProductBacklogs(organizationToBeAdded, product);
+            dbContext.ProductBacklogs.AddRange(ProductBacklogs);
+
+            // ProductBacklogItems
+            var productBacklog = ProductBacklogs.Single(e => e.Name == "Jane");
+            var ProductBacklogItems = mockData.GetProductBacklogItems(productBacklog);
+            dbContext.ProductBacklogItems.AddRange(ProductBacklogItems);
+
+            // Sprints
             var sprints = mockData.GetSprints(organization, product, jane, miguel);
             dbContext.Sprints.AddRange(sprints);
 
