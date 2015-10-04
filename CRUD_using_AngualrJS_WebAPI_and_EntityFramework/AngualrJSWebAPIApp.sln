@@ -53,6 +53,28 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "movieApp", "http://localhos
 		SlnRelativePath = "movieApp\"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AngualrJSWebAPI.Jasmine.AcceptanceTests", "http://localhost:51662", "{55CB6A95-2951-4AE6-9E53-F58B5FB58CCD}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51662"
+		Debug.AspNetCompiler.PhysicalPath = "AngualrJSWebAPI.Jasmine.AcceptanceTests\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51662\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51662"
+		Release.AspNetCompiler.PhysicalPath = "AngualrJSWebAPI.Jasmine.AcceptanceTests\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51662\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "AngualrJSWebAPI.Jasmine.AcceptanceTests\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +105,10 @@ Global
 		{E3826FE2-83A9-468E-982E-7DEEB4E2990D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3826FE2-83A9-468E-982E-7DEEB4E2990D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{E3826FE2-83A9-468E-982E-7DEEB4E2990D}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{55CB6A95-2951-4AE6-9E53-F58B5FB58CCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55CB6A95-2951-4AE6-9E53-F58B5FB58CCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55CB6A95-2951-4AE6-9E53-F58B5FB58CCD}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{55CB6A95-2951-4AE6-9E53-F58B5FB58CCD}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
