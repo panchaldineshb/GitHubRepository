@@ -40,6 +40,18 @@ phonecatApp.config(['$routeProvider', '$locationProvider', '$httpProvider',
              templateUrl: 'product/product.view.html',
              controller: 'ProductController'
          }).
+         when('/productbacklogitem', {
+             templateUrl: 'productbacklogitem/productbacklogitem.view.html',
+             controller: 'ProductBacklogItemController'
+         }).
+         when('/productbacklog', {
+             templateUrl: 'productbacklog/productbacklog.view.html',
+             controller: 'ProductBacklogController'
+         }).
+         when('/login', {
+             templateUrl: 'account/login.view.html',
+             controller: 'AccountController'
+         }).
          when('/login', {
              templateUrl: 'account/login.view.html',
              controller: 'AccountController'

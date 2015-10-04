@@ -48,6 +48,12 @@
 
     <script src="organization/organization.service.js"></script>
     <script src="organization/organization.controller.js"></script>
+    
+    <script src="productbacklog/productbacklog.service.js"></script>
+    <script src="productbacklog/productbacklog.controller.js"></script>
+    
+    <script src="productbacklogitem/productbacklogitem.service.js"></script>
+    <script src="productbacklogitem/productbacklogitem.controller.js"></script>
 
     <script src="product/product.service.js"></script>
     <script src="product/product.controller.js"></script>
@@ -84,6 +90,8 @@
                     <li ng-class="{'active':isActive('/role')}"><a href="index.html#/role">Role</a></li>
                     <li ng-class="{'active':isActive('/sprint')}"><a href="index.html#/sprint">Sprint</a></li>
                     <li ng-class="{'active':isActive('/product')}"><a href="index.html#/product">Product</a></li>
+                    <li ng-class="{'active':isActive('/productbacklog')}"><a href="index.html#/productbacklog">Product Backlog</a></li>
+                    <li ng-class="{'active':isActive('/productbacklogitem')}"><a href="index.html#/productbacklogitem">Product Backlog Item</a></li>
                     <li ng-class="{'active':isActive('/register')}"><a href="index.html#/register">Register</a></li>
                     <li ng-class="{'active':isActive('/login')}" ng-if="!globals.currentUser.username"><a href="index.html#/login">Login</a></li>
                     <li ng-class="{'active':isActive('/logoff')}" ng-if="globals.currentUser.username"><a href="index.html#/logoff">LogOff</a></li>

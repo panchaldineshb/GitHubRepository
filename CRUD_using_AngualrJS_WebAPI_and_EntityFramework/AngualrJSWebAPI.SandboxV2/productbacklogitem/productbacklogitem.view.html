@@ -1,0 +1,57 @@
+<div class="container-fluid" ng-init="init()">
+    <div class="gridStyle" ng-grid="gridOptions"></div>
+</div>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div ng-show="error" class="alert alert-danger">{{error}}</div>
+        <form name="myForm" class="form-horizontal">
+            <fieldset>
+                <legend>ProductBacklogItem Details</legend>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="inputName">Name</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" id="inputName" type="text" ng-model="Name" placeholder="Name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="inputDescription">Description</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" id="inputDescription" type="text" ng-model="Description" placeholder="Description">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="inputActive">Active</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" id="inputActive" type="text" ng-model="Active" placeholder="Active">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="inputPurged">Purged</label>
+                    <div class="col-lg-10">
+                        <textarea class="form-control" id="inputPurged" ng-model="Purged" placeholder="Purged" rows="3"></textarea>
+                        <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="inputDisplay">Display</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" id="inputDisplay" type="text" ng-model="Display" placeholder="Display">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button class="btn btn-danger" type="reset" ng-disabled="form.$invalid || dataLoading" ng-click="cancel()">Cancel</button>
+                        <button class="btn btn-primary" type="submit" ng-disabled="form.$invalid || dataLoading" ng-click="register()">Submit</button>
+                        <img ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
