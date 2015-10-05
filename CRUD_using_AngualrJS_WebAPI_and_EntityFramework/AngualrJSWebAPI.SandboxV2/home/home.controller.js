@@ -3,7 +3,7 @@
 /* Controllers */
 
 angular
-.module('phonecatApp')
+.module('SarabiAngularJSApp')
 .controller('HomeController', ['$scope', 'Home',
     function ($scope, Home) {
         $scope.phones = Home.query();

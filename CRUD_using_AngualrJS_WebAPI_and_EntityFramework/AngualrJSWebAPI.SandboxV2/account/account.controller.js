@@ -42,7 +42,7 @@ http://jasonwatmore.com/post/2015/03/10/AngularJS-User-Registration-and-Login-Ex
 /* Controllers */
 
 angular
-.module('phonecatApp')
+.module('SarabiAngularJSApp')
 .controller('AccountController', ['$scope', '$rootScope', '$location', 'Account',
     function ($scope, $rootScope, $location, Account) {
         $scope.logoff = function () {

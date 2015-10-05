@@ -4,14 +4,15 @@ Referenced : https://github.com/hillkim7/angularjs_tutorial
 */
 
 describe('MainCtrl', function () {
+    var mainCtrl, $scope;
     beforeEach(module('cookbook'));
-    it('should assign the correct rapper to scope',
-    inject(function ($controller, $rootScope) {
-        var $scope = $rootScope.$new();
+    beforeEach(inject(function ($controller, $rootScope) {
+        $scope = $rootScope.$new();
         $controller('MainCtrl', {
             $scope: $scope
         });
-
-        expect($scope.emcee).toEqual('Kool G Rap');
     }));
+    it('should assign the correct rapper to scope', function () {
+        expect($scope.emcee).toEqual('Kool G Rap');
+    });
 });

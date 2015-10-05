@@ -2,7 +2,7 @@
 
 /* Services
 
-angular.module('phonecatApp')
+angular.module('SarabiAngularJSApp')
 .factory('Contact', ['$resource',
   function ($resource) {
       return $resource('app/phones/:phoneId.json', {}, {
@@ -16,7 +16,7 @@ var user = User.get({ userId: 123 }, function () {
     user.$save();
 });
 
-angular.module('phonecatApp')
+angular.module('SarabiAngularJSApp')
 .factory("SweetFactory", ["$http", "$q", "$resource", function ($http, $q, $resource) {
     return $resource("/sweet/app", {}, {
         "put": {
@@ -29,13 +29,13 @@ angular.module('phonecatApp')
     });
 }]);
 
-angular.module('phonecatApp')
+angular.module('SarabiAngularJSApp')
 .service('$job', function ($resource) {
     var job = $resource(service_base_url + 'jobs.json/:id');
     return job;
 });
 
-angular.module('phonecatApp')
+angular.module('SarabiAngularJSApp')
 .service('$job', function ($resource) {
     var job = $resource(service_base_url + 'jobs.json/:id', {}, {
         'query': {
@@ -54,7 +54,7 @@ angular.module('phonecatApp')
 });
 
 // Authenticate Resource
-angular.module('phonecatApp')
+angular.module('SarabiAngularJSApp')
 .factory('Authenticate', ['$resource',
     function ($resource) {
         var serviceBaseUrl = config.apiurl;
@@ -92,7 +92,7 @@ The others cases will work as well. Just do not confuse path parameters with que
 
 
 
-angular.module('phonecatApp')
+angular.module('SarabiAngularJSApp')
 .factory('Account', ['Base64', '$http', '$resource', '$cookieStore', '$rootScope', '$timeout',
     function (Base64, $http, $resource, $cookieStore, $rootScope, $timeout) {
     var service = {};

@@ -3,7 +3,7 @@
 /* Controllers */
 
 angular
-.module('phonecatApp')
+.module('SarabiAngularJSApp')
 .controller('SprintController', ['$scope', '$rootScope', '$location', 'Sprint',
     function ($scope, $rootScope, $location, Sprint) {
         $scope.userData = [];

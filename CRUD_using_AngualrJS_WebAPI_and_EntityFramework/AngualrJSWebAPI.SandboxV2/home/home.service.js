@@ -2,7 +2,7 @@
 
 /* Services */
 
-angular.module('phonecatApp')
+angular.module('SarabiAngularJSApp')
 .factory('Home', ['$resource',
   function ($resource) {
       return $resource('app/phones/home.json', {}, {

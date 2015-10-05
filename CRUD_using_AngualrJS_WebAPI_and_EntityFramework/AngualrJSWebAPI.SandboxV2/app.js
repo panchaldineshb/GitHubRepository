@@ -2,14 +2,14 @@
 
 /* App Module */
 
-var phonecatApp = angular.module('phonecatApp', [
+var SarabiAngularJSApp = angular.module('SarabiAngularJSApp', [
   'ngGrid',
   'ngRoute',
   'ngResource',
   'ngCookies'
 ]);
 
-phonecatApp.config(['$routeProvider', '$locationProvider', '$httpProvider',
+SarabiAngularJSApp.config(['$routeProvider', '$locationProvider', '$httpProvider',
    function ($routeProvider, $locationProvider, $httpProvider) {
        $routeProvider.
          when('/', {
@@ -80,7 +80,7 @@ phonecatApp.config(['$routeProvider', '$locationProvider', '$httpProvider',
        delete $httpProvider.defaults.headers.common['X-Requested-With'];
    }]);
 
-phonecatApp.run(['$rootScope', '$location', '$cookieStore', '$http',
+SarabiAngularJSApp.run(['$rootScope', '$location', '$cookieStore', '$http',
    function ($rootScope, $location, $cookieStore, $http) {
        // keep user logged in after page refresh
        $rootScope.globals = $cookieStore.get('globals') || {};

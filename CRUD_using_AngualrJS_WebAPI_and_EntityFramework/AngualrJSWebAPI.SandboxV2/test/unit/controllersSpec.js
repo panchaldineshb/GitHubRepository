@@ -11,7 +11,7 @@ describe('PhoneCat controllers', function() {
     });
   });
 
-  beforeEach(module('phonecatApp'));
+  beforeEach(module('SarabiAngularJSApp'));
   beforeEach(module('phonecatServices'));
 
   describe('PhoneListController', function(){

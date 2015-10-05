@@ -3,7 +3,7 @@
 /* Controllers */
 
 angular
-.module('phonecatApp')
+.module('SarabiAngularJSApp')
 .controller('OrganizationController', ['$scope', '$rootScope', '$location', 'Organization',
     function ($scope, $rootScope, $location, Organization) {
         $scope.userData = [];

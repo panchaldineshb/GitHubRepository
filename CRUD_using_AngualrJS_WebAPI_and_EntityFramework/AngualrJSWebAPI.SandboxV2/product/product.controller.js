@@ -3,7 +3,7 @@
 /* Controllers */
 
 angular
-.module('phonecatApp')
+.module('SarabiAngularJSApp')
 .controller('ProductController', ['$scope', '$rootScope', '$location', 'Product',
     function ($scope, $rootScope, $location, Product) {
         $scope.userData = [];

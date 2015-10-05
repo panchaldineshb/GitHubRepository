@@ -3,7 +3,7 @@
 /* Controllers */
 
 angular
-.module('phonecatApp')
+.module('SarabiAngularJSApp')
 .controller('RoleController', ['$scope', '$rootScope', '$location', 'Role',
     function ($scope, $rootScope, $location, Role) {
         $scope.userData = [];

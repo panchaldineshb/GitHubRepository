@@ -2,7 +2,7 @@
 
 /* Services */
 
-angular.module('phonecatApp')
+angular.module('SarabiAngularJSApp')
 .factory('Contact', ['$resource',
   function ($resource) {
       return $resource('app/phones/:phoneId.json', {}, {

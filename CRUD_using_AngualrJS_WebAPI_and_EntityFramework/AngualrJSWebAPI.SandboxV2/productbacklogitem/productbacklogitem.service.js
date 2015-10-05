@@ -26,7 +26,7 @@ The others cases will work as well. Just do not confuse path parameters with que
 
 */
 
-angular.module('phonecatApp')
+angular.module('SarabiAngularJSApp')
 .factory('ProductBacklogItem', ['$resource', '$cookieStore', '$rootScope', '$timeout',
     function ($resource, $cookieStore, $rootScope, $timeout) {
         var service = {};

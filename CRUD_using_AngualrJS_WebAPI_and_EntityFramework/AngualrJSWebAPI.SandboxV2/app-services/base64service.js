@@ -2,7 +2,7 @@
 
 /* Services */
 
-angular.module('phonecatApp')
+angular.module('SarabiAngularJSApp')
 .factory('Base64', function () {
     /* jshint ignore:start */
 
