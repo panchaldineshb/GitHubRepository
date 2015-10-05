@@ -9,4 +9,3 @@ angular
     }])
 
 
-expect($scope.emcee).toEqual('Kool G Rap');
