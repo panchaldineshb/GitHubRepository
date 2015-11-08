@@ -1,18 +1,14 @@
-﻿using System.Net.Http.Headers;
+﻿using AngualrJSWebAPIApp.API.Abstract;
+using AngualrJSWebAPIApp.API.Concrete.Repositories;
+using AngualrJSWebAPIApp.DAL.Context;
+using Autofac;
+using Autofac.Integration.WebApi;
+using System.Net.Http.Headers;
 using System.Reflection;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Mvc;
 using System.Web.Routing;
-using AngualrJSWebAPIApp.API.Abstract;
-using AngualrJSWebAPIApp.API.Concrete;
-using AngualrJSWebAPIApp.API.Repositories;
-using AngualrJSWebAPIApp.API.Concrete.Repositories;
-using AngualrJSWebAPIApp.DAL.Context;
-using AngualrJSWebAPIApp.Models;
-using Autofac;
-using Autofac.Integration.WebApi;
-
 
 namespace AngualrJSWebAPIApp.API
 {
