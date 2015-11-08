@@ -1,3 +1,12 @@
-require('./app').listen(3000);
+/*
+ *
+ */
 
-console.log('Server started on localhost:3000; press Ctrl-C to terminate....');
+
+// get app
+var app = require('./app');
+
+// start listening
+app.listen(app.get('port'), function() {
+    console.log( 'Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.' );
+});

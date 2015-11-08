@@ -1,46 +1,47 @@
 {
-"name": "socket-io-test"
+    "name": "socket-io-test"
     ,
-"version": "0.0.1"
+    "version": "0.0.1"
     ,
-"private":
+    "private":
     true,
-"description": "Get all your dependencies in one file."
+    "description": "Get all your dependencies in one file."
     ,
-"scripts":
+    "scripts":
     {
-"test": "mocha"
+        "test": "mocha"
         ,
-"start": "node app.js"
+        "start": "node server.js"
     },
-"author": ""
+    "author": ""
     ,
-"license": "BSD-2-Clause"
+    "license": "BSD-2-Clause"
     ,
-"dependencies":
+    "dependencies":
     {
-"socket.io": "latest"
+        "socket.io": "latest"
         ,
-"express": "~4.5.1"
+        "express": "~4.5.1"
         ,
-"jade": "*"
+        "jade": "*"
         ,
-"ejs": "~1.0.0"
+        "ejs": "~1.0.0"
         ,
-"npm": "~1.4.20"
+        "npm": "~1.4.20"
         ,
-"rimraf": "~2.2.8"
+        "rimraf": "~2.2.8"
         ,
-"browserify": "~4.2.0"
+        "browserify": "~4.2.0",
+		"mongoose": "3.6"
     },
-"devDependencies":
+    "devDependencies":
     {
-"mocha": "~1.20.1"
+        "mocha": "~1.20.1"
         ,
-"array-map": "0.0.0"
+        "array-map": "0.0.0"
         ,
-"array-reduce": "0.0.0"
+        "array-reduce": "0.0.0"
         ,
-"expect.js": "~0.3.1"
+        "expect.js": "~0.3.1"
     }
 }

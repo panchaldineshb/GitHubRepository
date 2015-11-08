@@ -1,11 +1,14 @@
+/*
+ *
+ */
 var utils = module.exports = {};
 var browserify = require('browserify');
-var fs = require('fs');
 var rimraf = require('rimraf');
 var path = require('path');
+var fs = require('fs');
 
 utils.moduleInstalled = function(name) {
-    return fs.existsSync('./node_modules/'+name);
+    return fs.existsSync('./node_modules/' + name);
 };
 
 utils.removeModuleDir = function(name) {
@@ -49,4 +52,5 @@ utils.bundle = function(libraries, callback) {
 
         callback(src);
     });
+
 };
