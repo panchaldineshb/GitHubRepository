@@ -1,0 +1,2 @@
+C:\Projects\GitHubRepository\CRUD_using_nodejs\V1\CRUD_using_nodejs_V1\CRUD_using_nodejs_V1\obj\Debug\CRUD_using_nodejs_V1.njsprojResolveAssemblyReference.cache
+C:\Projects\GitHubRepository\CRUD_using_nodejs\V1\CRUD_using_nodejs_V1\CRUD_using_nodejs_V1\bin\Microsoft.NodejsTools.WebRole.dll

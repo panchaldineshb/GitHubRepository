@@ -1,13 +1,16 @@
 {
-  "name": "socket-io-test",
+  "name": "CRUD_using_nodejs_V1",
   "version": "0.0.1",
   "private": true,
-  "description": "Get all your dependencies in one file.",
+  "description": "CRUD_using_nodejs_V1",
   "scripts": {
     "test": "mocha",
     "start": "node server.js"
   },
-  "author": "",
+  "author": {
+    "name": "Dinesh",
+    "email": ""
+  },
   "license": "BSD-2-Clause",
   "dependencies": {
     "body-parser": "^1.14.1",

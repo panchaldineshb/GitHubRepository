@@ -1,0 +1,10 @@
+{
+  "name": "CRUD_using_nodejs_V1",
+  "version": "0.0.0",
+  "description": "CRUD_using_nodejs_V1",
+  "main": "app.js",
+  "author": {
+    "name": "Dinesh",
+    "email": ""
+  }
+}
