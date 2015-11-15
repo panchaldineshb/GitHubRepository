@@ -1,0 +1,47 @@
+body
+  #header
+    #welcome
+      a(href='/sessions/new') Login
+      | |
+      a(href='/users/new') Sign Up
+      | |
+      a(href='#') About
+    h3
+      a(href='/') Fat Free CRM
+  p#flash(style='display: none;')
+  .tabless
+    .standalone
+      form#new_user.new_user(accept-charset='UTF-8', action='/users', method='post', onsubmit='$$(\'#\'+this.id+\' input[type="submit"]\')[0].disabled = true')
+        div(style='margin: 0; padding: 0; display: inline;')
+          input(name='utf8', type='hidden', value='✓')
+        .title_tools
+          | Already signed up?
+          a(href='/sessions/new') Login Now!
+        .title Sign Up
+        .section
+          .label Email:
+          input#user_email(name='user[email]', size='30', type='text', value='')
+          .label Username:
+          input#user_username(name='user[username]', size='30', type='text', value='')
+          .label Password:
+          input#user_password(name='user[password]', size='30', type='password')
+          .label Confirm new password:
+          input#user_password_confirmation(name='user[password_confirmation]', size='30', type='password')
+        .buttonbar
+          input(name='commit', type='submit', value='Sign Up')
+  center
+    #footer
+      | Powered by
+      a(href='http://www.pragtech.co.in', data-popup='true') Fat Free CRM
+      | v0.10.1-rc1 © 2008-2012 by Michael Dvorkin
+      | |
+      img(alt='Iconset_attribution', src='/images/iconset_attribution-1ff72a2be9e88b8da29e1a753ca51fed.png')
+      | Icons from the
+      a(href='http://gentleface.com/free_icon_set.html') Gentleface Mono Icon Set
+    br
+    #about(style='display: none;')
+      h3
+        | Fat Free CRM version
+        span.cool v0.10.1-rc1
+        | (mysql2)
+   script(type='text/javascript')

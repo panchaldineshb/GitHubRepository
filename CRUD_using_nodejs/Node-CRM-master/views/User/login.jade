@@ -1,0 +1,51 @@
+body
+  #header
+    #welcome
+      a(href='/sessions/new') Login
+      | |
+      a(href='/users/new') Sign Up
+      | |
+      a(href='#', onclick='Modalbox.show($(\'about\'), { title: this.title }); return false;', title='About Fat Free CRM') About
+    h3
+      a(href='/') Fat Free CRM
+  if(req.body.user)
+    p(id="flash") Invalid username or password.
+    script(type="text/javascript")
+      crm.flash('warning', true)
+  //p#flash(style='display: none;')
+  .tabless
+    #standalone.standalone
+      form(action='/sessions', method='post')
+        div(style='margin: 0; padding: 0; display: inline;')
+          input(name='utf8', type='hidden', value='✓')
+        .title_tools
+          | Do not have an account?
+          a(href='/users/new') Sign Up Now!
+        .title Login
+        .section
+          .label Username:
+          input#authentication_username(name='user[username]', size='30', type='text')
+          .label Password:
+          input#authentication_password(name='user[password]', size='30', type='password')
+        div(style='margin-left: 12px;')
+          input(name='user[remember_me]', type='hidden', value='0')
+          input#authentication_remember_me(name='user[remember_me]', type='checkbox', value='1')
+          | Remember Me
+        br
+        .buttonbar
+          input(name='commit', type='submit', value='Login')
+          | or
+          a(href='/passwords/new') Forgot Password?
+  center
+    #footer
+      | Powered by
+      a(href='http://www.pragtech.co.in', data-popup='true') Fat Free CRM
+      | |
+      img(alt='Iconset_attribution', src='/assets/iconset_attribution-1ff72a2be9e88b8da29e1a753ca51fed.png')
+      | Icons from the
+      a(href='http://gentleface.com/free_icon_set.html') Gentleface Mono Icon Set
+    br
+    #about(style='display: none;')
+      p
+        | Thank you for using Fat Free CRM! We appreciate your business and hope you enjoy using the software.
+   

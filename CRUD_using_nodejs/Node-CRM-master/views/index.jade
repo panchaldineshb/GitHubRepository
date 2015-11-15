@@ -1,0 +1,142 @@
+body
+    #header
+      #welcome
+        | Welcome,
+        span#welcome_username darhamid
+        span !  
+        a#jumper(href='#') Quick find
+        | |
+        a(href='#') Profile
+        | |
+        a(href='/sessions') Logout
+        #jumpbox(trigger='jumper', style='z-index: 100; left: 1209px; top: 21px; display: none;')
+          span#jumpbox_menu
+            a(href='#') Campaigns
+            | |
+            a(href='#') Accounts
+            | |
+            a.selected(href='#') Leads
+            | |
+            a(href='#') Contacts
+            | |
+            a(href='#') Opportunities
+          span#jumpbox_label(style='display: none;')
+          br
+          input#auto_complete_query(autocomplete='off', name='auto_complete_query', style='width: 310px;', type='text')
+          #auto_complete_dropdown.auto_complete(style='display: none;')
+      h3
+        h4="helllllllllllllllllllllllllo"+user.username
+        a(href='#') Fat Free CRM
+    #tabs
+      ul
+        li
+          a.active(href='#')
+            img(alt='Dashboard_active', src='/images/dashboard_active-11ba0365b57628834d203df04a901dc4.png')
+            | Dashboard
+        li
+          a(href='#')
+            img(alt='Tasks', src='/images/tasks-34761652e66bedc92dec666f5cbf600d.png')
+            | Tasks
+        li
+          a(href='#')
+            img(alt='Campaigns', src='/images/campaigns-80ad99b4a444383f3c07b275e29114cf.png')
+            | Campaigns
+        li
+          a(href='#')
+            img(alt='Leads', src='/images/leads-9e70ca03ece9d2a9587ef3fcceaccca9.png')
+            | Leads
+        li
+          a(href='#')
+            img(alt='Accounts', src='/images/accounts-37fd43792d92f9cd23ccd363584a83af.png')
+            | Accounts
+        li
+          a(href='#')
+            img(alt='Contacts', src='/images/contacts-f3592054f3b432aba82387e4917ce103.png')
+            | Contacts
+        li
+          a(href='#')
+            img(alt='Opportunities', src='/images/opportunities-7ccdf9bbbddbefc947cb0e506ec1893f.png')
+            | Opportunities
+    table.tabbed(cellpadding='0', cellspacing='0', height='100%', width='100%')
+      tbody
+        tr
+          td#sidebar.sidebar(width='12%', valign='top')
+            #recently.panel
+              .caption Recent Items
+              li.last
+                dt
+                  a(href='#', title='Brick House') Brick House
+                tt Lead:
+          td#main.main(width='88%', valign='top')
+            .title_tools
+              a(href='#')
+                span#options_arrow.arrow ▼
+                | Options
+            .title
+              span#title Recent Activity Options
+            #activities.list
+              li#activity_4370.activity
+                .tools
+                  small 03 Apr 10:01
+                tt
+                  img.gravatar(width='16', height='16', src='/images/photo.htm', alt='Gravatar')
+                  a(href='#') matthewewersmobile@gmail.com
+                  | created account
+                  a(href='#') Dummy Account
+            #activities.list
+              li#activity_4370.activity
+                .tools
+                  small 03 Apr 10:01
+                tt
+                  img.gravatar(width='16', height='16', src='/images/photo.htm', alt='Gravatar')
+                  a(href='#') matthewewersmobile@gmail.com
+                  | created account
+                  a(href='#') Dummy Account
+            #activities.list
+              li#activity_4370.activity
+                .tools
+                  small 03 Apr 10:01
+                tt
+                  img.gravatar(width='16', height='16', src='/images/photo.htm', alt='Gravatar')
+                  a(href='#') matthewewersmobile@gmail.com
+                  | created account
+                  a(href='#') Dummy Account
+            #activities.list
+              li#activity_4370.activity
+                .tools
+                  small 03 Apr 10:01
+                tt
+                  img.gravatar(width='16', height='16', src='/images/photo.htm', alt='Gravatar')
+                  a(href='#') matthewewersmobile@gmail.com
+                  | created account
+                  a(href='#') Dummy Account
+    #footer  © Copyright 2010 Pragmatic Techsoft Pvt. Ltd. All rights reserved
+    script(type='text/javascript')
+      //<![CDATA[
+      _translations = {"Now":"Now","Today":"Today","Clear":"Clear","OK":"OK"};
+      Date.weekdays = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+      Date.months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+      //]]>
+    script(type='text/javascript')
+      document.observe("dom:loaded", function() {
+      new crm.Popup({
+      trigger     : "jumper",
+      target      : "jumpbox",
+      under       : "welcome",
+      appear      : 0.3,
+      fade        : 0.3,
+      before_show : function() {
+      $("jumper").className = "selected";
+      $("jumpbox_label").innerHTML = ""
+      $("jumpbox_label").hide();
+      $("jumpbox_menu").show();
+      crm.auto_complete("leads");
+      },
+      after_show  : function() {
+      $("auto_complete_query").focus();
+      },
+      after_hide  : function() {
+      $("jumper").className = "";
+      }
+      });
+      });

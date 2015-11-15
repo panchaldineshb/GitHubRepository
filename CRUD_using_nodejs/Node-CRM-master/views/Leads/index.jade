@@ -1,0 +1,266 @@
+html
+  body
+    #header
+      #welcome
+        | Welcome,
+        span#welcome_username darhamid
+        span !  
+        a#jumper(href='#') Quick find
+        | |
+        a(href='/profile') Profile
+        | |
+        a(href='/logout', data-method='delete', rel='nofollow') Logout
+        #jumpbox(style='display: none;')
+          span#jumpbox_menu
+            a.(href='#') Campaigns
+            | |
+            a.(href='#') Accounts
+            | |
+            a.selected(href='#') Leads
+            | |
+            a.(href='#') Contacts
+            | |
+            a.(href='#') Opportunities
+          span#jumpbox_label(style='display: none;')
+          br
+          input#auto_complete_query(autocomplete='off', name='auto_complete_query', style='width: 310px;', type='text')
+          #auto_complete_dropdown.auto_complete
+      h3
+        a(href='/') Fat Free CRM
+    #tabs
+      ul
+        li
+          a.active(href='#')
+            img(alt='Dashboard_active', src='/images/dashboard_active-11ba0365b57628834d203df04a901dc4.png')
+            | Dashboard
+        li
+          a(href='#')
+            img(alt='Tasks', src='/images/tasks-34761652e66bedc92dec666f5cbf600d.png')
+            | Tasks
+        li
+          a(href='#')
+            img(alt='Campaigns', src='/images/campaigns-80ad99b4a444383f3c07b275e29114cf.png')
+            | Campaigns
+        li
+          a(href='/leads/all')
+            img(alt='Leads', src='/images/leads-9e70ca03ece9d2a9587ef3fcceaccca9.png')
+            | Leads
+        li
+          a(href='#')
+            img(alt='Accounts', src='/images/accounts-37fd43792d92f9cd23ccd363584a83af.png')
+            | Accounts
+        li
+          a(href='#')
+            img(alt='Contacts', src='/images/contacts-f3592054f3b432aba82387e4917ce103.png')
+            | Contacts
+        li
+          a(href='#')
+            img(alt='Opportunities', src='/images/opportunities-7ccdf9bbbddbefc947cb0e506ec1893f.png')
+            | Opportunities
+    p#flash(style='display: none;') Can't delete the lead since it's no longer available.
+     
+    table.tabbed(cellpadding='0', cellspacing='0', height='100%', width='100%')
+      tr
+        td#sidebar.sidebar(valign='top')
+          #filters.filters
+            h4 Search leads
+            div(style='margin: 0px 0px 6px 0px;')
+              input#query(name='query', size='23', type='text')
+            script
+              //<![CDATA[
+              new Form.Element.Observer('query', 1.5, function(element, value) {
+              crm.search(value, 'leads')
+              });
+              //]]>
+            .check_box(style='border-bottom: 1px silver dotted;')
+              div(style='float: right;')
+                | 1
+              input#new(checked='checked', name='status[]', onclick='new Ajax.Request(\'/leads/filter\', {asynchronous:true, evalScripts:true, onComplete:function(request){$(\'loading\').hide()}, onLoading:function(request){$(\'loading\').show()}, parameters:"status=" + $$("input[name=\'status[]\']").findAll(function (el) { return el.checked }).pluck("value")})', type='checkbox', value='new')
+              label(for='new') New
+            .check_box(style='border-bottom: 1px silver dotted;')
+              div(style='float: right;')
+                | 0
+              input#contacted(name='status[]', onclick='new Ajax.Request(\'/leads/filter\', {asynchronous:true, evalScripts:true, onComplete:function(request){$(\'loading\').hide()}, onLoading:function(request){$(\'loading\').show()}, parameters:"status=" + $$("input[name=\'status[]\']").findAll(function (el) { return el.checked }).pluck("value")})', type='checkbox', value='contacted')
+              label(for='contacted') Contacted
+            .check_box(style='border-bottom: 1px silver dotted;')
+              div(style='float: right;')
+                | 0
+              input#converted(name='status[]', onclick='new Ajax.Request(\'/leads/filter\', {asynchronous:true, evalScripts:true, onComplete:function(request){$(\'loading\').hide()}, onLoading:function(request){$(\'loading\').show()}, parameters:"status=" + $$("input[name=\'status[]\']").findAll(function (el) { return el.checked }).pluck("value")})', type='checkbox', value='converted')
+              label(for='converted') Converted
+            .check_box(style='border-bottom: 1px silver dotted;')
+              div(style='float: right;')
+                | 1
+              input#rejected(checked='checked', name='status[]', onclick='new Ajax.Request(\'/leads/filter\', {asynchronous:true, evalScripts:true, onComplete:function(request){$(\'loading\').hide()}, onLoading:function(request){$(\'loading\').show()}, parameters:"status=" + $$("input[name=\'status[]\']").findAll(function (el) { return el.checked }).pluck("value")})', type='checkbox', value='rejected')
+              label(for='rejected') Rejected
+            .check_box(style='border-bottom: 1px silver dotted;')
+              div(style='float: right;')
+                | 0
+              input#other(name='status[]', onclick='new Ajax.Request(\'/leads/filter\', {asynchronous:true, evalScripts:true, onComplete:function(request){$(\'loading\').hide()}, onLoading:function(request){$(\'loading\').show()}, parameters:"status=" + $$("input[name=\'status[]\']").findAll(function (el) { return el.checked }).pluck("value")})', type='checkbox', value='other')
+              label(for='other') Other
+            .check_box
+              div(style='float: right;')
+                b 2
+              b Total Leads
+          #recently.panel
+            .caption Recent Items
+            li
+              dt
+                a(href='http://localhost:3000/leads/1', title='dar hamid') dar hamid
+              tt Lead:
+        td#main.main(valign='top')
+          .title_tools
+            a(href='/leads/new?cancel=false', data-remote='true', onclick='this.href = this.href.replace(/cancel=(true|false)/,\'cancel=\'+ Element.visible(\'create_lead\'));')
+              span#create_lead_arrow.arrow ►
+              | Create Lead
+            | |
+            a(href='/leads/options?cancel=false', data-remote='true', onclick='this.href = this.href.replace(/cancel=(true|false)/,\'cancel=\'+ Element.visible("options"));')
+              span#options_arrow.arrow ►
+              | Options
+          .title
+            span#create_lead_title Leads
+            img#loading(alt='Loading', height='16', src='/assets/loading-f694fa3f9fbceffa1d8cf286d06d5e91.gif', style='display: none;', width='16')
+          #options.remote(style='display: none;')
+          #advanced_search.remote(style='display: none;')
+          #create_lead.remote(style='display: none;')
+          -var cnt = 0;
+          -each lead in leads
+            -cnt+=1
+            if(lead.status == 'New')
+              div(class='list', id='leads')
+                li(class ="lead",id = cnt, onmouseout="return hideclass(this)", onmouseover="return changeclass(this)")
+                  .new.strip New
+                  div(class ="tools",id= "tools_lead_"+cnt, style='visibility: hidden;')
+                    a(href='/leads/'+lead._id.toHexString()+'/edit', data-remote='true', onclick='this.href = this.href.split(\'?\')[0] + \'?previous=\'+crm.find_form(\'edit_lead\');') Edit
+                    | |
+                    a(href='/leads/'+lead._id.toHexString()+'/convert', data-method='get', data-remote='true', with='{ previous: crm.find_form(\'edit_lead\') }') Convert
+                    | |
+                    a(href='/leads/'+lead._id.toHexString()+'/reject', data-method='get', data-remote='true', rel='nofollow') Reject!
+                    | |
+                    a(href='/leads/'+lead._id.toHexString(), data-method='get', data-remote='true', onclick='new Effect.Highlight("lead_131",{startcolor:\'#ffe4e1\'});', rel='nofollow') Delete!
+                  .indent
+                    a(href='/leads/131')!= lead.first_name+" "+lead.last_name
+                    tt
+                    dt 
+                      font(color='gainsboro')!= lead.rating 
+                      | |
+                      a(href='mailto:lead.email', title='lead.email')!= lead.email
+                      | |
+                      a(href='#')!= lead.phone
+            else if(lead.status == 'Rejected')
+              div(id="leads", class="list")
+                li(class ="lead",id = cnt, onmouseout="return hideclass(this)", onmouseover="return changeclass(this)")
+                  .rejected.strip(style="background: none repeat scroll 0 0 OrangeRed;") Rejected
+                  div(class ="tools",id= "tools_lead_"+cnt, style='visibility: hidden;')
+                    a(href='/leads/'+lead._id.toHexString()+'/edit', data-remote='true', onclick='this.href = this.href.split(\'?\')[0] + \'?previous=\'+crm.find_form(\'edit_lead\');') Edit
+                    | |
+                    font(color="silver") Convert; 
+                    | |
+                    font(color="silver") Reject 
+                    | |
+                    a(href='/leads/'+lead._id.toHexString(), data-method='get', data-remote='true',onclick="return confirmbox()", rel='nofollow') Delete!
+                
+                  .indent
+                    a(href='/leads/131')!= lead.first_name+" "+lead.last_name
+                    tt
+                    dt 
+                      font(color='gainsboro')!= lead.rating 
+                      | |
+                      a(href='mailto:lead.email', title='lead.email')!= lead.email
+                      | |
+                      a(href='#')!= lead.phone 
+
+
+          #paginate
+          #export
+            a(href='/leads.xls', title='Export to Excel') XLS
+            | |
+            a(href='/leads.csv', title='Export to comma-delimited file format (including deleted records)') CSV
+            | |
+            a(href='/leads.rss?authentication_credentials=R5Pjrp0AjysuzhuNcdfL', title='RSS feed') RSS
+            | |
+            a(href='/leads.atom?authentication_credentials=R5Pjrp0AjysuzhuNcdfL', title='Atom feed') ATOM
+    #footer
+      | Powered by
+      a(href='http://www.pragtech.co.in', data-popup='true') Fat Free CRM
+      | v0.10.1-rc1 © 2008-2012 by Michael Dvorkin
+      | |
+      img(alt='Iconset_attribution', src='/assets/iconset_attribution-1ff72a2be9e88b8da29e1a753ca51fed.png')
+      | Icons from the
+      a(href='http://gentleface.com/free_icon_set.html') Gentleface Mono Icon Set
+      | |
+      a(href='#', onclick='Modalbox.show($(\'about\'), { title: this.title }); return false;', title='About Fat Free CRM') About Fat Free CRM
+    br
+    #about(style='display: none;')
+      h3
+        | Fat Free CRM version
+        span.cool v0.10.1-rc1
+      p
+        | Thank you for using Fat Free CRM! We appreciate your business and hope you enjoy using the software.
+      | Fat Free CRM resources (links open a new window):
+      ul(style='margin: 0px 0px 0px 15px;')
+        li
+          | »
+          a(href='http://www.fatfreecrm.com', data-popup='true') Home page
+        li
+          | »
+          a(href='http://github.com/michaeldv/fat_free_crm/tree/master', data-popup='true') Project page
+        li
+          | »
+          a(href='http://fatfreecrm.lighthouseapp.com', data-popup='true') Features and bugs
+        li
+          | »
+          a(href='http://twitter.com/fatfreecrm', data-popup='true') Twitter commit updates
+        li
+          | »
+          a(href='http://groups.google.com/group/fat-free-crm-users', data-popup='true') Discussion group for users
+        li
+          | »
+          a(href='http://groups.google.com/group/fat-free-crm-dev', data-popup='true') Discussion group for developers
+      br
+    script(type='text/javascript')
+      //<![CDATA[
+      _translations = {"Now":"Now","Today":"Today","Clear":"Clear","OK":"OK"};
+      Date.weekdays = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+      Date.months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+      //]]>
+    script(type='text/javascript')
+      function changeclass(content){
+      var x = content.id;
+      content.style.background='seashell'; document.getElementById('tools_lead_'+x).style.visibility='visible'
+      
+      }
+
+      function hideclass(content){
+      var x = content.id;
+      content.style.background='white'; $('tools_lead_'+x).style.visibility='hidden'
+      }
+      function confirmbox() {
+      var Ok = confirm("Do you Want to Delete This Lead");
+      if(Ok)
+        return true
+      return false
+      }
+      document.observe("dom:loaded", function() {
+      new crm.Popup({
+      trigger     : "jumper",
+      target      : "jumpbox",
+      under       : "welcome",
+      appear      : 0.3,
+      fade        : 0.3,
+      before_show : function() {
+      $("jumper").className = "selected";
+      $("jumpbox_label").innerHTML = ""
+      $("jumpbox_label").hide();
+      $("jumpbox_menu").show();
+      crm.auto_complete("leads");
+      },
+      after_show  : function() {
+      $("auto_complete_query").focus();
+      },
+      after_hide  : function() {
+      $("jumper").className = "";
+      }
+      });
+      });
+
+    

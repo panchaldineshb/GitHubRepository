@@ -1,0 +1,626 @@
+!!! 5
+html
+  head
+    meta(content='text/html; charset=UTF-8', http-equiv='Content-Type')
+    title Fat Free CRM
+    //
+       leads : index 
+  body
+    #header
+      #welcome
+        | Welcome,
+        span#welcome_username darhamid
+        span !  
+        a#jumper(href='#') Quick find
+        | |
+        a(href='#') Profile
+        | |
+        a(href='#', data-method='delete', rel='nofollow') Logout
+        #jumpbox(style='display: none;')
+          span#jumpbox_menu
+            a(href='#') Campaigns
+            | |
+            a(href='#') Accounts
+            | |
+            a.selected(href='/leads/all') Leads
+            | |
+            a(href='#') Contacts
+            | |
+            a(href='#') Opportunities
+          span#jumpbox_label(style='display: none;')
+          br
+          input#auto_complete_query(autocomplete='off', name='auto_complete_query', style='width: 310px;', type='text')
+          #auto_complete_dropdown.auto_complete
+      h3 Fat Free CRM 
+    #tabs
+      ul
+        li
+          a.active(href='#')
+            img(alt='Dashboard_active', src='/images/dashboard_active-11ba0365b57628834d203df04a901dc4.png')
+            | Dashboard
+        li
+          a(href='#')
+            img(alt='Tasks', src='/images/tasks-34761652e66bedc92dec666f5cbf600d.png')
+            | Tasks
+        li
+          a(href='#')
+            img(alt='Campaigns', src='/images/campaigns-80ad99b4a444383f3c07b275e29114cf.png')
+            | Campaigns
+        li
+          a(href='/leads/all')
+            img(alt='Leads', src='/images/leads-9e70ca03ece9d2a9587ef3fcceaccca9.png')
+            | Leads
+        li
+          a(href='#')
+            img(alt='Accounts', src='/images/accounts-37fd43792d92f9cd23ccd363584a83af.png')
+            | Accounts
+        li
+          a(href='#')
+            img(alt='Contacts', src='/images/contacts-f3592054f3b432aba82387e4917ce103.png')
+            | Contacts
+        li
+          a(href='#')
+            img(alt='Opportunities', src='/images/opportunities-7ccdf9bbbddbefc947cb0e506ec1893f.png')
+            | Opportunities
+    p#flash(style='display: none;')
+    table.tabbed(cellpadding='0', cellspacing='0', height='100%', width='100%')
+      tbody
+        tr
+          td#sidebar.sidebar(valign='top')
+            #filters.filters
+               
+            #recently.panel
+              .caption Recent Items
+              li.last
+                dt
+                  a(href='#', title='Brick House') Brick House
+                tt Lead:
+          td#main.main(valign='top')
+            .title_tools
+              a(onclick='this.href = this.href.replace(/cancel=(true|false)/,\'cancel=\'+ Element.visible(\'create_lead\'));', data-remote='true', href='new?cancel=false')
+                span#create_lead_arrow.arrow ▼
+                | Create Lead
+              | |
+              a(href='#')
+                span.arrow ►
+                | Options
+            .title
+              span#create_lead_title Create Lead
+            form(method ="post", action ='/leads/'+lead.id +'/edit', onsubmit = "return validate();")
+              input(name='id', value=lead.id, type='hidden')
+              input(name='_method', value='PUT', type='hidden')
+              .section
+                table
+                  tbody
+                    tr
+                      td
+                        .label.req.top First name:
+                        input#lead_first_name(name='lead[first_name]', value=lead.first_name, size='30', type='text')
+                      td
+                        img(src='images/1x1-ce70ad80ba2af5ddb57e888f4e8492b7.gif', height='1', width='10')
+                      td
+                        .label.req.top Last name:
+                        input#lead_last_name(name='lead[last_name]', value=lead.last_name || '', size='30', type='text')
+                    tr
+                      td
+                        .label Email:
+                        input(name='lead[email]', size='30', type='text', value=lead.email ||'')
+                      td
+                        img(src='images/1x1-ce70ad80ba2af5ddb57e888f4e8492b7.gif', height='1', width='10')
+                      td
+                        .label Phone:
+                        input(name='lead[phone]', size='30', type='text', value=lead.phone || '')
+                    tr
+                      td(colspan='3', valign='top')
+                        .label Tags:
+                        select(name='lead[tags]', value=lead.tags || '', style='width: 500px; display: none;')
+                          option(value = lead.tags ,selected=1 ) web4pro
+                          option(value = lead.tags) itginger
+                        div(style='width: 500px;')
+                          ul
+                            li
+                              input(style='width: 381px;', type='text', value= lead.tags || '')
+              .subtitle
+                a(href='#', onclick='crm.flip_subtitle(this)')
+                  small ►
+                  | Status
+              .section
+                small(style='display: block;') You can add lead status information later.
+                #lead_status(style='display: none;')
+                  table
+                    tbody
+                      tr
+                        td
+                          .label.top Assigned to:
+                          select#lead_assigned_to.chzn-done(style='width: 160px; display: none;', name='lead[assigned_to]', data-placeholder='Myself')
+                            option(value='')
+                            option(value='19') 1@test.com
+                            option(value='47') 1gor@msn.com
+                            option(value='136') 8ofspades@gmail.com
+                          #lead_assigned_to_chzn.chzn-container.chzn-container-single(style='width: 160px;')
+                            a.chzn-single(href='javascript:void(0)', tabindex='0')
+                              span Myself
+                              div
+                                b
+                            .chzn-drop(style='left: -9000px; width: 158px; top: 22px;')
+                              .chzn-search
+                                input.(type='text', autocomplete='off', style='width: 123px;', tabindex='-1')
+                              ul.chzn-results
+                                li#lead_assigned_to_chzn_o_1.active-result.result-selected(style='') 1@test.com
+                                li#lead_assigned_to_chzn_o_2.active-result(style='') 1gor@msn.com
+                                li#lead_assigned_to_chzn_o_3.active-result(style='') 8ofspades@gmail.com
+                        td
+                          img(src='1x1-ce70ad80ba2af5ddb57e888f4e8492b7.gif', height='1', width='10')
+                        td
+                          .label.top Status:
+                          select(name='lead[status]', style='width: 160px;')
+                            option(value = lead.status , selected='selected')=lead.status
+                            if(lead.status =='New')
+                              option Contacted
+                              option Rejected
+                            else if(lead.status =='Contacted')
+                              option New
+                              option Rejected
+                            else if(lead.status =='Rejected')
+                              option New
+                              option Contacted
+                        td
+                          img(src='/1x1-ce70ad80ba2af5ddb57e888f4e8492b7.gif', height='1', width='10')
+                        td
+                          .label.top Rating:
+                          select(name='lead[rating]', selected='selected', style='width: 160px;')
+                            option(value =lead.rating, selected='selected')=lead.rating
+                            option ★
+                            option ★★
+                            option ★★★
+                            option ★★★★
+                            option ★★★★★
+                      tr
+                        td
+                          .label Source:
+                          select(name='lead[lead_source]', style='width: 160px;')
+                            option(value = lead.lead_source , selected='selected')=lead.lead_source
+                            option Cold Call
+                            option Conference
+                            option Online Marketting
+                            option Referral
+                            option Self Generated
+                            option Website
+                            option Word Of Mouth
+                            option Other
+                             
+                            
+                        td
+                          img(src='file:///C|/Users/Ravindra/Desktop/leads_files/1x1-ce70ad80ba2af5ddb57e888f4e8492b7.gif', height='1', width='10')
+                        td(colspan='3')
+                          .label Campaign:
+                          select(name='lead[compaign]', style='width: 100%;')
+                            option(selected='selected', value = lead.compaign)=lead.compaign
+                            option Corte de gastos
+              .subtitle
+                a(href='#', onclick='crm.flip_subtitle(this)')
+                  small ►
+                  | Contact Information
+              .section
+                small#lead_contact_intro(style='display: block;')
+                  | You can add lead contact information later.
+                #lead_contact(style='display: none;')
+                  table
+                    tbody
+                      tr
+                        td
+                          .label.top Title:
+                          input#lead_title(name='lead[title]' ,value=lead.title || '', size='30', type='text')
+                        td
+                          img(src='file:///C|/Users/Ravindra/Desktop/leads_files/1x1-ce70ad80ba2af5ddb57e888f4e8492b7.gif', height='1', width='10')
+                        td
+                          .label.top Company:
+                          input#lead_company(name='lead[company]',value = lead.company || '', size='30', type='text')
+                      tr
+                        td
+                          .label Alternative email:
+                          input#lead_alt_email(name='lead[alt_email]', value = lead.alt_email || '', size='30', type='text')
+                        td
+                          img(src='file:///C|/Users/Ravindra/Desktop/leads_files/1x1-ce70ad80ba2af5ddb57e888f4e8492b7.gif', height='1', width='10')
+                        td
+                          .label Mobile:
+                          input#lead_mobile(name='lead[mobile]',value = lead.mobile || '', size='30', type='text')
+                      tr
+                        td
+                          input#lead_business_address_attributes_address_type(name='lead[business_address_attributes][address_type]', value='Business', type='hidden')
+                          table.address(cellpadding='0', cellspacing='0')
+                            tbody
+                              tr
+                                td
+                                  .label Address:
+                                  input#lead_business_address_attributes_street1(hint='true', name='lead[business_address_attributes][street1]', value=business_address_attributes[0].street1 || '',onblur='crm.show_hint(this, \'Street 1...\')', onfocus='crm.hide_hint(this)', size='30', style='width: 240px; margin-top: 3px;',  type='text')
+                                  input#lead_business_address_attributes_street2(hint='true', name='lead[business_address_attributes][street2]', value=business_address_attributes[0].street2 , onblur='crm.show_hint(this, \'Street 2...\')', onfocus='crm.hide_hint(this)', size='30', style='margin-top: 6px;  width: 240px;',  type='text')
+                          table.address(cellpadding='0', cellspacing='0')
+                            tbody
+                              tr
+                                td
+                                  input#lead_business_address_attributes_city(hint='true', name='lead[business_address_attributes][city]',value =business_address_attributes[0].city || '', onblur='crm.show_hint(this, \'City...\')', onfocus='crm.hide_hint(this)', size='30', style='margin-top: 6px;width: 165px;',  type='text')
+                                td
+                                  img(src='file:///C|/Users/Ravindra/Desktop/leads_files/1x1-ce70ad80ba2af5ddb57e888f4e8492b7.gif', height='1', width='10')
+                                td
+                                  input#lead_business_address_attributes_state(hint='true', name='lead[business_address_attributes][state]',value =business_address_attributes[0].state || '', onblur='crm.show_hint(this, \'State...\')', onfocus='crm.hide_hint(this)', size='30', style='margin-top: 6px;width: 60px;',  type='text')
+                          table.address(cellpadding='0', cellspacing='0')
+                            tbody
+                              tr
+                                td
+                                  input#lead_business_address_attributes_zipcode(hint='true', name='lead[business_address_attributes][zipcode]',value =business_address_attributes[0].zipcode, onblur='crm.show_hint(this, \'Zip Code...\')', onfocus='crm.hide_hint(this)', size='30', style='margin-top: 6px; width: 80px;', type='text')
+                                td
+                                  img(src='file:///C|/Users/Ravindra/Desktop/leads_files/1x1-ce70ad80ba2af5ddb57e888f4e8492b7.gif', height='1', width='10')
+                                td
+                                  select#lead_business_address_attributes_country.chzn-done(data-placeholder='Select a Country', name='lead[business_address_attributes][country]', style='width: 150px; margin-top: 6px; display: block;')
+                                    option(selected='selected', value = '') Select A Country
+                                    option(value='United States') United States
+                                    option(value='Argentina') Argentina
+                                    option(value='Australia') Australia
+                                    option(value='Brasil') Brasil
+                                    option(value='Canada') Canada
+                                    option(value='Finland') Finland
+                                    option(value='France') France
+                                    option(value='Germany') Germany
+                                    option(value='Italy') Italy
+                                    option(value='Japan') Japan
+                                    option(value='Mexico') Mexico
+                                    option(value='Norway') Norway
+                                    option(value='Poland') Poland
+                                    option(value='Portugal') Portugal
+                                    option(value='Spain') Spain
+                                    option(value='Sweden') Sweden
+                                    option(value='Russia') Russia
+                                    option(value='United Kingdom') United Kingdom
+                                    option(value='', disabled='disabled') -------------
+                                    option(value='AF') Afghanistan
+                                    option(value='FI') Aland Islands
+                                    option(value='AL') Albania
+                                    option(value='AG') Algeria
+                                    option(value='AQ') American Samoa
+                                    option(value='AN') Andorra
+                                    option(value='AO') Angola
+                                    option(value='AV') Anguilla
+                                    option(value='AY') Antarctica
+                                    option(value='AC') Antigua and Barbuda
+                                    option(value='AM') Armenia
+                                    option(value='AA') Aruba
+                                    option(value='AU') Austria
+                                    option(value='AJ') Azerbaijan
+                                    option(value='BF') Bahamas
+                                    option(value='BA') Bahrain
+                                    option(value='BG') Bangladesh
+                                    option(value='BB') Barbados
+                                    option(value='BO') Belarus
+                                    option(value='BE') Belgium
+                                    option(value='BH') Belize
+                                    option(value='BN') Benin
+                                    option(value='BD') Bermuda
+                                    option(value='BT') Bhutan
+                                    option(value='BL') Bolivia
+                                    option(value='BK') Bosnia and Herzegovina
+                                    option(value='BC') Botswana
+                                    option(value='BV') Bouvet Island
+                                    option(value='BR') Brazil
+                                    option(value='IO') British Indian Ocean Territory
+                                    option(value='VI') British Virgin Islands
+                                    option(value='BX') Brunei
+                                    option(value='BU') Bulgaria
+                                    option(value='UV') Burkina Faso
+                                    option(value='BY') Burundi
+                                    option(value='CB') Cambodia
+                                    option(value='CM') Cameroon
+                                    option(value='CV') Cape Verde
+                                    option(value='CJ') Cayman Islands
+                                    option(value='CT') Central African Republic
+                                    option(value='CD') Chad
+                                    option(value='CI') Chile
+                                    option(value='CH') China
+                                    option(value='KT') Christmas Island
+                                    option(value='CK') Cocos (Keeling) Islands
+                                    option(value='CO') Colombia
+                                    option(value='CN') Comoros
+                                    option(value='CF') Congo (Brazzaville)
+                                    option(value='CG') Congo (Kinshasa)
+                                    option(value='CW') Cook Islands
+                                    option(value='CS') Costa Rica
+                                    option(value='HR') Croatia
+                                    option(value='CU') Cuba
+                                    option(value='CY') Cyprus
+                                    option(value='EZ') Czech Republic
+                                    option(value='DA') Denmark
+                                    option(value='DJ') Djibouti
+                                    option(value='DO') Dominica
+                                    option(value='DR') Dominican Republic
+                                    option(value='TT') East Timor
+                                    option(value='EC') Ecuador
+                                    option(value='EG') Egypt
+                                    option(value='ES') El Salvador
+                                    option(value='EK') Equatorial Guinea
+                                    option(value='ER') Eritrea
+                                    option(value='EN') Estonia
+                                    option(value='ET') Ethiopia
+                                    option(value='FK') Falkland Islands
+                                    option(value='FO') Faroe Islands
+                                    option(value='FJ') Fiji
+                                    option(value='FG') French Guiana
+                                    option(value='FP') French Polynesia
+                                    option(value='FS') French Southern Territories
+                                    option(value='GB') Gabon
+                                    option(value='GA') Gambia
+                                    option(value='GG') Georgia
+                                    option(value='GH') Ghana
+                                    option(value='GI') Gibraltar
+                                    option(value='GR') Greece
+                                    option(value='GL') Greenland
+                                    option(value='GJ') Grenada
+                                    option(value='GP') Guadeloupe
+                                    option(value='GQ') Guam
+                                    option(value='GT') Guatemala
+                                    option(value='GK') Guernsey
+                                    option(value='GV') Guinea
+                                    option(value='PU') Guinea-Bissau
+                                    option(value='GY') Guyana
+                                    option(value='HA') Haiti
+                                    option(value='HM') Heard Island and McDonald Islands
+                                    option(value='HO') Honduras
+                                    option(value='HK') Hong Kong S.A.R., China
+                                    option(value='HU') Hungary
+                                    option(value='IC') Iceland
+                                    option(value='IN') India
+                                    option(value='ID') Indonesia
+                                    option(value='IR') Iran
+                                    option(value='IZ') Iraq
+                                    option(value='EI') Ireland
+                                    option(value='IM') Isle of Man
+                                    option(value='IS') Israel
+                                    option(value='IV') Ivory Coast
+                                    option(value='JM') Jamaica
+                                    option(value='JE') Jersey
+                                    option(value='JO') Jordan
+                                    option(value='KZ') Kazakhstan
+                                    option(value='KE') Kenya
+                                    option(value='KR') Kiribati
+                                    option(value='KU') Kuwait
+                                    option(value='KG') Kyrgyzstan
+                                    option(value='LA') Laos
+                                    option(value='LG') Latvia
+                                    option(value='LE') Lebanon
+                                    option(value='LT') Lesotho
+                                    option(value='LI') Liberia
+                                    option(value='LY') Libya
+                                    option(value='LS') Liechtenstein
+                                    option(value='LH') Lithuania
+                                    option(value='LU') Luxembourg
+                                    option(value='MC') Macao S.A.R., China
+                                    option(value='MK') Macedonia
+                                    option(value='MA') Madagascar
+                                    option(value='MI') Malawi
+                                    option(value='MY') Malaysia
+                                    option(value='MV') Maldives
+                                    option(value='ML') Mali
+                                    option(value='MT') Malta
+                                    option(value='RM') Marshall Islands
+                                    option(value='MB') Martinique
+                                    option(value='MR') Mauritania
+                                    option(value='MP') Mauritius
+                                    option(value='MF') Mayotte
+                                    option(value='FM') Micronesia
+                                    option(value='MD') Moldova
+                                    option(value='MN') Monaco
+                                    option(value='MG') Mongolia
+                                    option(value='MJ') Montenegro
+                                    option(value='MH') Montserrat
+                                    option(value='MO') Morocco
+                                    option(value='MZ') Mozambique
+                                    option(value='BM') Myanmar
+                                    option(value='WA') Namibia
+                                    option(value='NR') Nauru
+                                    option(value='NP') Nepal
+                                    option(value='NL') Netherlands
+                                    option(value='NT') Netherlands Antilles
+                                    option(value='NC') New Caledonia
+                                    option(value='NZ') New Zealand
+                                    option(value='NU') Nicaragua
+                                    option(value='NG') Niger
+                                    option(value='NI') Nigeria
+                                    option(value='NE') Niue
+                                    option(value='NF') Norfolk Island
+                                    option(value='KN') North Korea
+                                    option(value='CQ') Northern Mariana Islands
+                                    option(value='MU') Oman
+                                    option(value='PK') Pakistan
+                                    option(value='PS') Palau
+                                    option(value='WE') Palestinian Territory
+                                    option(value='PM') Panama
+                                    option(value='PP') Papua New Guinea
+                                    option(value='PA') Paraguay
+                                    option(value='PE') Peru
+                                    option(value='RP') Philippines
+                                    option(value='PC') Pitcairn
+                                    option(value='RQ') Puerto Rico
+                                    option(value='QA') Qatar
+                                    option(value='RE') Reunion
+                                    option(value='RO') Romania
+                                    option(value='RW') Rwanda
+                                    option(value='SH') Saint Helena
+                                    option(value='SC') Saint Kitts and Nevis
+                                    option(value='ST') Saint Lucia
+                                    option(value='SB') Saint Pierre and Miquelon
+                                    option(value='VC') Saint Vincent and the Grenadines
+                                    option(value='WS') Samoa
+                                    option(value='SM') San Marino
+                                    option(value='TP') Sao Tome and Principe
+                                    option(value='SA') Saudi Arabia
+                                    option(value='SG') Senegal
+                                    option(value='RB') Serbia
+                                    option(value='YI') Serbia And Montenegro
+                                    option(value='SE') Seychelles
+                                    option(value='SL') Sierra Leone
+                                    option(value='SN') Singapore
+                                    option(value='LO') Slovakia
+                                    option(value='SI') Slovenia
+                                    option(value='BP') Solomon Islands
+                                    option(value='SO') Somalia
+                                    option(value='SF') South Africa
+                                    option(value='SX') South Georgia and the South Sandwich Islands
+                                    option(value='KS') South Korea
+                                    option(value='CE') Sri Lanka
+                                    option(value='SU') Sudan
+                                    option(value='NS') Suriname
+                                    option(value='SV') Svalbard and Jan Mayen
+                                    option(value='WZ') Swaziland
+                                    option(value='SZ') Switzerland
+                                    option(value='SY') Syria
+                                    option(value='TW') Taiwan
+                                    option(value='TI') Tajikistan
+                                    option(value='TZ') Tanzania
+                                    option(value='TH') Thailand
+                                    option(value='TO') Togo
+                                    option(value='TL') Tokelau
+                                    option(value='TN') Tonga
+                                    option(value='TD') Trinidad and Tobago
+                                    option(value='TS') Tunisia
+                                    option(value='TU') Turkey
+                                    option(value='TX') Turkmenistan
+                                    option(value='TK') Turks and Caicos Islands
+                                    option(value='TV') Tuvalu
+                                    option(value='VQ') U.S. Virgin Islands
+                                    option(value='UG') Uganda
+                                    option(value='UP') Ukraine
+                                    option(value='AE') United Arab Emirates
+                                    option(value='UY') Uruguay
+                                    option(value='UZ') Uzbekistan
+                                    option(value='NH') Vanuatu
+                                    option(value='VT') Vatican
+                                    option(value='VE') Venezuela
+                                    option(value='VM') Vietnam
+                                    option(value='WF') Wallis and Futuna
+                                    option(value='WI') Western Sahara
+                                    option(value='YM') Yemen
+                                    option(value='ZA') Zambia
+                                    option(value='ZI') Zimbabwe
+                                  
+                        td
+                          img(src='file:///C|/Users/Ravindra/Desktop/leads_files/1x1-ce70ad80ba2af5ddb57e888f4e8492b7.gif', height='1', width='10')
+                        td
+                          .label Referred by:
+                          input#lead_referred_by(name='lead[referred_by]',value=lead.reffered_by, size='30', type='text')
+                          div(style='margin-top: 6px;font-size:11px;font-weight:bold;font-colour:seliver;')
+                            .check_box
+                              input(name='lead[do_not_call]', value='0', type='hidden')
+                              input#lead_do_not_call(name='lead[do_not_call]', value='true', type='checkbox')
+                              | Do not call
+              .subtitle
+                a(href='#', data-remote='true', onclick='crm.flip_subtitle(this)')
+                  small ►
+                  | Web Presence
+              .section
+                small#lead_presence_intro(style='display: block;')
+                  | You can add web presence information later.
+                #lead_presence(style='display: none;')
+                  table
+                    tbody
+                      tr
+                        td
+                          .label.top Website/Blog:
+                          input#lead_blog(name='lead[blog]',value=lead.blog, size='30', type='text')
+                        td
+                          img(src='file:///C|/Users/Ravindra/Desktop/leads_files/1x1-ce70ad80ba2af5ddb57e888f4e8492b7.gif', height='1', width='10')
+                        td
+                          .label.top Twitter:
+                          input#lead_twitter(name='lead[twitter]',value=lead.twitter, size='30', type='text')
+                      tr
+                        td
+                          .label LinkedIn:
+                          input#lead_linkedin(name='lead[linkedin]',value=lead.linkedin, size='30', type='text')
+                        td
+                          img(src='file:///C|/Users/Ravindra/Desktop/leads_files/1x1-ce70ad80ba2af5ddb57e888f4e8492b7.gif', height='1', width='10')
+                        td
+                          .label Facebook:
+                          input#lead_facebook(name='lead[facebook]',value=lead.facebook, size='30', type='text')
+                      tr
+                        td
+                          .label Skype:
+                          input#lead_skype(name='lead[skype]',value=lead.skype, size='30', type='text')
+                        td
+                          img(src='file:///C|/Users/Ravindra/Desktop/leads_files/1x1-ce70ad80ba2af5ddb57e888f4e8492b7.gif', height='1', width='10')
+                        td
+                          img(src='file:///C|/Users/Ravindra/Desktop/leads_files/1x1-ce70ad80ba2af5ddb57e888f4e8492b7.gif', height='1', width='10')
+              #field_groups
+              .subtitle
+                a(href='#', data-remote='true', onclick='crm.flip_subtitle(this)')
+                  small ►
+                  | Permissions
+              .section
+                small#lead_permissions_intro(style='display: block;')
+                  | By default permissions will be copied from the campaign or set to public. You can change lead permissions later.
+                #lead_permissions(style='display: none;')
+                  .radio_box
+                    input#lead_access_private(name='lead[access]',value=lead.access, onclick='$(\'people\').hide();', value='Private', type='radio')
+                    label(for='lead_access_private', style='cursor: pointer;') Keep it private, do not share with others
+                  .radio_box
+                    input#lead_access_public(checked='checked', name='lead[access]',value=lead.access, onclick='$(\'people\').hide();', value='Public', type='radio')
+                    label(for='lead_access_public', style='cursor: pointer;') Share it with everyone
+                  .radio_box
+                    input#lead_access_shared(name='lead[access]',value=lead.access, onclick='$(\'people\').show();', value='Shared', type='radio')
+                    label(for='lead_access_shared', style='cursor: pointer;') Share it with the following people
+                  #people(style='display: none;')
+                    div(style='padding: 6px 0px 0px 20px;')
+                      .check_box
+                        input#user_19(name='users[]', value='19', type='checkbox')
+                        label(for='user_19', style='cursor: pointer;') 1@test.com
+                       
+                  .radio_box
+                    input#lead_access_campaign(disabled='disabled', name='lead[access]',value=lead.access, onclick='$(\'people\').hide(); $(\'lead_access_campaign\').value = \'Campaign\'', value='Campaign', type='radio')
+                    font#copy_permissions(color='grey') Copy campaign permissions
+              .buttonbar
+                input(name='commit', onclick='return validate();', value='Create Lead', type='submit')
+                 
+             
+    #footer  © Copyright 2010 Pragmatic Techsoft Pvt. Ltd. All rights reserved
+    script(type='text/javascript')
+      //<![CDATA[
+      _translations = {"Now":"Now","Today":"Today","Clear":"Clear","OK":"OK"};
+      Date.weekdays = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+      Date.months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+      //]]>
+    script(type='text/javascript')
+      function validate(){
+        fnam = document.getElementById('lead_first_name');
+        lname = document.getElementById('lead_last_name');
+        if(fname.value == ''){
+          alert("First Name can't be Empty");
+          fname.focus();
+          return false;
+        }
+        if(lname.value == ''){
+          alert("Last Name can't be Empty");
+          fname.focus();
+          return false;
+        }
+        return true;
+      }
+    script(type='text/javascript')
+      document.observe("dom:loaded", function() {
+      new crm.Popup({
+      trigger     : "jumper",
+      target      : "jumpbox",
+      under       : "welcome",
+      appear      : 0.3,
+      fade        : 0.3,
+      before_show : function() {
+      $("jumper").className = "selected";
+      $("jumpbox_label").innerHTML = ""
+      $("jumpbox_label").hide();
+      $("jumpbox_menu").show();
+      crm.auto_complete("leads");
+      },
+      after_show  : function() {
+      $("auto_complete_query").focus();
+      },
+      after_hide  : function() {
+      $("jumper").className = "";
+      }
+      });
+      });
